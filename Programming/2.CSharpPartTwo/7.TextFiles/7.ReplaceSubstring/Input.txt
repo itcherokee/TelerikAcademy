@@ -1,0 +1,4 @@
+In the current chapter, we will start with strings.
+Starting with strings is a whole new era.
+Before that you have to already started with chars.
+Bla bla bla bla blastart bla bla startedbla...
