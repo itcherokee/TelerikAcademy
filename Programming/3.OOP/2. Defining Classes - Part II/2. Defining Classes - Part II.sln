@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.StructPoint3D", "01.StructPoint3D\01.StructPoint3D.csproj", "{9E73B0A6-D527-4250-84FE-667594A4BE51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ReadOnlyField", "02.ReadOnlyField\02.ReadOnlyField.csproj", "{70284793-FEA6-49CD-A9E6-344A8F0FDE9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Distance3D", "03.Distance3D\03.Distance3D.csproj", "{36421C44-34A9-4464-9E53-FEBF724FDF5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E73B0A6-D527-4250-84FE-667594A4BE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E73B0A6-D527-4250-84FE-667594A4BE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E73B0A6-D527-4250-84FE-667594A4BE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E73B0A6-D527-4250-84FE-667594A4BE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70284793-FEA6-49CD-A9E6-344A8F0FDE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70284793-FEA6-49CD-A9E6-344A8F0FDE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70284793-FEA6-49CD-A9E6-344A8F0FDE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70284793-FEA6-49CD-A9E6-344A8F0FDE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36421C44-34A9-4464-9E53-FEBF724FDF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36421C44-34A9-4464-9E53-FEBF724FDF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36421C44-34A9-4464-9E53-FEBF724FDF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36421C44-34A9-4464-9E53-FEBF724FDF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
