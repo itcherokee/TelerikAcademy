@@ -5,18 +5,18 @@ namespace My3DSpace
     using System;
     using System.Text;
 
+    /// <summary>
+    /// Defines representation of 3D-coordinate in Euclidian 3D space.
+    /// </summary>
+    public struct Point3D
+    {
+        public double x;
+        public double y;
+        public double z;
+    }
+
     public class Euclidian3D
     {
-        /// <summary>
-        /// Defines representation of 3D-coordinate in Euclidian 3D space.
-        /// </summary>
-        internal struct Point3D
-        {
-            internal double X;
-            internal double Y;
-            internal double Z;
-        }
-
         /// <summary>
         /// Represents the 3D-coordinate in Euclidian 3D space.
         /// </summary>
@@ -30,9 +30,9 @@ namespace My3DSpace
         {
             StringBuilder output = new StringBuilder();
             output.Append("3D point coordinates:\n");
-            output.Append(string.Format("X = {0}\n", this.Coordinate3D.X.ToString()));
-            output.Append(string.Format("Y = {0}\n", this.Coordinate3D.Y.ToString()));
-            output.Append(string.Format("Z = {0}\n", this.Coordinate3D.Z.ToString()));
+            output.Append(string.Format("X = {0}\n", this.Coordinate3D.x.ToString()));
+            output.Append(string.Format("Y = {0}\n", this.Coordinate3D.y.ToString()));
+            output.Append(string.Format("Z = {0}\n", this.Coordinate3D.z.ToString()));
             return output.ToString();
         }
     }
