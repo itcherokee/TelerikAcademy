@@ -23,16 +23,16 @@ namespace My3DSpace
         }
 
         /// <summary>
-        /// Calculates the distance between two 3D-coordinates using two Point3D points
+        /// Calculates the distance between two 3D-coordinates using two Point3D type coordinates
         /// </summary>
-        /// <param name="firstPoint">First 3D point</param>
-        /// <param name="secondPoint">Second 3D point</param>
+        /// <param name="firstPoint">First 3D point coordinates</param>
+        /// <param name="secondPoint">Second 3D point coordinates</param>
         /// <returns></returns>
         public static double CalcDistance3D(Point3D firstPoint, Point3D secondPoint)
         {
-            double xPoints = firstPoint.x - secondPoint.x;
-            double yPoints = firstPoint.y - secondPoint.y;
-            double zPoints = firstPoint.z - secondPoint.z;
+            double xPoints = firstPoint.X - secondPoint.X;
+            double yPoints = firstPoint.Y - secondPoint.Y;
+            double zPoints = firstPoint.Z - secondPoint.Z;
             return Math.Sqrt((xPoints * xPoints) + (yPoints * yPoints) + (zPoints * zPoints));
         }
     }

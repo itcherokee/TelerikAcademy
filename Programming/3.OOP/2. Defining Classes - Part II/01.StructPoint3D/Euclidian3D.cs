@@ -10,9 +10,23 @@ namespace My3DSpace
     /// </summary>
     public struct Point3D
     {
-        public double x;
-        public double y;
-        public double z;
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
+
+        /// <summary>
+        /// Converts Euclidian 3D-coordinate to special formated representation of System.string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            StringBuilder output = new StringBuilder();
+            output.Append("3D point coordinates:\n");
+            output.Append(string.Format("X = {0}\n", this.X.ToString()));
+            output.Append(string.Format("Y = {0}\n", this.Y.ToString()));
+            output.Append(string.Format("Z = {0}\n", this.Z.ToString()));
+            return output.ToString();
+        }
     }
 
     public class Euclidian3D
@@ -21,19 +35,5 @@ namespace My3DSpace
         /// Represents the 3D-coordinate in Euclidian 3D space.
         /// </summary>
         public Point3D Coordinate3D { get; set; }
-
-        /// <summary>
-        /// Converts Euclidian 3D-coordinate of this instance to special formated representation of System.string
-        /// </summary>
-        /// <returns>string</returns>
-        public override string ToString()
-        {
-            StringBuilder output = new StringBuilder();
-            output.Append("3D point coordinates:\n");
-            output.Append(string.Format("X = {0}\n", this.Coordinate3D.x.ToString()));
-            output.Append(string.Format("Y = {0}\n", this.Coordinate3D.y.ToString()));
-            output.Append(string.Format("Z = {0}\n", this.Coordinate3D.z.ToString()));
-            return output.ToString();
-        }
     }
 }

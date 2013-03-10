@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A5FFF73-FA3A-4D2E-9684-4727284DB51F}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{5462FD9B-35C4-4752-95CA-71779D70FD15}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>test</RootNamespace>
-    <AssemblyName>test</AssemblyName>
+    <RootNamespace>_10.GenericMatrixOperators</RootNamespace>
+    <AssemblyName>10.GenericMatrixOperators</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,29 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\04.PathAndPathStorage\04.PathAndPathStorage.csproj">
-      <Project>{237e4c9f-ff50-4410-af35-cecb34ea7d5d}</Project>
-      <Name>04.PathAndPathStorage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\07.GenericListMinMax\07.GenericListMinMax.csproj">
-      <Project>{d708cd85-1c3a-4cce-9e28-ccc911f55092}</Project>
-      <Name>07.GenericListMinMax</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\10.GenericMatrixOperators\10.GenericMatrixOperators.csproj">
-      <Project>{5462fd9b-35c4-4752-95ca-71779d70fd15}</Project>
-      <Name>10.GenericMatrixOperators</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\11.VersionAttribute\11.VersionAttribute.csproj">
-      <Project>{dfba9a21-5eae-4175-b891-90979ca70f4a}</Project>
-      <Name>11.VersionAttribute</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

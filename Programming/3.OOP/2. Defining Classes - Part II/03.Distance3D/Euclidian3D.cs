@@ -10,9 +10,23 @@ namespace My3DSpace
     /// </summary>
     public struct Point3D
     {
-        public double x;
-        public double y;
-        public double z;
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
+
+        /// <summary>
+        /// Converts Euclidian 3D-coordinate to special formated representation of System.string
+        /// </summary>
+        /// <returns>string</returns>
+        public override string ToString()
+        {
+            StringBuilder output = new StringBuilder();
+            output.Append("3D point coordinates:\n");
+            output.Append(string.Format("X = {0}\n", this.X.ToString()));
+            output.Append(string.Format("Y = {0}\n", this.Y.ToString()));
+            output.Append(string.Format("Z = {0}\n", this.Z.ToString()));
+            return output.ToString();
+        }
     }
 
     public class Euclidian3D
@@ -33,28 +47,14 @@ namespace My3DSpace
         }
 
         /// <summary>
-        /// Default static constructor of Euclidian3d class. Initialize the static read-only field coordinateCenter
+        /// Default static constructor of Euclidian3d class. Initialize the static read-only field coordinateCenter to {0,0,0}
         /// </summary>
         static Euclidian3D()
         {
             coordinateCenter = new Point3D();
-            coordinateCenter.x = 0.0d;
-            coordinateCenter.y = 0.0d;
-            coordinateCenter.z = 0.0d;
-        }
-
-        /// <summary>
-        /// Converts Euclidian 3D-coordinate of this instance to special formated representation of System.string
-        /// </summary>
-        /// <returns>string</returns>
-        public override string ToString()
-        {
-            StringBuilder output = new StringBuilder();
-            output.Append("3D point coordinates:\n");
-            output.Append(string.Format("X = {0}\n", this.Coordinate3D.x.ToString()));
-            output.Append(string.Format("Y = {0}\n", this.Coordinate3D.y.ToString()));
-            output.Append(string.Format("Z = {0}\n", this.Coordinate3D.z.ToString()));
-            return output.ToString();
+            coordinateCenter.X = 0.0d;
+            coordinateCenter.Y = 0.0d;
+            coordinateCenter.Z = 0.0d;
         }
     }
 }
