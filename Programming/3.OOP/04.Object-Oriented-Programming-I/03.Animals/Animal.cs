@@ -25,7 +25,7 @@ namespace MyAnimals
             this.Sex = sex;
         }
 
-        public static double Average(IEnumerable<Animal> list)
+        public static Dictionary<Type, int> Average(IEnumerable<Animal> list)
         {
             Dictionary<Type, int> result = new Dictionary<Type, int>();
             Type current;
