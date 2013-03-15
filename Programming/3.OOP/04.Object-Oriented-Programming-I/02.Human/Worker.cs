@@ -1,7 +1,6 @@
 ﻿namespace MyHuman
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
 
@@ -87,7 +86,6 @@
         {
             StringBuilder output = new StringBuilder();
             output.Append("Name: " + this.FirstName + " " + this.LastName);
-            //output.Append(string.Format("  Salary per Hour: {0:C2}", this.MoneyPerHour()));
             return output.ToString();
         }
     }
