@@ -2,7 +2,7 @@
 {
     using System;
 
-    interface ISound
+    internal interface ISound
     {
         // Produce sound depending on Animal
         string DoVoice();

@@ -9,15 +9,12 @@ namespace MyAnimals
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class TestRun
     {
         public static void Main()
         {
-        
+            // add a couple of different Animals
             List<Animal> animals = new List<Animal>()
             { 
                 new Dog("Sharo", 10, Animal.Gender.Male),
@@ -25,14 +22,17 @@ namespace MyAnimals
                 new Dog("Ceca", 5, Animal.Gender.Female),
                 new Dog("Tochka", 7,  Animal.Gender.Female),
                 new Frog("Kvaki", 54, Animal.Gender.Female),
-                new Cat("To",9, Animal.Gender.Male),
+                new Cat("To", 9, Animal.Gender.Male),
                 new Kitten("Tomka", 2, Animal.Gender.Female),
                 new Tomcat("Tom", 10, Animal.Gender.Male),
                 new Tomcat("Slon", 12, Animal.Gender.Male)
+            };
+
+            // print the average age per Animal type
+            foreach (var item in Animal.Average(animals))
+            {
+                Console.WriteLine("Animal type: {0}; Average years: {1}", item.Key.ToString().Substring(item.Key.ToString().IndexOf('.', 0) + 1), item.Value);
             }
-
-
-
         }
     }
 }
