@@ -7,22 +7,23 @@ namespace ElectronicLibrary
 {
     public class Client : Person
     {
-        public DateTime ClientSince { get;  set; }
+        public DateTime? ClientSince { get; set; }
 
-        public PersonStatus Status { get; set; }
-
-        public PersonTypes PersonType { get; set; }
-
-        public Client(string firstName, string lastName, string personlaID, PersonStatus status, string address)
+        public Client(string firstName, string lastName, string address, string personalID, PersonStatus status, PersonTypes personType = PersonTypes.Client, DateTime? clientSince = null)
         {
-            this.PersonType = PersonTypes.Client;
+            this.PersonType = personType;
             this.FirstName = firstName;
             this.LastName = lastName;
-            this.PersonalID = personlaID;
-            this.Status = status;
+            this.PersonalID = personalID;
+            this.PrsonStatus = status;
             this.Address = address;
-            this.ClientSince = DateTime.Today;
+            this.ClientSince = clientSince ?? DateTime.Today;
+        }
 
+        public override string ToString()
+        {
+            return "Client: " + this.FullName + ", " + this.Address + " " + this.PersonalID + ", " +
+                this.PrsonStatus + ", " + this.ClientSince;
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using System.Text;
     using System.Collections.Generic;
 
     /// <summary>
@@ -11,87 +12,140 @@
 
     public class InputOutput
     {
-        public string pathPerson = @"../../InputOutputPerson.txt";
-        public string pathMedia = @"../../InputOutputMedia.txt";
+        private string pathPerson = Environment.CurrentDirectory + @"\Persons.txt";
+        private string pathMedia = Environment.CurrentDirectory + @"\Media.txt";
 
-       
-         //Record fields:
-         //0. PersonType
-         //1. FirstName
-         //2.LastName
-         //3.Personal ID
-         //4. personalStatus
-         //5. Address
-        //6. clientSince
+        // Record fields order:
+        // 0. PersonType
+        // 1. ClentSince/EmployeeSince
+        // 2. FirstName
+        // 3. LastName
+        // 4. Personal ID
+        // 5. personalStatus
+        // 6. Address
 
-        public List<Person> GetPersonList()
+        public Users LoadPersons()
         {
-           
-            List<Person> objPeople = new List<Person>();
-
-            using (StreamReader file = new StreamReader("../../InputOutputPerson.txt"))
+            if (File.Exists(pathPerson))
             {
-                while (file.Peek()!=null)
-                {
+                Users listPersons = new Users();
 
-                    char[] delimiters = new char[] {' '};
-                    string[] parts = file.ReadLine().Split((char)9);
-                    Client client;
-                    for (int index=0; index< parts.Length;index++)
+                using (StreamReader inputFile = new StreamReader(pathPerson, Encoding.UTF8))
+                {
+                    while (inputFile.Peek() != -1)
+                    {                        
+                        Person record = Parse(inputFile.ReadLine().Split((char)9));
+                        listPersons.Add(record);
+
+                    }
+                    inputFile.Close();
+                }
+                return listPersons;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public void SavePersons(IEnumerable<Person> list)
+        {
+            using (StreamWriter outputFile = new StreamWriter(pathPerson, false, Encoding.UTF8))
+            {
+                StringBuilder outputRecord = new StringBuilder();
+                try
+                {
+                    foreach (var record in list)
                     {
-                        if (parts[index] == PersonTypes.Client.ToString())
+                        if (record is Client)
                         {
-                            client = new Client(parts[1],parts[2],parts[3],PersonStatus.Unknown,parts[5]);
+                            var item = record as Client;
+                            //outputRecord.Append((record as Client).personType.ToString());
+                            outputRecord.Append(item.PersonType.ToString() + "\t");
+                            outputRecord.Append(item.ClientSince.ToString() + "\t");
                         }
+                        else
+                        {
+                            var item = record as Librarian;
+                            outputRecord.Append(item.PersonType.ToString() + "\t");
+                            outputRecord.Append(item.EmployeeSince.ToString() + "\t");
+                        }
+                        outputRecord.Append(record.FirstName + "\t");
+                        outputRecord.Append(record.LastName + "\t");
+                        outputRecord.Append(record.PersonalID + "\t");
+                        outputRecord.Append(record.PrsonStatus.ToString() + "\t");
+                        outputRecord.Append(record.Address);
+
+                        // Write record to file
+                        outputFile.WriteLine(outputRecord.ToString());
+                        outputRecord.Clear();
                     }
                 }
-                file.Close();
-            }
-            return objPeople;
-        }
-
-
-
-
-
-
-
-
-
-
-
-        public void OutputPerson(IList<Person> person)
-        {
-            using (StreamWriter sw = File.AppendText(pathPerson))
-            {
-                sw.WriteLine(person);
-            }
-        }
-
-        public void InputMedia()
-        {
-            int rowMedia = 1;
-            using (StreamReader input = new StreamReader("../../InputOutputMedia.txt"))
-                for (string line; (line = input.ReadLine()) != null; rowMedia++)
+                catch (IOException)
                 {
-                    Console.WriteLine(line);
+                    throw new IOException("There were problem saving your data to DataBase!");
                 }
-        }
+                finally
+                {
+                    outputFile.Close();
+                }
 
-        public void OutputMedia(IList<Media> media)
-        {
-            using (StreamWriter sw = File.AppendText(pathPerson))
-            {
-                sw.WriteLine(media);
             }
         }
 
-        public void OutputPersonAdd(string player)
+        private Person Parse(string[] data)
         {
-            using (StreamWriter sw = File.AppendText(pathPerson))
+            PersonTypes personType = (PersonTypes)Enum.Parse(typeof(PersonTypes), data[0]);
+            if (personType == PersonTypes.Client)
             {
-                sw.WriteLine(player);
+                Client client = new Client(data[2], data[3], data[6], data[4],
+                    (PersonStatus)Enum.Parse(typeof(PersonStatus), data[5]), personType, Convert.ToDateTime(data[1]));
+                return client;
+            }
+            else if (personType == PersonTypes.Employee)
+            {
+                Librarian client = new Librarian(data[2], data[3], data[6], data[4],
+                    (PersonStatus)Enum.Parse(typeof(PersonStatus), data[5]), personType, Convert.ToDateTime(data[1]));
+                return client;
+            }
+            else
+            {
+                throw new LibraryException.NonImplementedInterfaceException("Only IO operations with Client & Librarian types has been implemented!");
             }
         }
+
+        //public void OutputPerson(IList<Person> person)
+        //{
+        //    using (StreamWriter sw = File.AppendText(pathPerson))
+        //    {
+        //        sw.WriteLine(person);
+        //    }
+        //}
+
+        //public void InputMedia()
+        //{
+        //    int rowMedia = 1;
+        //    using (StreamReader input = new StreamReader("../../InputOutputMedia.txt"))
+        //        for (string line; (line = input.ReadLine()) != null; rowMedia++)
+        //        {
+        //            Console.WriteLine(line);
+        //        }
+        //}
+
+        //public void OutputMedia(IList<Media> media)
+        //{
+        //    using (StreamWriter sw = File.AppendText(pathPerson))
+        //    {
+        //        sw.WriteLine(media);
+        //    }
+        //}
+
+        //public void OutputPersonAdd(string player)
+        //{
+        //    using (StreamWriter sw = File.AppendText(pathPerson))
+        //    {
+        //        sw.WriteLine(player);
+        //    }
+        //}
     }
 }

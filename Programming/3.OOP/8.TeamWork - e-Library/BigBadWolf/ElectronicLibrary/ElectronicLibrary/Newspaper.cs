@@ -5,48 +5,46 @@ using System.Text;
 
 namespace ElectronicLibrary
 {
-    public class Newspaper : Paper, IReadable, IBuyable, IPrintableMedia
+    public class Newspaper : PeriodicPress, IReadable
     {
-        public Newspaper(long barcode, string title, string author, string publisher, MediaType type, int volume, int quantity, string owner, string manager, string chiefEditor)
-            : base(barcode, title, author, publisher, type, quantity)
+        public Newspaper(string title, string author, string publisher, long barcode, int quantity, int pages, string isbn, DateTime year, bool isViewed = false,
+            int volume = 0, string owner = "-none-", string manager = "-none-", string chiefEditor = "-none-")
+            : base(title, author, publisher, MediaType.Newspaper, barcode, quantity, pages, isbn, year, volume, owner, manager, chiefEditor)
         {
-            this.Volume = volume;
-            this.Owner = owner;
-            this.Manager = manager;
-            this.ChiefEditor = chiefEditor;
+            this.IsViewed = isViewed;
         }
 
-        public int Volume { get; set; }
-
         #region IReadable Members
-        public event EventHandler Viewed;
+
+        public bool IsViewed { get; set; }
 
         public void View()
         {
-            throw new NotImplementedException();
+            this.IsViewed = true;
+            OnViewed();
         }
 
-        #endregion
-
-        #region IBuyable Members
-
-        public event EventHandler Bought;
-        
-        public decimal IBuyable.Price { get; set; }
-        
-        public void Buy()
+        public void ReturnViewed()
         {
-            throw new NotImplementedException();
+            this.IsViewed = false;
+            // TODO: OnReturnViewed();
         }
 
         #endregion
 
-        #region IPrintableMedia Members
-        public string Owner { get; set; }
+        #region Trigers for the event to be fired when Book has been taken to be read
 
-        public string Manager { get; set; }
+        public event NewspaperViewedEventHandler NewspaperHasBeenRead;
 
-        public string ChiefEditor { get; set; }
+        // fires the event in case of records change
+        protected virtual void OnViewed()
+        {
+            if (NewspaperHasBeenRead != null)
+            {
+                NewspaperHasBeenRead(this);
+            }
+        }
+
         #endregion
     }
 }

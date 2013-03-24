@@ -10,8 +10,6 @@ namespace ElectronicLibrary
         Book,
         Newspaper,
         Magazine,
-        CD,
-        DVD,
-        Flash
+        Movie
     }
 }

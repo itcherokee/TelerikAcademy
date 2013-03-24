@@ -58,6 +58,14 @@ namespace ElectronicLibrary
             }
         }
 
+        public class MediaExistException : LibraryException
+        {
+            public MediaExistException(string message)
+                : base(message)
+            {
+            }
+        }
+
         public class NonRentableMediaException : LibraryException
         {
             public NonRentableMediaException(string message)
@@ -85,6 +93,19 @@ namespace ElectronicLibrary
         public class WrongMediaTypeSlectionException : LibraryException
         {
             public WrongMediaTypeSlectionException(string message)
+                : base(message)
+            {
+            }
+        }
+
+
+        #endregion
+
+        #region IOExceptions
+
+        public class NonImplementedInterfaceException : LibraryException
+        {
+            public NonImplementedInterfaceException(string message)
                 : base(message)
             {
             }

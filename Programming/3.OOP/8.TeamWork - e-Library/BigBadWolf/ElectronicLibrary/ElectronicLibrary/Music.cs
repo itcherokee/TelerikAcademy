@@ -7,20 +7,15 @@ namespace ElectronicLibrary
 {
     public class Music : Electronic, IBuyable
     {
-        public Music(long barcode, string title, string author, string publisher, MediaType type, int quantity)
-            : base(barcode, title, author, publisher, type, quantity)
+        public Music(long barcode, string title, string author, string publisher, MediaType type, int quantity, int length)
+            : base(barcode, title, author, publisher, type, quantity, length)
         {
         }
 
         #region IBuyable Members
-        public event EventHandler Bought;
 
-        public decimal IBuyable.Price { get; set; }
 
-        public void Buy()
-        {
-            throw new NotImplementedException();
-        } 
+        public decimal BuyPrice { get; set; } 
         #endregion
     }
 }

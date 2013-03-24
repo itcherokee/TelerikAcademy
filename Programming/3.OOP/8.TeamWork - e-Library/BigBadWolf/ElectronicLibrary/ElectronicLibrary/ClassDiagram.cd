@@ -1,73 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="ElectronicLibrary.Administrator" Collapsed="true">
-    <Position X="0.5" Y="7.25" Width="1.5" />
+  <Class Name="ElectronicLibrary.Book">
+    <Position X="8.25" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Administrator.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ElectronicLibrary.Book" Collapsed="true">
-    <Position X="0.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAAABQAAAAAgAAAAAAAAACABgEAQACAAAAAAAAA=</HashCode>
+      <HashCode>AABAAACABQAAAgAEAAAIAAAAACMBAAAAAAAEQQAAAgA=</HashCode>
       <FileName>Book.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ElectronicLibrary.Client" Collapsed="true">
-    <Position X="5" Y="5.75" Width="1.5" />
+  <Class Name="ElectronicLibrary.Client">
+    <Position X="3" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAIAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Client.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ElectronicLibrary.Electronic" Collapsed="true">
-    <Position X="8.5" Y="1.75" Width="1.5" />
+    <Position X="8.75" Y="0.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Electronic.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.ElectronicLibrary" Collapsed="true">
-    <Position X="12" Y="0.5" Width="1.5" />
+  <Class Name="ElectronicLibrary.ElectronicLibrary">
+    <Position X="0.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>ElectronicLibrary.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.InputOutput" Collapsed="true">
-    <Position X="13.75" Y="0.5" Width="1.5" />
+  <Class Name="ElectronicLibrary.InputOutput">
+    <Position X="0.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAkAAAAAAAAAQAAAAIAAAAgAAAAAAAAIAABAAAAA=</HashCode>
+      <HashCode>AAAoAgAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAA=</HashCode>
       <FileName>InputOutput.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.Librarian" Collapsed="true">
-    <Position X="2.75" Y="7.25" Width="1.5" />
+  <Class Name="ElectronicLibrary.Librarian">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Librarian.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.LibrarianWorker" Collapsed="true">
-    <Position X="1.5" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LibrarianWorker.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ElectronicLibrary.LibraryException" Collapsed="true">
-    <Position X="12" Y="1.5" Width="1.5" />
+  <Class Name="ElectronicLibrary.LibraryException">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="ElectronicLibrary.LibraryException.NonImplementedInterfaceException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.InvalidUserNameException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.UnknownException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.NonExistingMediaException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.UserExistException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.WrongMediaTypeSlectionException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.NonExistingUserException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.NonRentableMediaException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.MediaExistException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.NonBuyableMediaException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="ElectronicLibrary.LibraryException.NonReadableMediaException" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>LibraryException.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LibraryException.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.Magazine" Collapsed="true">
-    <Position X="2.75" Y="3.25" Width="1.5" />
+  <Class Name="ElectronicLibrary.Magazine">
+    <Position X="4.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAACABAEAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAMBAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Magazine.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -75,107 +127,139 @@
   <Class Name="ElectronicLibrary.Media" Collapsed="true">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAgAAAAgA=</HashCode>
       <FileName>Media.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.Movie" Collapsed="true">
-    <Position X="7.25" Y="3.25" Width="1.5" />
+  <Class Name="ElectronicLibrary.Movie">
+    <Position X="10" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAABAAAAAAAAAAAAAAAACAAAEAQACAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAACAAAABAgAEAAAAAAAAACAAAAAAAAAAQQAAAgA=</HashCode>
       <FileName>Movie.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ElectronicLibrary.Music" Collapsed="true">
-    <Position X="9.5" Y="3.25" Width="1.5" />
+  <Class Name="ElectronicLibrary.Newspaper">
+    <Position X="6.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAABAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>Music.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="ElectronicLibrary.Newspaper" Collapsed="true">
-    <Position X="5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAACABAEAAAAAAAAAAAAAAAABhEAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAJAAAAAAMBAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Newspaper.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ElectronicLibrary.Paper" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+    <Position X="7" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Paper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.Person" Collapsed="true">
-    <Position X="2.75" Y="4.5" Width="1.5" />
+  <Class Name="ElectronicLibrary.Person">
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAIAEAAAEAAAAAAAAAAACAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAEAABAAAAIAEIAAEAAAAAAAAAAACAAAAAAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ElectronicLibrary.Users" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13.75" Y="1.5" Width="1.5" />
+  <Class Name="ElectronicLibrary.Users" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="6.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>IAIAAAAAAAAAQBAAAAAABAAAAAAAAAAAAAAAAAAgIAA=</HashCode>
+      <HashCode>IAIAAAAAAQAAABAAAAAABAAAAACAAAAAAAAAAAAgIAA=</HashCode>
       <FileName>Users.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.169" />
+  </Class>
+  <Class Name="ElectronicLibrary.MediaList" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.75" />
+    <NestedTypes>
+      <Delegate Name="ElectronicLibrary.MediaList.MediaChangeEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MediaList.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAQAAIBAAAAAABAAAAEBAAAAIkAAAFAAwCAA=</HashCode>
+      <FileName>MediaList.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Struct Name="ElectronicLibrary.MediaData" Collapsed="true">
-    <Position X="12" Y="2.75" Width="1.5" />
+  <Class Name="ElectronicLibrary.RentingRecords">
+    <Position X="9.75" Y="8" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="ElectronicLibrary.RentingRecords.Status" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>RentingRecords.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAEAAiAAAAAAAAAAAAAAAAQAAgAAAAAA=</HashCode>
+      <HashCode>AAIEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RentingRecords.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicLibrary.PeriodicPress">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAEAAAAEAAAAAAAAAAAABAAAAAIAAAAAAgA=</HashCode>
+      <FileName>PeriodicPress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="ElectronicLibrary.MediaData">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAEAAiAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>MediaData.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Interface Name="ElectronicLibrary.IBuyable" Collapsed="true">
-    <Position X="12" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAQAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>IBuyable.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="ElectronicLibrary.INotable" Collapsed="true">
-    <Position X="13.75" Y="4" Width="1.5" />
+    <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>INotable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ElectronicLibrary.IReadable" Collapsed="true">
-    <Position X="12" Y="4.75" Width="1.5" />
+  <Interface Name="ElectronicLibrary.IReadable">
+    <Position X="13.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAIBAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IReadable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ElectronicLibrary.IRentable" Collapsed="true">
-    <Position X="13.75" Y="4.75" Width="1.5" />
+  <Interface Name="ElectronicLibrary.IRentable">
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAQQAAAAA=</HashCode>
       <FileName>IRentable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="ElectronicLibrary.MediaType" Collapsed="true">
-    <Position X="12" Y="5.75" Width="1.5" />
+  <Interface Name="ElectronicLibrary.IPrintable">
+    <Position X="12" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAACBAAAAAAAAAAAAAgAAAAQAAAAAIAAA=</HashCode>
+      <HashCode>AAAAAACAAAEAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IPrintable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ElectronicLibrary.MediaType">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAEABAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
       <FileName>MediaType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ElectronicLibrary.PersonStatus" Collapsed="true">
-    <Position X="13.75" Y="5.75" Width="1.5" />
+  <Enum Name="ElectronicLibrary.PersonStatus">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAEAABAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>PersonStatus.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="ElectronicLibrary.PersonTypes" Collapsed="true">
-    <Position X="12" Y="6.5" Width="1.5" />
+  <Enum Name="ElectronicLibrary.PersonTypes">
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>PersonTypes.cs</FileName>

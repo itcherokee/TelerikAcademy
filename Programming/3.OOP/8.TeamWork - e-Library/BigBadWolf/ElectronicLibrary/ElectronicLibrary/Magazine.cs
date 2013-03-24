@@ -1,41 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace ElectronicLibrary
 {
-    public class Magazine : Paper, IBuyable, IPrintableMedia
+    public class Magazine : PeriodicPress, IReadable
     {
-        public Magazine(long barcode, string title, string author, string publisher, MediaType type, int volume, int quantity, string owner, string manager, string chiefEditor)
-            : base(barcode, title, author, publisher, type, quantity)
+        public Magazine(string title, string author, string publisher, long barcode, int quantity, int pages, string isbn, DateTime year, bool isViewed = false,
+            int volume = 0, string owner = "-none-", string manager = "-none-", string chiefEditor = "-none-")
+            : base(title, author, publisher, MediaType.Magazine, barcode, quantity, pages, isbn, year, volume, owner, manager, chiefEditor)
         {
-            this.Volume = volume;
-            this.Owner = owner;
-            this.Manager = manager;
-            this.ChiefEditor = chiefEditor;
+            this.IsViewed = isViewed;
         }
 
-        public int Volume { get; set; }
+        #region IReadable Members
 
-        #region IBuyable Members
-        public event EventHandler Bought;
-
-        public decimal IBuyable.Price { get; set; }
-        
-        public void Buy()
+        public void View()
         {
-            throw new NotImplementedException();
+            this.IsViewed = true;
+            OnViewed();
         }
+
+        public void ReturnViewed()
+        {
+            this.IsViewed = false;
+            // TODO: OnReturnViewed();
+        }
+
+        public bool IsViewed { get; set; }
 
         #endregion
 
-        #region IPrintableMedia Members
-        public string Owner { get; set; }
+        #region Trigers for the event to be fired when Book has been taken to be read
 
-        public string Manager { get; set; }
+        public event MagazineViewedEventHandler MagazineHasBeenRead;
 
-        public string ChiefEditor { get; set; }
+        // fires the event in case of records change
+        protected virtual void OnViewed()
+        {
+            if (MagazineHasBeenRead != null)
+            {
+                MagazineHasBeenRead(this);
+            }
+        }
+
         #endregion
     }
 }

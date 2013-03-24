@@ -1,104 +1,103 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace ElectronicLibrary
 {
-    public class Book : Paper, IReadable, IBuyable, IRentable
+    public class Book : Paper, IReadable, IRentable
     {
-        public int ISBN { get; private set; }
-        public int Year { get; private set; }
-        public int Pages { get; private set; }
-
-        public Book(long barcode, string title, string author, string publisher, MediaType type, int quantity, int ISBN, int year, int pages)
-            : base(barcode, title, author, publisher, type, quantity)
+        public Book(string title, string author, string publisher, long barcode, int quantity, int pages, string isbn, DateTime year, bool isRented = false)
+            : base(title, author, publisher, MediaType.Book, barcode, quantity, pages)
         {
-            this.ISBN = ISBN;
+            this.ISBN = isbn;
             this.Year = year;
-            this.Pages = pages;
+            this.IsRented = isRented;
         }
 
-        public Book(long barcode, string title, string author)
-            : this(barcode, title, author, null, MediaType.Book, 0, 0, 0, 0)
-        {
-        }
+        public string ISBN { get; private set; }
 
-        public Book(long barcode, string title)
-            : this(barcode, title, null)
-        {
-        }
-
-        //public Book (string title, string author, string publisher, decimal price, int ISDN, int year, int page)
-        //{
-        //    MediaData mediaBook = new MediaData();
-
-        //    mediaBook.Title= title;
-        //    mediaBook.Author = author;
-        //    mediaBook.Publisher = publisher;
-        //    mediaBook.Price = price;
-        //    mediaBook.Type = MediaType.Book;
-        //    this.ISBN = ISDN;
-        //    this.Year = year;
-        //    this.Pages = page;
-        //}
-
-        //public Book(string title, string author)
-        //{
-        //    MediaData mediaBook = new MediaData();
-
-        //    mediaBook.Title = title;
-        //    mediaBook.Author = author;
-        //}
-
-        //public Book(string title)
-        //{
-        //    MediaData mediaBook = new MediaData();
-
-        //    mediaBook.Title = title;
-        //}
-
-        //public Book(string title, string author)
-        //{
-        //    MediaData mediaBook = new MediaData();
-
-        //    mediaBook.Author = author;
-        //}
+        public DateTime Year { get; private set; }
 
         #region IReadable Members
-        public event EventHandler Viewed;
+
+        public bool IsViewed { get; set; }
 
         public void View()
         {
-            throw new NotImplementedException();
+            this.IsViewed = true;
+            OnViewed();
         }
 
-        #endregion
-
-        #region IBuyable Members
-
-        public event EventHandler Bought;
-
-        public decimal IBuyable.Price { get; set; }
-
-        public void Buy()
+        public void ReturnViewed()
         {
-            throw new NotImplementedException();
+            this.IsViewed = false;
+            // TODO: OnReturnViewed();
         }
 
         #endregion
 
         #region IRentable Members
 
-        public event EventHandler Rented;
+        public bool IsRented { get; set; }
 
-        public decimal IRentable.Price { get; set; }
+        public decimal RentPrice { get; set; }
 
         public void Rent()
         {
-            throw new NotImplementedException();
+            this.IsRented = true;
+            OnRented();
+        }
+
+        public void ReturnRented()
+        {
+            this.IsRented = false;
+            // TODO: OnReturnRented();
         }
 
         #endregion
+
+        #region Trigers for the event to be fired when Book has been rented
+
+        public event BookRentedEventHandler BookHasBeenRented;
+
+        // fires the event in case of records change
+        protected virtual void OnRented()
+        {
+            if (BookHasBeenRented != null)
+            {
+                BookHasBeenRented(this, "rented");
+            }
+        }
+
+        #endregion
+
+        #region Trigers for the event to be fired when Book has been taken to be read
+
+        public event BookViewedEventHandler BookHasBeenRead;
+
+        // fires the event in case of records change
+        protected virtual void OnViewed()
+        {
+            if (BookHasBeenRead != null)
+            {
+                BookHasBeenRead(this);
+            }
+        }
+
+        #endregion
+
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("ISBN: {0}\nYear: {1:YYYY}\nRent price: {2}", this.ISBN.ToString(), this.Year.Year.ToString(), this.RentPrice.ToString());
+        }
+
+        internal override string ToFileSave()
+        {
+            StringBuilder record = new StringBuilder();
+            record.Append(base.ToFileSave());
+            record.Append(this.ISBN + "\t");
+            record.Append(this.Year.Year.ToString() + "\t");
+            record.Append(this.RentPrice.ToString() + "\t");
+            return record.ToString();
+        }
     }
 }

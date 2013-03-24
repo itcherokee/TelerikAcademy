@@ -46,22 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrator.cs" />
     <Compile Include="Book.cs" />
-    <Compile Include="IPrintableMedia.cs" />
+    <Compile Include="IPrintable.cs" />
     <Compile Include="MediaList.cs" />
-    <Compile Include="Music.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Movie.cs" />
     <Compile Include="Electronic.cs" />
     <Compile Include="ElectronicLibrary.cs" />
-    <Compile Include="IBuyable.cs" />
     <Compile Include="INotable.cs" />
     <Compile Include="InputOutput.cs" />
     <Compile Include="IReadable.cs" />
     <Compile Include="IRentable.cs" />
     <Compile Include="Librarian.cs" />
-    <Compile Include="LibrarianWorker.cs" />
     <Compile Include="LibraryException.cs" />
     <Compile Include="Magazine.cs" />
     <Compile Include="MediaType.cs" />
@@ -69,9 +65,11 @@
     <Compile Include="MediaData.cs" />
     <Compile Include="Newspaper.cs" />
     <Compile Include="Paper.cs" />
+    <Compile Include="PeriodicPress.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonStatus.cs" />
     <Compile Include="PersonTypes.cs" />
+    <Compile Include="RentingRecords.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

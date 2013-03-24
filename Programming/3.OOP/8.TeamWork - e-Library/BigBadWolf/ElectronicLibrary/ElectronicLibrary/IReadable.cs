@@ -5,10 +5,18 @@ using System.Text;
 
 namespace ElectronicLibrary
 {
+    public delegate void BookViewedEventHandler(Media media);
+
+    public delegate void MagazineViewedEventHandler(Media media);
+
+    public delegate void NewspaperViewedEventHandler(Media media);
+
     public interface IReadable
     {
-        event EventHandler Viewed;
-    
+        bool IsViewed { get; set; }
+
         void View();
+
+        void ReturnViewed();
     }
 }

@@ -7,9 +7,7 @@ namespace ElectronicLibrary
 {
     public interface IBuyable
     {
-        event EventHandler Bought;
-        
-        decimal Price { get; set; }
+        decimal BuyPrice { get; set; }
         
         void Buy();
     }

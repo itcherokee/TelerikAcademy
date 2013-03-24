@@ -19,6 +19,10 @@
                 return this.FirstName + " " + this.LastName;
             }
         }
+
+        public PersonStatus PrsonStatus { get; set; }
+
+        public PersonTypes PersonType { get; set; }
         
         public override string ToString()
         {
