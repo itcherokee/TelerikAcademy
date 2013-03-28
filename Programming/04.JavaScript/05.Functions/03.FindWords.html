@@ -10,29 +10,46 @@
     <input type="text" id="tb-text" />
     <label for="tb-word">Word to count:</label>
     <input type="text" id="tb-word" />
-    <a href="#" id="btn-check-prime" onclick="onShowBtnClick()">Find</a>
+    <a href="#" id="btn-check-prime" onclick="onBtnClick()">Count</a>
     <div id="js-console">
     </div>
     <script src="script/js-console.js"></script>
     <script>
 
-        function CountWord(array, wrd) {
-            var counter = 0;
-            for (var element in array) {
-                if (array[element] == wrd) {
+		function Count(arr,word){
+		    var counter = 0;
+		    for (var element in arr) {
+			    if (arr[element] == word) {
                     counter++;
                 }
             }
-            return counter;
+			return counter;
+		}
+	
+        function CountWord(array, wrd, caseOption) {
+			switch (arguments.length){
+			case 2: return Count(array,wrd); break;
+			case 3: 
+				var word = (wrd + "").toLowerCase();
+				for (var item in array){
+					array[item] = (array[item] + "").toLowerCase();
+				}
+				return Count(array,word);
+				break;
+			}
         }
 
-        function onShowBtnClick() {
+        function onBtnClick() {
             var text = jsConsole.read("#tb-text");
             var wordsArray = text.split(/(?:,| )+/);
             var word = jsConsole.read("#tb-word");
-            var result = CountWord(wordsArray, word);
-            jsConsole.write("Selected word appears ");
-            jsConsole.write(result);
+            var resultSensitive = CountWord(wordsArray, word);
+			var resultInSensitive = CountWord(wordsArray, word, true);
+            jsConsole.write("Selected word (Case Sensitive) appears ");
+            jsConsole.write(resultSensitive);
+            jsConsole.writeLine(" times in text.")
+			jsConsole.write("Selected word (Case Insensitive) appears ");
+            jsConsole.write(resultInSensitive);
             jsConsole.write(" times in text.")
         }
 
