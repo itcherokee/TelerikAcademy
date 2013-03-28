@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 4: Write a function that checks if a given object contains a given property</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 4: Write a function that checks if a given object contains a given property</div>
+    <a href="#" id="btn-check-prime" onclick="onDemoBtnClick()">Demo</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function hasProperty(obj, property) {
+            for (var item in obj) {
+                if (item == property) {
+                    return true; 
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        function onDemoBtnClick() {
+            jsConsole.writeLine("Initial data has been hardcoded in order to simplify your task:");
+            var testSource = { nomerche: 3, stringche: "alabala", obektche: new Date(2012, 1, 12) }
+            jsConsole.writeLine("Number: " + testSource["nomerche"]);
+            jsConsole.writeLine("String: " + testSource["stringche"]);
+            jsConsole.writeLine("Object: " + testSource["obektche"]);
+            jsConsole.writeLine("Make a check for some properties.");
+            jsConsole.writeLine("Property 'nomerche' exist: "+ hasProperty(testSource,"nomerche"));
+            jsConsole.writeLine("Property 'arrayche' exist: " + hasProperty(testSource, "arrayche"));
+        }
+
+    </script>
+</body>
+</html>
+

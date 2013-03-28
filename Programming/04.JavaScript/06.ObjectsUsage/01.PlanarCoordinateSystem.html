@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1: Write functions for working with shapes in  standard Planar coordinate system</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 1: Write functions for working with shapes in  standard Planar coordinate system</div>
+    <a href="#" id="btn-check-prime" onclick="onShowBtnClick()">Demo</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+
+        function onShowBtnClick() {
+            jsConsole.writeLine("Initial data has been hardcoded in order to simplify your task:");
+
+            // declare points
+            var point11 = buildPoint(1, 1);
+            var point12 = buildPoint(2, 2);
+            var point21 = buildPoint(3, 4);
+            var point22 = buildPoint(3, 5);
+            var point31 = buildPoint(4, 5);
+            var point32 = buildPoint(2, 5);
+
+            // create lines & print on console
+            var line1 = buildLine(point11, point12);
+            jsConsole.writeLine(line1.toString());
+            var line2 = buildLine(point21, point22);
+            jsConsole.writeLine(line2);
+            var line3 = buildLine(point31, point32);
+            jsConsole.writeLine(line3);
+
+            // check does they can form triangle
+            jsConsole.writeLine("Lets check can these lines form a triangle.....");
+            jsConsole.writeLine(canFormTriangle(line1, line2, line3));
+        }
+
+        // create point
+        function buildPoint(x, y) {
+            return {
+                X: x,
+                Y: y,
+                toString: function () { return "x:" + this.X.toString() + ",y:" + this.Y.toString(); }
+            };
+        }
+
+        // create line
+        function buildLine(pointOne, pointTwo) {
+            return {
+                start: pointOne,
+                end: pointTwo,
+                toString: function () { return "Line [start(" + this.start.toString() + ") - end(" + this.end.toString() + ")]"; },
+                distance: function () { return Math.sqrt(((this.end.X - this.start.X) * (this.end.X - this.start.X)) + ((this.end.Y - this.start.Y) * (this.end.Y - this.start.Y))); }
+            };
+        }
+
+        // check can three lines form a triangle 
+        function canFormTriangle(lineOne, lineTwo, lineThree) {
+            if (lineOne.distance() + lineTwo.distance() > lineThree.distance() &&
+                lineOne.distance() + lineThree.distance() > lineTwo.distance() &&
+                lineTwo.distance() + lineThree.distance() > lineOne.distance()) {
+                return "Three lines can form a triange.";
+            }
+            else {
+                return "Three lines can't form a triangle.";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+

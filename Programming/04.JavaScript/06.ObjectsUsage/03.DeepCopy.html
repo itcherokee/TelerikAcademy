@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 3: Write a function that makes a deep copy of an object</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 3: Write a function that makes a deep copy of an object</div>
+    <a href="#" id="btn-check-prime" onclick="onDemoBtnClick()">Demo</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function deepCopy(source) {
+            var target = new Object();
+            for (var member in source) {
+                if (typeof source[member] === "object" ) {
+                    target[member] = deepCopy(source[member]);
+                }
+                else {
+                    target[member] = source[member];
+                }
+            }
+            return target;
+        }
+
+        function onDemoBtnClick() {
+            jsConsole.writeLine("Initial data has been hardcoded in order to simplify your task:");
+            var testSource = { nomerche: 3, stringche: "alabala", obektche: new Date(2012, 1, 12) }
+            jsConsole.writeLine("Number: " + testSource["nomerche"]);
+            jsConsole.writeLine("String: " + testSource["stringche"]);
+            jsConsole.writeLine("Object: " + testSource["obektche"]);
+            jsConsole.writeLine("Make a DeepCopy and change date (current) of the new object and print the old object.");
+            var testTarget = deepCopy(testSource);
+            testTarget.obektche = new Date();
+            jsConsole.writeLine("Number: " + testSource["nomerche"]);
+            jsConsole.writeLine("String: " + testSource["stringche"]);
+            jsConsole.writeLine("Object: " + testSource["obektche"]);
+            jsConsole.writeLine("And here is the new object");
+            jsConsole.writeLine("Number: " + testTarget["nomerche"]);
+            jsConsole.writeLine("String: " + testTarget["stringche"]);
+            jsConsole.writeLine("Object: " + testTarget["obektche"]);
+
+        }
+
+    </script>
+</body>
+</html>
+

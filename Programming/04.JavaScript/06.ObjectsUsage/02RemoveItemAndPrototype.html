@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 2: Write a function that removes all elements with a given value</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 1: Write a function that removes all elements with a given value</div>
+    <a href="#" id="btn-check-prime" onclick="onDemoBtnClick()">Demo</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        Array.prototype.removeItem = function (item) {
+            for (var i = 0; i < this.length; i++) {
+                if (this[i] == item) {
+                    this.splice(i, 1);
+                }
+            }
+        }
+
+        function onDemoBtnClick() {
+            jsConsole.writeLine("Initial data has been hardcoded in order to simplify your task:");
+            var array = [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"];
+            jsConsole.writeLine(array);
+            jsConsole.writeLine("Let's remove all 4s. ....... Done");
+            array.removeItem(4);
+            jsConsole.write(array);
+
+        }
+        
+    </script>
+</body>
+</html>
+
