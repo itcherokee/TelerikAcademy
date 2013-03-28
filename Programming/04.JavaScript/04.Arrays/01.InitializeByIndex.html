@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 1: Initialize Array with it's index</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        Task 1: Write a script that allocates array of 20 integers and initializes each
+
+    </div>
+    <div>
+        element by its index multiplied by 5. Print the obtained array on the console.
+    </div>
+    <a href="#" id="btn-check-prime" onclick="onShowBtnClick()">Show</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function onShowBtnClick() {
+            var numbers = new Array(20);
+            for (var number = 0; number < numbers.length; number++) {
+                numbers[number] = number * 5;
+                jsConsole.writeLine("Element at index " + number + " has value " + numbers[number]);
+            }
+        }
+
+    </script>
+</body>
+</html>

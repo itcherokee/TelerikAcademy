@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 4: Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 4: Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects</div>
+        <a href="#" id="btn-check-prime" onclick="onShowBtnClick()">Show</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function onShowBtnClick() {
+            var entities = [document, window, navigator];
+            for (var entity = 0; entity < entities.length; entity++) {
+                var properties = [];
+                for (var property in entities[entity]) {
+                    properties.push(property);
+                }
+                properties.sort();
+                jsConsole.writeLine("Min property: " + properties[0] + " |  Max property: " + properties[properties.length - 1]);
+                properties.length =0;
+            }
+        }
+
+    </script>
+</body>
+</html>
