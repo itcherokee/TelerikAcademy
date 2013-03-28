@@ -1,0 +1,36 @@
+﻿ul {
+    list-style: none;
+    padding-left: 0.5em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.sublist {
+    display: none;
+}
+
+    .sublist a {
+        color: gray;
+    }
+
+ul.list > li {
+    white-space: nowrap;
+    display: inline;
+    float: left;
+    clear: left;
+}
+
+ul.list li:hover a {
+    text-decoration: underline;
+}
+
+ul.list li:hover > ul.sublist {
+    display: block;
+}
+
+    ul.list li:hover > ul.sublist a {
+        text-decoration: none;
+    }

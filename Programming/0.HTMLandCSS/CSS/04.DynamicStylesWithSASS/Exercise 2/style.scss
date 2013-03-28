@@ -1,0 +1,35 @@
+$small_image_size: 80px;
+$big_image_size: 280px;
+section { 
+	ul {
+		list-style: none;	
+		margin:0px;
+		padding:0px;
+		li{
+			float:left;
+		}
+	}
+	ul li img{ 
+		margin-right: 10px;
+		width:$small_image_size;
+		height:$small_image_size;
+		&:hover { 
+			cursor: pointer;			
+		}
+	}
+	input:checked + img{ 
+			display:block;
+		}
+	div{ 
+		clear:left;
+		input{
+			display:none;
+		}
+		img { 
+			padding-top: 10px;
+			width: $big_image_size;
+			height: $big_image_size;
+			display: none;
+		}
+	}
+}

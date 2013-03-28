@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Cherokee">
+		<title>Excercise 4.1</title>
+		<style type="text/css">
+			table {border-collapse:collapse;}
+			table.major {width:500px;}
+			td {padding:2px;}
+			tfoot tr td {background-color:#D2ECE1; text-align:center; margin:0 auto;}
+			.firstcol {width:150px; text-align:right; font-weight:bold;}
+			.state {width:40px;}
+			#country {display:inline; width:200px; margin-left:2px;}
+			.rules {border-left:1px solid; border-right:1px solid;}
+		</style>
+	</head>	
+	<body>
+		<form action="#" method="POST" name="myform">
+			<table class="major" border="1" >
+				<tfoot>
+					<tr>
+						<td colspan="2" >
+							<input type="submit" name="submit" value="Submit" tabindex="18"/>
+							<input type="reset" name="reset" value="Clear This Form" tabindex="19"/>
+						</td>
+					</tr> 
+				</tfoot>
+				<tbody>
+					<tr>
+						<td class="firstcol"><label for="lastname">Last Name</label></td>
+						<td>
+							<input type="text" name="lastname" id="lastname" autofocus="autofocus" size="50" tabindex="1"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="firstname">First Name</label></td>
+						<td>
+							<input type="text" name="'firstname" id="firstname" size="50" tabindex="2"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="address">Address</label></td>
+						<td>
+							<textarea name="address" cols="38" rows="4" id="address" tabindex="3"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="city">City</label></td>
+						<td>
+							<table>
+								<tr>
+									<td><input type="text" name="city" size="35" id="city" tabindex="4"/></td>
+									<td class="firstcol state rules"><label for="state">State</label></td>
+									<td><input type="text" name="state" size="1" id="state" tabindex="5"/></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="zip">Zip/Postal Code</label></td>
+						<td>
+							<input type="number" name="zip" id="zip" tabindex="6"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="country">Country</label></td>
+						<td >	
+							<select name="country" id="country" tabindex="7">
+								<option value="Bulgaria">Bulgaria</option>
+								<option value="Vietnam">Vietnam</option>
+								<option value="Uzbekistan">Uzbekistan</option>
+								<option value="Cambodga">Cambodga</option>
+								<option value="Burundi">Burundi</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="countrynum">Phone (country code, area code,number)</label></td>
+						<td>
+							(+ <input type="tel" name="countrynum" id="countrynum" size="3" tabindex="8"/> 
+							) <input type="tel" name="citynum" size="5" tabindex="9"/> 
+							- <input type="tel" name="phonenum" size="20" tabindex="9"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="email">E-mail</label></td>
+						<td>
+							<input type="email" name="email" id="email" pattern="[^ @]*@[^ @].[^ @]" size="50" tabindex="10"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="month">Birth date</label></td>
+						<td>
+							<table>
+								<tr>
+									<td><label for="month">Month</label></td>
+									<td><input type="text" name="month" size="1" id="month" tabindex="11"/></td>
+									<td><label for="day">Day</label></td>
+									<td><input type="text" name="day" id="day" size="1" tabindex="12"/></td>
+									<td><label for="year">Year(4 digit)</label></td>
+									<td><input type="text" name="year" id="year" size="4" tabindex="13"/><td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="gender">Gender</label></td>
+						<td>
+							<select name="gender" id="gender" tabindex="14">
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="startdate">Starting date</label></td>
+						<td>
+							<input type="radio" name="startdate" value="Spring2006" id="startdate" tabindex="15"/> Spring 2006
+							<input type="radio" name="startdate" value="Summer2006" tabindex="16"/> Summer 2006
+						</td>
+					</tr>
+					<tr>
+						<td class="firstcol"><label for="comments">Comments/Questions</label></td>
+						<td>
+							<textarea name="comments" id="comments" cols="38" rows="6" tabindex="17"> </textarea>
+						</td>
+					</tr>
+				</tbody>	
+			</table>
+		</form>	
+	</body>
+</html>

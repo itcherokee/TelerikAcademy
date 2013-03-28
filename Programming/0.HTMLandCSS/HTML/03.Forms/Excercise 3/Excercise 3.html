@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Cherokee">
+		<title>Excercise 4.3</title>
+		<style type="text/css">
+			* {font-family:sans-serif;}
+			input, img {vertical-align:middle;}
+			th,tfoot {text-align:left; background-color:#E0E1E6;}
+			th,td {border-color:grey;text-align:left;}
+			.borders {border:1px solid grey;}
+			.outertable {width:100%; border-spacing:0px;}
+			.toprow {border-left:1px solid grey; border-top:1px solid grey; border-right:1px solid grey;}
+			.bottomleft {border-left:1px solid grey; border-bottom:1px solid grey;}
+			.bottomright {border-right:1px solid grey; border-bottom:1px solid grey; text-align:right;}
+			.innertd {padding:0px;}
+			.innertable {border-collapse:collapse; border-spacing:0px; width:100%}
+			
+		</style>
+	</head>	
+	<body>
+		<form action="#" method="POST" name="myform">
+			<table class="outertable">
+				<thead>					
+					<tr>
+						<th colspan="2" class="toprow">
+							Drag a column header and drop it here to group by that column
+						</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td class="bottomleft">
+							<input type="image" name="first" src="./first.jpg" alt="<<"/>
+							<input type="image" name="previous" src="./previous.jpg" alt="<"/>
+							<a href="#" >1</a>&nbsp;
+							<a href="#" >2</a>&nbsp;
+							<a href="#" >3</a>&nbsp;
+							<a href="#" >4</a>&nbsp;
+							<a href="#" >5</a>&nbsp;
+							<a href="#" >6</a>&nbsp;
+							<a href="#" >7</a>&nbsp;
+							<a href="#" >8</a>&nbsp;
+							<a href="#" >9</a>&nbsp;
+							<a href="#" >10</a>&nbsp;...
+							<input type="image" name="next" src="./next.jpg" alt=">" />
+							<input type="image" name="last" src="./last.jpg" alt=">>" />
+							&nbsp;&nbsp;&nbsp;&nbsp;Page size:&nbsp;
+							<select name="pagesize">
+								<option value="10" selected="selected">10</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</td>							
+						<td class="bottomright">
+							335104 items in 33511 pages
+						</td>		
+					</tr>
+				</tfoot>
+				<tbody> 
+					<tr>
+						<td colspan="2" class="innertd">
+							<table border="1" class="innertable">
+								<thead class="borders">
+									<tr>
+										<th>ProductID</th>
+										<th>Product name</th>
+										<th>Unit price</th>
+										<th>Quantity per unit</th>
+										<th>Units in stock</th>
+										<th>Discontinued</th>
+									</tr>
+									<tr>
+										<th>
+											<input type="text" name="productid" size="1" />
+										</th>
+										<th>
+											<input type="text" name="name" size="20" />								
+										</th>
+										<th>
+											<input type="text" name="price" size="10" />
+											<img src="./funnel.jpg" alt="Funnel">
+										</th>
+										<th>
+											<input type="text" name="quantity" size="12" />									
+										</th>
+										<th>
+											<input type="text" name="units" size="10" />
+											<img src="./funnel.jpg" alt="Funnel">											
+										</th>
+										<th>
+											<input type="checkbox" name="discontinued" value="yes"/>
+											<img src="./funnel.jpg" alt="Funnel">											
+										</th>
+									</tr>
+								</thead>
+								<tbody class="borders">
+									<tr>
+										<td>1</td>
+										<td>Chai</td>
+										<td>$18.00</td>
+										<td>10 boxes x 20 bags</td>
+										<td>39</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>Chang</td>
+										<td>$19.00</td>
+										<td>24 - 12 oz bottles</td>
+										<td>17</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>Anissed Syrup</td>
+										<td>$10.00</td>
+										<td>15 - 550 ml bottles</td>
+										<td>13</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>Chief Anton's Cajun Seasoning</td>
+										<td>$22.00</td>
+										<td>48 - 6 oz jars</td>
+										<td>53</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>Chief Anton's Gumbo Mix</td>
+										<td>$21.35</td>
+										<td>36 boxes</td>
+										<td>0</td>
+										<td>
+											<input type="checkbox" name="box1" checked="checked">
+										</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>Grandma's Boysenberry Spread</td>
+										<td>$25.00</td>
+										<td>12 - 8 oz jars</td>
+										<td>120</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>Uncle Bob's Organic Dried Pears</td>
+										<td>$30.00</td>
+										<td>12 - 1 lb pkds.</td>
+										<td>15</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>	
+									<tr>
+										<td>8</td>
+										<td>Northwoods Cranberry Sause</td>
+										<td>$40.00</td>
+										<td>12 - 12 oz jars</td>
+										<td>6</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td>Mishi Kobe Niku</td>
+										<td>$97.00</td>
+										<td>18 - 500 g pkgs.</td>
+										<td>29</td>
+										<td>
+											<input type="checkbox" name="box1" checked="checked">
+										</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td>Ikura</td>
+										<td>$31.00</td>
+										<td>12 - 200 ml jars</td>
+										<td>31</td>
+										<td>
+											<input type="checkbox" name="box1">
+										</td>
+									</tr>							
+								</tbody>
+							</table>
+						</td>			
+					</tr>							
+				</tbody>
+			</table>
+		</form>	
+	</body>
+</html>

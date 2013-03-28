@@ -1,0 +1,242 @@
+﻿
+body {
+    font: bold 1.06em Corbel, sans-serif;
+    width: 682px;
+    height: 474px;
+    border: 2px ridge grey;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+header {
+    margin: 10px auto 0px auto;
+    width: 637px;
+    text-align: center;
+}
+
+    header ul {
+        list-style: none;
+        margin: 0px auto;
+        border-bottom: 2px ridge grey;
+    }
+
+        header ul li {
+            display: inline;
+        }
+
+            header ul li a {
+                font: bold 1.2em sans-serif;
+                color: #00aff0;
+            }
+
+.wrapper {
+    width: 445px;
+    height: 100%;
+    border: 2px ridge grey;
+    margin: 7px;
+    padding: 5px;
+    padding-bottom: 13px;
+    color: #383838;
+    display: inline-block;
+}
+
+.laptop {
+    height: 122px;
+    width: 205px;
+    border: 2px ridge grey;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 3px;
+    display: inline-block;
+    vertical-align:top;
+}
+
+    .laptop legend {
+        text-align: center;
+    }
+
+.laptopimage {
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+}
+
+    .laptopimage img {
+        display: block;
+        width: 106px;
+        height: 62px;
+    }
+
+    .laptopimage span {
+        margin-top: 15px;
+        display: block;
+    }
+
+.laptopdata {
+    display: inline-block;
+    height: 100%;
+    line-height: 1.8em;
+    vertical-align: top;
+    padding-top: 14px;
+}
+
+    .laptopdata span {
+        display: block;
+    }
+
+.slidders {
+    padding-top:50px;
+    display: inline-block;
+    text-align: center;
+    vertical-align:top;
+    height: 100%;
+    width: 190px;
+    color: #383838;
+    line-height: 30px;
+}
+
+    .slidders div {
+body {
+    font: bold 1.06em Corbel, sans-serif;
+    width: 682px;
+    height: 474px;
+    border: 2px ridge grey;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+header {
+    margin: 10px auto 0px auto;
+    width: 637px;
+    text-align: center;
+}
+
+    header ul {
+        list-style: none;
+        margin: 0px auto;
+        border-bottom: 2px ridge grey;
+    }
+
+        header ul li {
+            display: inline;
+        }
+
+            header ul li a {
+                font: bold 1.2em sans-serif;
+                color: #00aff0;
+            }
+
+.wrapper {
+    width: 443px;
+    height: 100%;
+    border: 2px ridge grey;
+    margin: 7px;
+    padding: 5px;
+    padding-bottom: 13px;
+    color: #383838;
+    display: inline-block;
+}
+
+.laptop {
+    height: 122px;
+    width: 206px;
+    border: 2px ridge grey;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 3px;
+    display: inline-block;
+    vertical-align:top;
+}
+
+    .laptop legend {
+        text-align: center;
+    }
+
+.laptopimage {
+    display: inline-block;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+}
+
+    .laptopimage img {
+        display: block;
+        width: 106px;
+        height: 62px;
+    }
+
+    .laptopimage span {
+        margin-top: 15px;
+        display: block;
+    }
+
+.laptopdata {
+    display: inline-block;
+    height: 100%;
+    line-height: 1.8em;
+    vertical-align: top;
+    padding-top: 14px;
+}
+
+    .laptopdata span {
+        display: block;
+    }
+
+.slidders {
+    padding-top:50px;
+    display: inline-block;
+    text-align: center;
+    vertical-align:top;
+    height: 100%;
+    width: 190px;
+    color: #383838;
+    line-height: 30px;
+}
+
+    .slidders div {
+        margin-top: 35px;
+    }
+
+    .slidders input {
+        width: 170px;
+    }
+
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.left, .right {
+    display: inline-block;
+    width: 50%;
+}
+
+        margin-top: 35px;
+    }
+
+    .slidders input {
+        width: 170px;
+    }
+
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.left, .right {
+    display: inline-block;
+    width: 50%;
+}

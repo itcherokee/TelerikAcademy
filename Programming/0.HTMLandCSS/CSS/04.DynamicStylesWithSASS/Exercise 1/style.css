@@ -1,0 +1,131 @@
+body {
+  background: #d392fd;
+  background: -moz-linear-gradient(top, #d392fd 0%, #c68cf2 4%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d392fd), color-stop(4%, #c68cf2), color-stop(15%, #a338f4), color-stop(21%, #8f19ef), color-stop(24%, #9215f2), color-stop(100%, #9215f2));
+  background: -webkit-linear-gradient(top, #d392fd 0%, #c68cf2 4%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%);
+  background: -o-linear-gradient(top, #d392fd 0%, #c68cf2 4%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%);
+  background: -ms-linear-gradient(top, #d392fd 0%, #c68cf2 4%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%);
+  background: linear-gradient(to bottom, #d392fd 0%, #c68cf2 4%, #a338f4 15%, #8f19ef 21%, #9215f2 24%, #9215f2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d392fd', endColorstr='#9215f2',GradientType=0 );
+  margin: 0;
+  padding: 1em;
+  font-family: serif;
+  font-size: 1em;
+  color: white; }
+  body header #logo-container {
+    display: inline-block; }
+  body header #reg-form-container {
+    float: right;
+    position: relative;
+    top: 2em;
+    right: 5em;
+    font-size: 0.8em; }
+    body header #reg-form-container input {
+      border: 1px solid #603382;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      width: 130px;
+      padding: 2px 5px;
+      margin: 5px;
+      background-color: #B35EF3;
+      text-align: right; }
+    body header #reg-form-container button {
+      font-weight: bold;
+      border: 2px outset #c0afce;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      padding: 5px 8px;
+      color: white;
+      width: 76px;
+      background-color: #B35EF3; }
+  body header .nav-list {
+    margin: 0em 0em 0em 1.8em;
+    padding: 0em;
+    border: 1px solid black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    line-height: 2em;
+    height: 2.2em;
+    width: 73%; }
+    body header .nav-list li {
+      float: left;
+      list-style: none; }
+      body header .nav-list li a {
+        display: block;
+        padding: 3px 8px;
+        color: white;
+        text-decoration: none; }
+      body header .nav-list li ul {
+        display: none;
+        background-color: #B35EF3; }
+      body header .nav-list li:hover ul {
+        border: none;
+        display: block;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 15%; }
+      body header .nav-list li:hover li {
+        float: none; }
+        body header .nav-list li:hover li a {
+          background-color: #B35EF3;
+          border-bottom: 1px solid #fff;
+          color: white; }
+      body header .nav-list li li a:hover {
+        background-color: #8dbfff; }
+  body section {
+    clear: both;
+    float: left;
+    width: 73%; }
+    body section article {
+      border: 1px solid black;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      padding: 1em;
+      margin: 1em; }
+      body section article header h1 {
+        margin-bottom: 0.5em;
+        padding-left: 0.4em; }
+      body section article > p {
+        margin-top: 0px;
+        font-size: 0.9em; }
+      body section article footer {
+        text-align: right;
+        font-size: 0.9em; }
+        body section article footer a {
+          color: #cc78f6; }
+  body aside {
+    float: left;
+    width: 22%;
+    padding-top: 1em;
+    margin-left: 1em; }
+    body aside h2 {
+      margin-top: 0; }
+    body aside > ul {
+      display: inline-block;
+      list-style: none;
+      padding: 0; }
+      body aside > ul > li {
+        border: 1px solid black;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 0.7em;
+        padding: 1em;
+        font-size: 0.9em; }
+        body aside > ul > li a {
+          text-decoration: none;
+          color: #cccccc; }
+        body aside > ul > li em, body aside > ul > li strong {
+          color: #cccccc; }
+      body aside > ul > li:nth-child(2) ul li {
+        list-style: url(http://localhost:8182/images/li-dot.png);
+        line-height: 1.5em; }
+  body footer {
+    text-align: center;
+    clear: both; }
+

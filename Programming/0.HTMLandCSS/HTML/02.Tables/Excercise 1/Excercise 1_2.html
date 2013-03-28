@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="Cherokee">
+		<title>Excercise 3.1.1</title>
+		<style>
+			table {border: 3px ridge lightgray; border-collapse:collapse;}
+			td {text-align:center; width:30px; border: 3px ridge lightgray; }
+			#rightside {text-align:right;}
+			#leftside {text-align:left;}
+			#middleside {text-align:center;}
+			#rightbottomside {text-align:right; vertical-align:bottom;}
+		</style>
+	<body>
+		<table cellpadding="0" cellspacing="0">
+			<tbody>
+				<tr>
+					<td colspan="3">Title goes here</td>
+					<td>A</td>
+					<td id="rightside">B</td>					
+				</tr>
+				<tr>
+					<td rowspan="3" id="leftside">C</td>
+					<td>D</td>
+					<td>E</td>					
+					<td>F</td>				
+					<td id="rightside">G</td>
+				</tr>
+				<tr>
+					<td>H</td>
+					<td colspan="2" id="middleside">I</td>
+					<td rowspan="2" id="rightbottomside">J</td>					
+				</tr>
+				<tr>
+					<td>K</td>
+					<td>L</td>					
+					<td>M</td>				
+				</tr>
+				<tr>
+					<td id="rightside">N</td>
+					<td colspan="4" id="middleside">O</td>
+				</tr>
+			</tbody>	
+		</table>
+	</body>
+</html>

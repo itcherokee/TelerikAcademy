@@ -1,0 +1,77 @@
+﻿
+.outer {
+    border: ridge 2px lightgray;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    width: 424px;
+    height: 520px;
+}
+
+header {
+    margin: 9px;
+    font: normal 0.9em sans-serif;
+}
+
+article {
+    margin: 36px 9px;
+    border: solid 1px #A6A6A6;
+    background-color: #FFFFFF;
+    margin: 36px 9px;
+    padding: 16px;
+    height: 86px;
+    width: 372px;
+}
+
+.picture {
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    border: solid 1px #A6A6A6;
+    vertical-align: middle;
+    width: 130px;
+    height: 86px;
+}
+
+
+.combined {
+    padding: 0px 0px 0px 16px;
+    margin: 0px;
+    display: inline-block;
+    height: 86px;
+    vertical-align: middle;
+    width: 220px;
+}
+
+.textual {
+    width: 226px;
+    height: 61px;
+    font: normal 0.87em sans-serif;
+    color: #232323;
+}
+
+.buttons {
+    height: 26px;
+    text-align: right;
+}
+
+button {
+    font: normal 0.8em sans-serif;
+    color: white;
+    vertical-align: top;
+    border: 2px outset #ec8283;
+    height: 26px;
+}
+
+    button.Add {
+        width: 60px;
+        background: url('images/btnsmall.png') 0 0 no-repeat;
+        padding-left: 15px;
+    }
+
+    button.Listen {
+        width: 73px;
+        background: url('images/btnbig.png') 0 0 no-repeat;
+        padding-left: 15px;
+    }

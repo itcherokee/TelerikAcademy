@@ -1,0 +1,148 @@
+﻿body {
+    background-color: #f1f1f1;
+    font: normal 0.6em Verdana, sans-serif;
+    color: #525252;
+}
+
+.wrapper {
+    border: 2px solid #505050;
+    width: 634px;
+    /*height: 515px;*/
+}
+
+.leftcol {
+    display: inline-block;
+    border: none;
+    width: 130px;
+    border-color: red;
+}
+
+    .leftcol * {
+        display: inline-block;
+        text-decoration: none;
+        color: #525252;
+    }
+
+    .leftcol header {
+        padding-top: 15px;
+        font-weight: bold;
+    }
+
+    .leftcol div, .leftcol header {
+        margin-bottom: 15px;
+    }
+
+        .leftcol div a {
+            display: block;
+        }
+
+    .leftcol span {
+        font-weight: bold;
+        color: #8c0202;
+    }
+
+.middlecol {
+    display: inline-block;
+    border: 1px solid gray;
+    height: 500px;
+    width: 360px;
+    vertical-align: top;
+    padding: 5px;
+    margin-top: 3px;
+    background-color: white;
+}
+
+    .middlecol header {
+        border-bottom: 1px solid gray;
+        margin-bottom: 5px;
+    }
+
+    .middlecol h1 {
+        color: black;
+    }
+
+    .middlecol article {
+        margin-bottom: 10px;
+    }
+
+        .middlecol article header {
+            background-color: #808080;
+            color: white;
+            padding-left: 3px;
+        }
+
+        .middlecol article img {
+            float: left;
+        }
+
+        .middlecol article a {
+            color: #8c0202;
+        }
+
+    .middlecol footer {
+        border-top: 1px solid gray;
+        margin-top: 5px;
+    }
+
+        .middlecol footer nav input, .middlecol header nav input {
+            border: 1px solid #525252;
+            text-align: center;
+            width: 70px;
+            font-size: 0.9em;
+        }
+
+
+#major * {
+    font-weight: bold;
+    color: black;
+}
+
+#major a {
+    color: #8c0202;
+}
+
+.rightcol {
+    display: inline-block;
+    margin-top: 3px;
+    height: 200px;
+    border-color: blue;
+    vertical-align: top;
+    background-color: white;
+}
+
+    .rightcol input[type=text] {
+        width: 60px;
+    }
+
+
+
+    .rightcol article {
+        border: 1px solid gray;
+        display: block;
+        text-decoration: none;
+        color: #525252;
+        text-align: center;
+        width: 120px;
+        margin-bottom: 4px;
+        padding-bottom: 3px;
+    }
+
+        .rightcol article h2 {
+            color: white;
+            font-size: 1em;
+            text-align: center;
+            background-color: #808080;
+        }
+
+        .rightcol article a {
+            color: #8c0202;
+        }
+
+#specbtn {
+    border: 1px solid #8eb4d1;
+    margin: 2px auto;
+    background-color: #d3effe;
+    color: #44cefe;
+    padding: 4px;
+    display: block;
+}

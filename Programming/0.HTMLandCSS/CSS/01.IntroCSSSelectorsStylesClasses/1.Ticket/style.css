@@ -1,0 +1,25 @@
+*  {font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	color: #b4b7b6;
+	background: #595959;
+	vertical-align: top}
+
+p {font-size: 1.6em; margin: 13px 0px 24px 0px;}
+
+table  {border-collapse: collapse;} 
+
+td {width: 160px; height: 40px; font-size: 1.08em;}
+
+.titlecol {color: White; font-style: italic;}
+
+.note {	height: 15px;}
+
+.datacol {color:#d8d7a4; width:200px;}
+
+td.note+td.note:before {content: url(greendot.gif);}
+
+#redtext {color:Red;}
+
+#orangetext {color:Orange;}
+ 
+a:link, a:visited, a:hover, a:active  {color:#d8d7a4; text-decoration: none;}

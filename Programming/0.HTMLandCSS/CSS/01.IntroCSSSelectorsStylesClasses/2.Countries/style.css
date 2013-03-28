@@ -1,0 +1,27 @@
+*  {font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.04em;
+	font-weight: normal;}
+
+table {border-collapse: collapse;
+	   border: 2px ridge LightGray;} 
+
+thead {background: #52b506;}
+
+th {border-left: 2px ridge LightGray;
+	border-bottom: 2px ridge LightGray;
+	color: White;
+	padding: 7px;
+	text-align: left;}
+
+td {border-left: 2px ridge LightGray;
+ 	padding: 10px;}
+
+img {vertical-align: middle;}
+
+tr:nth-child(even) { background: #ececd8;}
+
+.contact { width:233px;}
+.city { width:183px;}
+.country { width:212px;}
+.check { width:133px;}
+
