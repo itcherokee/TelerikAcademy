@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 4: Write a function to count the number of divs on the web page</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 4: Write a function to count the number of divs on the web page</div>
+    <a href="#" id="btn-check-prime" onclick="onShowBtnClick()">Count</a> (There should be 8 divs in this page, but if you have installed some additional tools (FireBug), they could be more.)
+    <div id="js-console"></div>
+    <div id="Div1"></div>
+    <div id="Div2"></div>
+    <div id="Div3"></div>
+    <div id="Div4"></div>
+    <div id="Div5"></div>
+    <div id="Div6"></div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function onShowBtnClick() {
+            var divs = document.getElementsByTagName('div');
+            jsConsole.write("Number of divs in this page are: ");
+            jsConsole.writeLine(divs.length);
+            for (var index = 1; index <= divs.length; index++) {
+                var number = index + ". ";
+                jsConsole.write(number);
+                jsConsole.writeLine(divs[index-1].id);
+            }
+        }
+
+    </script>
+</body>
+</html>
