@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 6: Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 6: Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags</div>
+    <label for="tb-text">HTML: </label>
+    <input type="text" name="tb-text" id="tb-text" />
+    <a href="#" id="btn-check-prime" onclick="onBtnClick()">Extract</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function onBtnClick() {
+            jsConsole.writeLine("Modified text:");
+            jsConsole.write(extractText(jsConsole.read("#tb-text")));
+        }
+
+        function extractText(source) {
+            var result = "";
+            var previousChar = "";
+            var inString = false;
+            for (var index = 1; index < source.length; index++) {
+                // take index-1 character and check is it an opening "<" or closing ">" of tag
+                previousChar = source.charAt(index - 1);
+                if (previousChar === '>' && source[index] !== '<') {
+                    // we are in text, not in tag
+                    inString = true;
+                }
+                else if (source[index] === '<' && inString) {
+                    // we are in tag, not in text
+                    inString = false;
+                }
+                if (inString) {
+                    // if we are in text, copy the char to result string
+                    result += source[index];
+                }
+            }
+            return result;
+        }
+
+    </script>
+</body>
+</html>
+

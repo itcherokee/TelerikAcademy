@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 3: Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 3: Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).</div>
+    <label for="tb-text">Text: </label>
+    <input type="text" name="tb-text" id="tb-text" />
+    <label for="tb-search">String to search and count: </label>
+    <input type="text" name="tb-search" id="tb-search" />
+    <a href="#" id="btn-check-prime" onclick="onBtnClick()">Search</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+
+        function onBtnClick() {
+            jsConsole.write("Number of times when searched string apears in text are(is) : ");
+            var result = jsConsole.read("#tb-text").countSubString(jsConsole.read("#tb-search"));
+            if (result == undefined) {
+                jsConsole.writeLine("wrong input! Try again...");
+            }
+            else {
+                jsConsole.writeLine(String(result));
+            }
+        }
+
+        // creating prototype function to string object to search for substring (case insensitive)
+        String.prototype.countSubString = function (str) {
+            // convert both strings to lowercase - to be case insensitive
+            var source = this.toLowerCase();
+            var target = str.toLowerCase();
+            var counter = 0;
+            // create vars to hold legth of both strings for simplicity
+            var sourceLength = source.length;
+            var targetLength = target.length;
+            // checks does the string to be searched and source string are not empty strings; if one of them (or both) is/are empty return undefined
+            if (targetLength === 0 || sourceLength === 0 || sourceLength < targetLength) {
+                return undefined;
+            }
+            // start iterating over the string and search for substring
+            for (var position = 0; position < sourceLength - targetLength + 1; position++) {
+                // found first symbol continue to test following ones up to the lenght of searched string
+                if (source[position] == target[0]) {
+                    if (targetLength > 1) {
+                        var tempCounter = 1;
+                        for (var indexInt = position + 1, strIndex = 1; indexInt < position + targetLength; indexInt++, strIndex++) {
+                            if (source[indexInt] == target[strIndex]) {
+                                tempCounter++;
+                            }
+                        }
+                        if (tempCounter == targetLength) {
+                            // a complete equality has been found, so we increase the counter of founded substrings and continue further
+                            counter++;
+                            position += targetLength - 1;
+                        }
+                    }
+                    else {
+                        counter++;
+                        position += targetLength - 1;
+                    }
+                }
+
+            }
+            return counter;
+        };
+    </script>
+</body>
+</html>
+

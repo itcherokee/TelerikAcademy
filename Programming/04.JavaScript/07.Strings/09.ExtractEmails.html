@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Task 9: Write a function for extracting all email addresses from given text.</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div>Task 9: Write a function for extracting all email addresses from given text.</div>
+    <label for="tb-text">Text: </label>
+    <input type="text" name="tb-text" id="tb-text" />
+    <a href="#" id="btn-check-prime" onclick="onBtnClick()">Extract</a>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script>
+
+        function onBtnClick() {
+            jsConsole.writeLine("E-mails:");
+            jsConsole.writeLine(extractEmails(jsConsole.read("#tb-text")));
+        }
+
+        function extractEmails(source) {
+            // using regular expression and method "match" to extract all e-mails
+            // using "gi" at the end of the regular expression, generates an array of all e-mails matches and also makes it case insensitive
+            var emailsArray = source.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+            return emailsArray;        
+        }
+
+    </script>
+</body>
+</html>
+
