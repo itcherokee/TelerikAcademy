@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(args) {
+
+            var rowcolstr = args[0];
+            //var rowAndColStr = rowcolstr.split(" ");
+            var startPositionStr = args[1];
+            //var startPosition = startPositionStr.split(" ");
+            var rowPosition = parseInt(startPositionStr.slice(0, startPositionStr.indexOf(" ")));
+            var colPosition = parseInt(startPositionStr.slice(startPositionStr.indexOf(" ") + 1));
+            //var rows = new Array(parseInt(rowcolstr.slice(0, rowcolstr.indexOf(" "))));
+            //var cols = new Array(parseInt(rowcolstr.slice(rowcolstr.indexOf(" ") + 1)));
+            var rowsLength = rowcolstr.slice(0, rowcolstr.indexOf(" "));
+            var rows = [];
+            var cols = [];
+            //for (var r = 0, c = 0; r < rows.length; r++, c++) {
+            //    cols[c] = args[c + 2].split("");
+            //    rows[r] = cols[c];
+            //}
+            for (var r = 0; r < rowsLength; r++) {
+                rows.push(args[r+2]);
+            }
+            //var rowsPoints = new Array(rows.length);
+            var rowsPoints = [];
+            var counter = 1;
+            for (var rowp = 0; rowp < rowsLength; rowp++) {
+                var colsPoints = [];
+                for (var colp = 0; colp < rows[0].length; colp++) {
+                    colsPoints.push(counter++);
+                }
+                rowsPoints.push(colsPoints);
+            }
+
+            var sum = rowsPoints[rowPosition][colPosition];
+            rowsPoints[rowPosition][colPosition] = 0;
+
+            var countCels = 1;
+            var newStep = rows[rowPosition].charAt(colPosition);
+            //console.log(sum);
+            //console.log(newStep);
+            //console.log(countCels);
+            while (true) {
+                switch (newStep) {
+                    case "l":
+                        colPosition--;
+
+                        break;
+                    case "r":
+                        colPosition++;
+
+                        break;
+                    case "u":
+                        rowPosition--;
+
+                        break;
+                    case "d":
+                        rowPosition++;
+
+                        break;
+                    
+
+                }
+                if (colPosition >= 0 && colPosition < rows[0].length && rowPosition >= 0 && rowPosition < rows.length) {
+                    if (rowsPoints[rowPosition][colPosition] == 0) {
+                        return "lost " + countCels;
+                    }
+                    countCels++;
+                    newStep = rows[rowPosition].charAt(colPosition);
+                    sum += rowsPoints[rowPosition][colPosition];
+                    rowsPoints[rowPosition][colPosition] = 0;
+
+                }
+                else {
+                    return "out " + sum;
+                }
+
+            }
+
+
+
+
+        }
+
+        //console.log(Solve(["3 4", "1 3", "lrrd", "dlll", "rddd"]));
+        console.log(Solve(["3 4", "1 3", "lrrd", "drll", "rddd"]));
+
+       // console.log(Solve(["5 8", "0 0", "rrrrrrrd", "rludulrd", "durlddud", "urrrldud", "ulllllll"]));
+        //console.log(Solve(["5 8", "0 0", "rrrrrrrd", "rludulrd", "lurlddud", "urrrldud", "ulllllll"]));
+
+        //console.log(Solve());
+
+
+    </script>
+</body>
+</html>

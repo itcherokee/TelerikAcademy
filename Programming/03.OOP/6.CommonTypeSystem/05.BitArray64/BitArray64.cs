@@ -11,7 +11,7 @@ namespace MyBitArray64
     {
         private ulong bits;
 
-        public BitArray64(int initialValue = 0)
+        public BitArray64(ulong initialValue = 0)
         {
             this.Bits = initialValue;
         }

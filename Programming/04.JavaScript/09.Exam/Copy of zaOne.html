@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        //function Solve(args) {
+
+        //    var N = parseInt(args[0]);
+        //    var arrayOfNumbers = [];
+
+        //    for (var i = 1; i <= N; i++) {
+        //        arrayOfNumbers.push(parseInt(args[i]));
+
+        //    }
+        //    //console.log(arrayOfNumbers);
+
+        //    var finalSum = 0;
+        //    var finalStartIndex = 0;
+        //    var finalElelementCount = 0;
+        //    var currentStartIndex = 0;
+        //    var currentCountElelemnts = 0;
+        //    var currentSum = 0;
+        //    for (var index = 0; index < N; index++) {
+        //        if (currentSum + arrayOfNumbers[index] >0) {
+        //            if (currentSum === 0) {
+        //                currentStartIndex = index;
+        //            }
+
+        //            currentSum = currentSum + arrayOfNumbers[index];
+        //            currentCountElelemnts++;
+        //        }
+        //        else {
+        //            currentSum = 0;
+        //            currentCountElelemnts = 0;
+        //        }
+
+        //        if (currentSum > finalSum) {
+        //            finalSum = currentSum;
+        //            finalStartIndex = currentStartIndex;
+        //            finalElelementCount = currentCountElelemnts;
+        //        }
+        //    }
+        //    return finalSum;
+
+
+        //}
+
+        function Solve(args) {
+            var N = parseInt(args[0]);
+            var arrayOfNumbers = [];
+            for (var i = 1; i <= N; i++) {
+                arrayOfNumbers.push(parseInt(args[i]));
+            }
+            var result = arrayOfNumbers[0];
+            var maxEnd = arrayOfNumbers[0];
+            var current = 1;
+            var start = 0;
+            var startTemp = 0;
+            for (var i = 1; i < arrayOfNumbers.length; i++) {
+                if (arrayOfNumbers[i] + maxEnd > arrayOfNumbers[i]) {
+                    maxEnd = arrayOfNumbers[i] + maxEnd;
+                    current++;
+                }
+                else {
+                    maxEnd = arrayOfNumbers[i];
+                    startTemp = i;
+                    current = 1;
+                }
+                if (maxEnd > result) {
+                    result = maxEnd;
+                    start = startTemp;
+                }
+            }
+            return result;
+        }
+
+         console.log(Solve(["8", "1", "6", "-9", "4", "4", "-2", "10", "-1"]));
+   //  console.log(Solve(["6", "1", "3", "-5", "8", "7", "-6"]));
+    //     console.log(Solve(["9", "-9", "-8", "-8", "-7", "-6", "-5", "-1", "-7", "-6"]));
+
+        //console.log(Solve());
+
+
+    </script>
+</body>
+</html>
