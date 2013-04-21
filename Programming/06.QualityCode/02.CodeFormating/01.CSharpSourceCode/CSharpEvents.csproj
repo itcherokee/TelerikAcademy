@@ -7,8 +7,8 @@
     <ProjectGuid>{748C7166-BAAE-4C4F-A6F4-75A8FF50E607}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.CSharpSourceCode</RootNamespace>
-    <AssemblyName>01.CSharpSourceCode</AssemblyName>
+    <RootNamespace>CSharpEvents</RootNamespace>
+    <AssemblyName>CSharpEvents</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,9 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHolder.cs" />
-    <Compile Include="Events.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Messages.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

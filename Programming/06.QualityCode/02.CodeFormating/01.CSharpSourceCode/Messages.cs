@@ -1,9 +1,9 @@
-﻿namespace CSharpSourceCode
+﻿namespace CSharpEvents
 {
     using System;
     using System.Text;
 
-    static class Messages
+    internal static class Messages
     {
         private static StringBuilder messageOutput = new StringBuilder();
 
@@ -29,7 +29,7 @@
             }
             else
             {
-                messageOutput.AppendFormat("{0} events deleted", eventNumber);
+                messageOutput.AppendFormat("{0} event deleted", eventNumber);
                 messageOutput.Append(Environment.NewLine);
             }
         }

@@ -1,12 +1,12 @@
-﻿namespace CSharpSourceCode
+﻿namespace CSharpEvents
 {
     using System;
     using Wintellect.PowerCollections;
 
-    class EventHolder
+    internal class EventHolder
     {
-        MultiDictionary<string, Event> pairByTitle = new MultiDictionary<string, Event>(true);
-        OrderedBag<Event> orderedByDate = new OrderedBag<Event>();
+        private MultiDictionary<string, Event> pairByTitle = new MultiDictionary<string, Event>(true);
+        private OrderedBag<Event> orderedByDate = new OrderedBag<Event>();
 
         public void AddEvent(DateTime date, string title, string location)
         {

@@ -1,55 +1,95 @@
-namespace CSharpSourceCode
+﻿namespace CSharpEvents
 {
     using System;
-    using System.Text;
 
-    class Event : IComparable
+    public class Events
     {
-        private DateTime date;
-        private string title;
-        private string location;
+        private static EventHolder events = new EventHolder();
 
-        public Event(DateTime date, string title, string location)
+        public static void Main(string[] args)
         {
-            this.date = date;
-            this.title = title;
-            this.location = location;
+            while (ExecuteNextCommand())
+            {
+            }
+
+            Console.WriteLine(Messages.MessageOutput);
         }
 
-        public int CompareTo(object comparedItem)
+        private static bool ExecuteNextCommand()
         {
-            Event other = comparedItem as Event;
-            int compareByDate = this.date.CompareTo(other.date);
-            int compareByTitle = this.title.CompareTo(other.title);
-            int compareByLocation = this.location.CompareTo(other.location);
-            if (compareByDate == 0)
+            string commandToExecute = Console.ReadLine();
+            char commandFirstLetter = commandToExecute[0];
+            if (commandFirstLetter == 'A')
             {
-                if (compareByTitle == 0)
-                {
-                    return compareByLocation;
-                }
-                else
-                {
-                    return compareByTitle;
-                }
+                AddEvent(commandToExecute);
+                return true;
+            }
+
+            if (commandFirstLetter == 'D')
+            {
+                DeleteEvents(commandToExecute);
+                return true;
+            }
+
+            if (commandFirstLetter == 'L')
+            {
+                ListEvents(commandToExecute);
+                return true;
+            }
+
+            if (commandFirstLetter == 'E')
+            {
+                return false;
+            }
+
+            return false;
+        }
+
+        private static void AddEvent(string command)
+        {
+            DateTime date;
+            string title;
+            string location;
+            GetParameters(command, "AddEvent", out date, out title, out location);
+            events.AddEvent(date, title, location);
+        }
+
+        private static void DeleteEvents(string command)
+        {
+            string title = command.Substring("DeleteEvents".Length + 1);
+            events.DeleteEvents(title);
+        }
+
+        private static void ListEvents(string command)
+        {
+            int pipeIndex = command.IndexOf('|');
+            DateTime date = GetDate(command, "ListEvents");
+            string countString = command.Substring(pipeIndex + 1);
+            int count = int.Parse(countString);
+            events.ListEvents(date, count);
+        }
+
+        private static void GetParameters(string commandForExecution, string commandType, out DateTime dateAndTime, out string eventTitle, out string eventLocation)
+        {
+            dateAndTime = GetDate(commandForExecution, commandType);
+            int firstPipeIndex = commandForExecution.IndexOf('|');
+            int lastPipeIndex = commandForExecution.LastIndexOf('|');
+            if (firstPipeIndex == lastPipeIndex)
+            {
+                eventTitle = commandForExecution.Substring(firstPipeIndex + 1).Trim();
+                eventLocation = string.Empty;
             }
             else
             {
-                return byDate;
+                eventTitle = commandForExecution.Substring(firstPipeIndex + 1, lastPipeIndex - firstPipeIndex - 1).Trim();
+                eventLocation = commandForExecution.Substring(lastPipeIndex + 1).Trim();
             }
         }
 
-        public override string ToString()
+        private static DateTime GetDate(string command, string commandType)
         {
-            StringBuilder toString = new StringBuilder();
-            toString.Append(this.date.ToString("yyyy-MM-ddTHH:mm:ss"));
-            toString.Append(" | " + this.title);
-            if (this.location != null && this.location != string.Empty)
-            {
-                toString.Append(" | " + this.location);
-            }
-
-            return toString.ToString();
+            DateTime date = DateTime.Parse(command.Substring(commandType.Length + 1, 20));
+            return date;
         }
     }
 }

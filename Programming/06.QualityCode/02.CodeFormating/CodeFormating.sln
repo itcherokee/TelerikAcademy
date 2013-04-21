@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CSharpSourceCode", "01.CSharpSourceCode\01.CSharpSourceCode.csproj", "{748C7166-BAAE-4C4F-A6F4-75A8FF50E607}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpEvents", "01.CSharpSourceCode\CSharpEvents.csproj", "{748C7166-BAAE-4C4F-A6F4-75A8FF50E607}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "02.JSSourceCode", "http://localhost:2239", "{0B57E44F-7B86-479E-B37C-64505F36236C}"
 	ProjectSection(WebsiteProperties) = preProject
