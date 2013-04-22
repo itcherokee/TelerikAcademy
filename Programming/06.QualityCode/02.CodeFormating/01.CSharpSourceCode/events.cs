@@ -1,4 +1,9 @@
-﻿namespace CSharpEvents
+﻿// Format correctly the following source code 
+//
+// The initial source file has been splitted to 4 separate classes to hold each defined class.
+// It has been taken special attention to access modifiers for classes and methods.
+
+namespace CSharpEvents
 {
     using System;
 
