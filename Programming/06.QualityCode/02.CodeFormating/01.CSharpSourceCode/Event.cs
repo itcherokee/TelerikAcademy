@@ -9,16 +9,26 @@ namespace CSharpEvents
         private readonly string eventTitle;
         private readonly string eventLocation;
 
-        public Event(DateTime date, string title, string location)
+        internal Event(DateTime eventDate, string eventTitle, string eventLocation)
         {
-            this.eventDate = date;
-            this.eventTitle = title;
-            this.eventLocation = location;
+            this.eventDate = eventDate;
+            this.eventTitle = eventTitle;
+            this.eventLocation = eventLocation;
         }
 
-        public int CompareTo(object eventToCompare)
+        public int CompareTo(object eventToCompareTo)
         {
-            Event comparedEvent = eventToCompare as Event;
+            if (eventToCompareTo == null)
+            {
+                return 1;
+            }
+
+            Event comparedEvent = eventToCompareTo as Event;
+            if (comparedEvent == null)
+            {
+                throw new ArgumentException("Object to compare to is not of Event type.");
+            }
+
             int compareByDate = this.eventDate.CompareTo(comparedEvent.eventDate);
             int compareByTitle = this.eventTitle.CompareTo(comparedEvent.eventTitle);
             int compareByLocation = this.eventLocation.CompareTo(comparedEvent.eventLocation);
@@ -42,7 +52,7 @@ namespace CSharpEvents
         public override string ToString()
         {
             StringBuilder eventOutput = new StringBuilder();
-            eventOutput.Append(this.eventDate.ToString("yyyy-MM-ddTHH:mm:ss"));
+            eventOutput.Append(this.eventDate.ToString("yyyy-MM-dd HH:mm:ss"));
             eventOutput.Append(" | " + this.eventTitle);
             if (this.eventLocation != null && this.eventLocation != string.Empty)
             {

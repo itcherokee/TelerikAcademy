@@ -7,7 +7,7 @@
     {
         private static StringBuilder messageOutput = new StringBuilder();
 
-        public static string MessageOutput
+        internal static string MessageOutput
         {
             get
             {
@@ -15,13 +15,13 @@
             }
         }
 
-        public static void EventAdded()
+        internal static void EventAdded()
         {
             messageOutput.Append("Event added");
             messageOutput.Append(Environment.NewLine);
         }
 
-        public static void EventDeleted(int eventNumber)
+        internal static void EventDeleted(int eventNumber)
         {
             if (eventNumber == 0)
             {
@@ -34,13 +34,13 @@
             }
         }
 
-        public static void NoEventsFound()
+        internal static void NoEventsFound()
         {
             messageOutput.Append("No events found");
             messageOutput.Append(Environment.NewLine);
         }
 
-        public static void PrintEvent(Event eventToPrint)
+        internal static void PrintEvent(Event eventToPrint)
         {
             if (eventToPrint != null)
             {

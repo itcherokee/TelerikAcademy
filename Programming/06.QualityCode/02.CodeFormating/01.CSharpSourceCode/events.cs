@@ -4,12 +4,14 @@
 
     public class Events
     {
-        private static EventHolder events = new EventHolder();
+        private static EventHolder eventsInput = new EventHolder();
 
         public static void Main(string[] args)
         {
-            while (ExecuteNextCommand())
+            bool isRunning = true;
+            while (isRunning)
             {
+                isRunning = ExecuteNextCommand();
             }
 
             Console.WriteLine(Messages.MessageOutput);
@@ -37,36 +39,31 @@
                 return true;
             }
 
-            if (commandFirstLetter == 'E')
-            {
-                return false;
-            }
-
             return false;
         }
 
-        private static void AddEvent(string command)
+        private static void AddEvent(string commandForExecution)
         {
-            DateTime date;
-            string title;
-            string location;
-            GetParameters(command, "AddEvent", out date, out title, out location);
-            events.AddEvent(date, title, location);
+            DateTime eventDate;
+            string eventTitle;
+            string eventLocation;
+            GetParameters(commandForExecution, "AddEvent", out eventDate, out eventTitle, out eventLocation);
+            eventsInput.AddEvent(eventDate, eventTitle, eventLocation);
         }
 
-        private static void DeleteEvents(string command)
+        private static void DeleteEvents(string commandForExecution)
         {
-            string title = command.Substring("DeleteEvents".Length + 1);
-            events.DeleteEvents(title);
+            string title = commandForExecution.Substring("DeleteEvents".Length + 1);
+            eventsInput.DeleteEvents(title);
         }
 
-        private static void ListEvents(string command)
+        private static void ListEvents(string commandForExecution)
         {
-            int pipeIndex = command.IndexOf('|');
-            DateTime date = GetDate(command, "ListEvents");
-            string countString = command.Substring(pipeIndex + 1);
+            int pipeIndex = commandForExecution.IndexOf('|');
+            DateTime date = GetDate(commandForExecution, "ListEvents");
+            string countString = commandForExecution.Substring(pipeIndex + 1);
             int count = int.Parse(countString);
-            events.ListEvents(date, count);
+            eventsInput.ListEvents(date, count);
         }
 
         private static void GetParameters(string commandForExecution, string commandType, out DateTime dateAndTime, out string eventTitle, out string eventLocation)
@@ -86,9 +83,9 @@
             }
         }
 
-        private static DateTime GetDate(string command, string commandType)
+        private static DateTime GetDate(string commandForExecution, string commandType)
         {
-            DateTime date = DateTime.Parse(command.Substring(commandType.Length + 1, 20));
+            DateTime date = DateTime.Parse(commandForExecution.Substring(commandType.Length + 1, 20));
             return date;
         }
     }
