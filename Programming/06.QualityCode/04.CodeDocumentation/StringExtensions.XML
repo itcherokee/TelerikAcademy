@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StringExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.ILS.Common.StringExtensions">
+            <summary>
+            Extends with additional features the base type class <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToMd5Hash(System.String)">
+            <summary>
+            Calculate the MD5 hash of the string.
+            </summary>
+            <param name="input">String which MD5 hash to be calculated.</param>
+            <returns>System.String representing the computed MD5 hash of provided input data.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToBoolean(System.String)">
+            <summary>
+            Check does string contains boolean true values.
+            </summary>
+            <param name="input">String to be verified.</param>
+            <returns>True if contains "true" values, else False.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToShort(System.String)">
+            <summary>
+            Convert string to 16-bit signed integer value.
+            </summary>
+            <param name="input">String to be converted.</param>
+            <returns>16-bit signed integer type converted string if successful else returns 0.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToInteger(System.String)">
+            <summary>
+            Converts string to 32-bit signed integer value.
+            </summary>
+            <param name="input">String to be converted.</param>
+            <returns>32-bit signed integer value if conversion successful else returns 0.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToLong(System.String)">
+            <summary>
+            Converts string to 64-bit signed integer value.
+            </summary>
+            <param name="input">String to be converted.</param>
+            <returns>64-bit signed integer value if conversion successful else returns 0.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToDateTime(System.String)">
+            <summary>
+            Convert string to DateTime type.
+            </summary>
+            <param name="input">Date in System.String format.</param>
+            <returns>System.DateTime type converted string.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.CapitalizeFirstLetter(System.String)">
+            <summary>
+            Convert the string to sentence type (first sentence letter capital).
+            </summary>
+            <param name="input">String to be sentence like capitalized.</param>
+            <returns>System.String formatted in sentence like capitalization.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.GetStringBetween(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Extract substring by using <paramref name="startString"/> and <paramref name="endString"/>, starting to look-up from position <paramref name="startFrom"/>.
+            </summary>
+            <param name="input">String to be processed.</param>
+            <param name="startString">String to start from.</param>
+            <param name="endString">String to finish the extraction.</param>
+            <param name="startFrom">Position from where to start the search for <paramref name="startString"/>.</param>
+            <returns>Extracted System.String, if one of parameters is not valid or not found, returns System.Empty.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ConvertCyrillicToLatinLetters(System.String)">
+            <summary>
+            Converts string in bulgarian to latin letters using Bulgarian phonetic representation of Latin letters.
+            </summary>
+            <param name="input">String to be converted.</param>
+            <returns>System.String containing latin letters mapped to bulgarian phonetic/sound representation of latin letters.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ConvertLatinToCyrillicKeyboard(System.String)">
+            <summary>
+            Converts string to cyrillic using Bulgarian representation of Latin keyboard characters.
+            </summary>
+            <param name="input">String to be converted.</param>
+            <returns>System.String containing cyrillic letters mapped to latin keyboard position.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToValidUsername(System.String)">
+            <summary>
+            Converts username written in cyrillic to valid one written in latin letters.
+            </summary>
+            <param name="input">Username written with cyrillic letters.</param>
+            <returns>System.String username with valid formatting and latin letters.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToValidLatinFileName(System.String)">
+            <summary>
+            Format a filename to valid one in terms of syntax naming.
+            </summary>
+            <param name="input">Filename to be checked and corrected.</param>
+            <returns>Correct filename string.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.GetFirstCharacters(System.String,System.Int32)">
+            <summary>
+            Extracts first <see cref="!:charsCount"/> characters form a string, starting from position 0.
+            </summary>
+            <param name="input">String to be processed.</param>
+            <param name="charsCount">Number of characters to be extracted.</param>
+            <returns>Returns System.String contained requested substring.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.GetFileExtension(System.String)">
+            <summary>
+            Extract the file extension from file name.
+            </summary>
+            <param name="fileName">File name to extract the extension.</param>
+            <returns>File extension of provided filename in string format. If <see cref="!:fileName"/>fileName input string is empty, returns empty string.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToContentType(System.String)">
+            <summary>
+            Find content type of a file.
+            </summary>
+            <param name="fileExtension">File name extension.</param>
+            <returns>Content type of file.</returns>
+        </member>
+        <member name="M:Telerik.ILS.Common.StringExtensions.ToByteArray(System.String)">
+            <summary>
+            Converts string into sequence of bytes.
+            </summary>
+            <param name="input">System.String type data.</param>
+            <returns>Array of unsigned bytes.</returns>
+        </member>
+    </members>
+</doc>

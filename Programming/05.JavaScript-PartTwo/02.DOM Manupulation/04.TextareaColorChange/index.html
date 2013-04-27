@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create a text area and two inputs with type="color"</title>
+    <link href="style/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Task 4: Create a text area and two inputs with type="color".</h1>
+        <ul>
+            <li>Make the font color of the text area as the value of the first color input</li>
+            <li>Make the background color of the text area as the value of the second input</li>
+        </ul>
+        <textarea id="textbox">       Some text        </textarea>
+        <label for="fontColor">Font color:</label>
+        <input id="fontColor" type="color" onchange="changeFontColor();" />
+        <label for="backgroundColor">Background color:</label>
+        <input id="backgroundColor" type="color" onchange="changeBackgroundColor()" />
+        <script src="script/script.js"></script>
+    </div>
+</body>
+</html>
