@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.TaskOne", "01.TaskOne\01.TaskOne.csproj", "{FE5B8EF9-AA18-428F-873B-3D1138444829}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CalculateSize", "01.CalculateSize\01.CalculateSize.csproj", "{FE5B8EF9-AA18-428F-873B-3D1138444829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.TaskTwo", "02.TaskTwo\02.TaskTwo.csproj", "{B0430996-1E5B-4D53-B9E3-200FFE1045FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.StatisticsCalculation", "02.StatisticsCalculation\02.StatisticsCalculation.csproj", "{B0430996-1E5B-4D53-B9E3-200FFE1045FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

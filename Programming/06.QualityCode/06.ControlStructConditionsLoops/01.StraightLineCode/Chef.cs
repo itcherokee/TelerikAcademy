@@ -1,47 +1,52 @@
 ﻿// Refactor the following class using best practices for organizing straight-line code
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StraightLineCode
+namespace Cooking
 {
-public void Cook() 
-public class Chef
-{
-    private Bowl GetBowl()
-    {   
-        //... 
-    }
-    private Carrot GetCarrot()
-    {
-        //...
-    }
-    private void Cut(Vegetable potato)
-    {
-        //...
-    }  
-    public void Cook()
-    {
-        Potato potato = GetPotato();
-        Carrot carrot = GetCarrot();
-        Bowl bowl;
-        Peel(potato);
-                
-        Peel(carrot);
-        bowl = GetBowl();
-        Cut(potato);
-        Cut(carrot);
-        bowl.Add(carrot);
-                
-        bowl.Add(potato);
-    }
-    private Potato GetPotato()
-    {
-        //...
-    }
-}
+    using System;
 
+    public class Chef
+    {
+        public void Cook(Vegetable vegetable)
+        {
+            Bowl bowl = this.GetBowl();
+
+            Carrot carrot = this.GetCarrot();
+            this.Peel(carrot);
+            this.Cut(carrot);
+            bowl.Add(carrot);
+
+            Potato potato = this.GetPotato();
+            this.Peel(potato);
+            this.Cut(potato);
+            bowl.Add(potato);
+        }
+
+        private Bowl GetBowl()
+        {
+            // ... 
+            return new Bowl();
+        }
+
+        private Carrot GetCarrot()
+        {
+            // ...
+            return new Carrot();
+        }
+
+        private Potato GetPotato()
+        {
+            // ...
+            return new Potato();
+        }
+
+        private void Cut(Vegetable vegetable)
+        {
+            // ...
+        }
+
+        private void Peel(Vegetable vegetable)
+        {
+            // ...
+        }
+    }
 }
