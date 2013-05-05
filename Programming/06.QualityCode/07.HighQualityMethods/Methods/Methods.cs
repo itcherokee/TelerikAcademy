@@ -1,109 +1,38 @@
-﻿using System;
+﻿// Take the VS solution "Methods" and refactor its code to follow the guidelines of high-quality methods. 
+// Ensure you handle errors correctly: when the methods cannot do what their name says, throw an exception 
+// (do not return wrong result).Ensure good cohesion and coupling, good naming, no side effects, etc.
 
 namespace Methods
 {
-    class Methods
+    using System;
+
+    public class Methods
     {
-        static double CalcTriangleArea(double a, double b, double c)
+        public static void Main()
         {
-            if (a <= 0 || b <= 0 || c <= 0)
-            {
-                Console.Error.WriteLine("Sides should be positive.");
-                return -1;
-            }
-            double s = (a + b + c) / 2;
-            double area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
-            return area;
-        }
+            Console.WriteLine(GraphicsUtils.CalcTriangleArea(3, 4, 5));
 
-        static string NumberToDigit(int number)
-        {
-            switch (number)
-            {
-                case 0: return "zero";
-                case 1: return "one";
-                case 2: return "two";
-                case 3: return "three";
-                case 4: return "four";
-                case 5: return "five";
-                case 6: return "six";
-                case 7: return "seven";
-                case 8: return "eight";
-                case 9: return "nine";
-            }
+            Console.WriteLine(NumberUtils.ConvertSingleDigitToWord(5));
 
-            return "Invalid number!";
-        }
+            Console.WriteLine(NumberUtils.FindMax(5, -1, 3, 2, 14, 2, 3));
 
-        static int FindMax(params int[] elements)
-        {
-            if (elements == null || elements.Length == 0)
-            {
-                return -1;
-            }
+            Console.WriteLine(NumberUtils.FormatNumber(1.3, "f"));
+            Console.WriteLine(NumberUtils.FormatNumber(0.75, "%"));
+            Console.WriteLine(NumberUtils.FormatNumber(2.30, "r"));
 
-            for (int i = 1; i < elements.Length; i++)
-            {
-                if (elements[i] > elements[0])
-                {
-                    elements[0] = elements[i];
-                }
-            }
-            return elements[0];
-        }
+            double pointOneX = 3;
+            double pointOneY = -1;
+            double pointTwoX = 3;
+            double pointTwoY = 2.5;
+            Console.WriteLine(GraphicsUtils.CalculateDistance(pointOneX, pointOneY, pointTwoX, pointTwoY));
+            Console.WriteLine("Horizontal? " + GraphicsUtils.IsHorizontal(pointOneY, pointTwoY));
+            Console.WriteLine("Vertical? " + GraphicsUtils.IsVertical(pointOneX, pointTwoX));
 
-        static void PrintAsNumber(object number, string format)
-        {
-            if (format == "f")
-            {
-                Console.WriteLine("{0:f2}", number);
-            }
-            if (format == "%")
-            {
-                Console.WriteLine("{0:p0}", number);
-            }
-            if (format == "r")
-            {
-                Console.WriteLine("{0,8}", number);
-            }
-        }
+            Student peter = new Student("Peter", "Ivanov", "From Sofia, born at 17.03.1992");
 
+            Student stella = new Student("Stella", "Markova", "From Vidin, gamer, high results, born at 03.11.1993");
 
-        static double CalcDistance(double x1, double y1, double x2, double y2, 
-            out bool isHorizontal, out bool isVertical)
-        {
-            isHorizontal = (y1 == y2);
-            isVertical = (x1 == x2);
-
-            double distance = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-            return distance;
-        }
-
-        static void Main()
-        {
-            Console.WriteLine(CalcTriangleArea(3, 4, 5));
-            
-            Console.WriteLine(NumberToDigit(5));
-            
-            Console.WriteLine(FindMax(5, -1, 3, 2, 14, 2, 3));
-            
-            PrintAsNumber(1.3, "f");
-            PrintAsNumber(0.75, "%");
-            PrintAsNumber(2.30, "r");
-
-            bool horizontal, vertical;
-            Console.WriteLine(CalcDistance(3, -1, 3, 2.5, out horizontal, out vertical));
-            Console.WriteLine("Horizontal? " + horizontal);
-            Console.WriteLine("Vertical? " + vertical);
-
-            Student peter = new Student() { FirstName = "Peter", LastName = "Ivanov" };
-            peter.OtherInfo = "From Sofia, born at 17.03.1992";
-
-            Student stella = new Student() { FirstName = "Stella", LastName = "Markova" };
-            stella.OtherInfo = "From Vidin, gamer, high results, born at 03.11.1993";
-
-            Console.WriteLine("{0} older than {1} -> {2}",
-                peter.FirstName, stella.FirstName, peter.IsOlderThan(stella));
+            Console.WriteLine("{0} older than {1} -> {2}", peter.FirstName, stella.FirstName, peter.IsOlderThan(stella));
         }
     }
 }
