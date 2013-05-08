@@ -4,24 +4,60 @@
 
     class MathAdvanceUtils
     {
-        internal static T SquareRoot<T>(T operand) where T : struct
+        internal static float SquareRoot(float operand)
         {
-            double firstOperand = (double)operand;
-            T result = (T)Math.Sqrt(firstOperand);
+            //double firstOperand = (double)operand;
+            float result = (float)Math.Sqrt((double)operand);
             return result;
         }
 
-        internal static T Logarithm<T>(T operand) where T : struct
+        internal static double SquareRoot(double operand)
         {
-            double firstOperand = (double)operand;
-            T result = (T)Math.Log(firstOperand);
+            //double firstOperand = (double)operand;
+            double result = Math.Sqrt(operand);
             return result;
         }
 
-        internal static T Sinus<T>(T angle) where T : struct
+        internal static decimal SquareRoot(decimal operand)
         {
-            double angleOperand = (double)angle;
-            T result = (T)Math.Sin(angleOperand);
+            //double firstOperand = (double)operand;
+            decimal result = (decimal)Math.Sqrt((double)operand);
+            return result;
+        }
+
+        internal static float Logarithm(float operand)
+        {
+            float result = (float)Math.Log((double)operand);
+            return result;
+        }
+
+        internal static double Logarithm(double operand)
+        {
+            double result = Math.Log(operand);
+            return result;
+        }
+
+        internal static decimal Logarithm(decimal operand)
+        {
+            decimal result = (decimal)Math.Log((double)operand);
+            return result;
+        }
+
+        internal static float Sinus(float angle)
+        {
+            float result = (float)Math.Sin((double)angle);
+            return result;
+        }
+
+        internal static double Sinus(double angle)
+        {
+            double result = Math.Sin(angle);
+            return result;
+        }
+
+        internal static decimal Sinus(decimal angle)
+        {
+            decimal result = (decimal)Math.Sin((double)angle);
             return result;
         }
     }
