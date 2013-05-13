@@ -5,9 +5,7 @@ using System.Collections.Generic;
 
 namespace TestPoker
 {
-
-
-    /// <summary>
+        /// <summary>
     ///This is a test class for PokerHandsCheckerTest and is intended
     ///to contain all PokerHandsCheckerTest Unit Tests
     ///</summary>
@@ -131,7 +129,7 @@ namespace TestPoker
                 new Card(CardFace.Ace, CardSuit.Clubs)
             };
             Hand hand = new Hand(cards);
-            bool actual = target.IsFlush(hand);
+            bool actual = target.IsStraightFlush(hand);
             Assert.IsTrue(actual);
         }
 
@@ -196,19 +194,62 @@ namespace TestPoker
         }
 
         /// <summary>
-        ///A test for IsFourOfAKind
+        ///A test for IsFourOfAKind - Trivial.
         ///</summary>
         [TestMethod()]
-        public void IsFourOfAKindTest()
+        public void IsFourOfAKindTrivialTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsFourOfAKind(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Diamonds),
+                new Card(CardFace.Two, CardSuit.Hearts),
+                new Card(CardFace.Two, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsFourOfAKind(hand);
+            Assert.IsTrue(actual);
         }
+
+        /// <summary>
+        ///A test for IsFourOfAKind - Only three of a kind.
+        ///</summary>
+        [TestMethod()]
+        public void IsFourOfAKindOnlyThreeOfAKindTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Diamonds),
+                new Card(CardFace.Two, CardSuit.Hearts),
+                new Card(CardFace.Three, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsFourOfAKind(hand);
+            Assert.IsFalse(actual);
+        }
+
+        /// <summary>
+        ///A test for IsFourOfAKind - Five of equal suit.
+        ///</summary>
+        [TestMethod()]
+        public void IsFourOfAKindFiveOfEqualSuitTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Seven, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsFourOfAKind(hand);
+            Assert.IsFalse(actual);
+        }
+
 
         /// <summary>
         ///A test for IsFlush - Trivial

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Poker
 {
@@ -33,12 +34,52 @@ namespace Poker
 
         public bool IsStraightFlush(IHand hand)
         {
+            // // пет карти от една боя, поредни
+            //bool result = true;
+            //Card[] currentHand = new Card[5];
+            //hand.Cards.CopyTo(currentHand);
+            //for (int outer = 0; outer < hand.Cards.Count; outer++)
+            //{
+            //    for (int inner = outer + 1; inner < hand.Cards.Count; inner++)
+            //    {
+            //        if (hand.Cards[outer].Suit != hand.Cards[inner].Suit)
+            //        {
+            //            result = false;
+            //        }
+            //    }
+            //}
+
+            //return result
+
             throw new NotImplementedException();
+
         }
 
         public bool IsFourOfAKind(IHand hand)
         {
-            throw new NotImplementedException();
+            // 4 еднотипни карти от различни бои без значение каква е последната карта
+            int numberOfEqualCards = 1;
+            for (int outer = 0; outer < 2; outer++)
+            {
+                for (int inner = outer + 1; inner < hand.Cards.Count; inner++)
+                {
+                    if (hand.Cards[outer].Face == hand.Cards[inner].Face)
+                    {
+                        numberOfEqualCards++;
+                    }
+                }
+
+                if (numberOfEqualCards == 4)
+                {
+                    return true;
+                }
+                else
+                {
+                    numberOfEqualCards = 1;
+                }
+            }
+
+            return false;
         }
 
         public bool IsFullHouse(IHand hand)
