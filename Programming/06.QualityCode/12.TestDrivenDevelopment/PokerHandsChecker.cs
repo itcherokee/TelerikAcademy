@@ -6,24 +6,29 @@ namespace Poker
     {
         public bool IsValidHand(IHand hand)
         {
-
-            for (int outer = 0; outer < hand.Cards.Count; outer++)
+            bool result = true;
+            if (hand.Cards.Count == 5)
             {
-                for (int inner = outer; inner < hand.Cards.Count; inner++)
+                for (int outer = 0; outer < hand.Cards.Count; outer++)
                 {
-                    if (hand.Cards[outer].Face == hand.Cards[inner].Face)
+                    for (int inner = outer + 1; inner < hand.Cards.Count; inner++)
                     {
-                        
+                        if (hand.Cards[outer].Face == hand.Cards[inner].Face)
+                        {
+                            if (hand.Cards[outer].Suit == hand.Cards[inner].Suit)
+                            {
+                                result = false;
+                            }
+                        }
                     }
                 }
-
             }
-            // Дали са 5 карти
-            // Дали са различни:
-                // Една боя:
-                    // различни лица
-                // Едо лице:
-                    // различни бои
+            else
+            {
+                result = false;
+            }
+
+            return result;
         }
 
         public bool IsStraightFlush(IHand hand)
@@ -43,7 +48,20 @@ namespace Poker
 
         public bool IsFlush(IHand hand)
         {
-            throw new NotImplementedException();
+            // пет карти от една боя, но не е задължително да са поредни - до 4 поредни може, иначе е StrightFlush или RoyalFlush. 
+            bool result = true;
+            for (int outer = 0; outer < hand.Cards.Count; outer++)
+            {
+                for (int inner = outer + 1; inner < hand.Cards.Count; inner++)
+                {
+                    if (hand.Cards[outer].Suit != hand.Cards[inner].Suit)
+                    {
+                        result = false;
+                    }
+                }
+            }
+
+            return result;
         }
 
         public bool IsStraight(IHand hand)
