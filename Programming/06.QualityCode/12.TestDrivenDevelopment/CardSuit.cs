@@ -1,6 +1,5 @@
 ﻿namespace Poker
 {
-
     public enum CardSuit
     {
         Clubs = 1,    // ♣
