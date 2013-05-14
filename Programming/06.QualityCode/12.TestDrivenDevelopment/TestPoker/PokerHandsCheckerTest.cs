@@ -84,33 +84,79 @@ namespace TestPoker
         }
 
         /// <summary>
-        ///A test for IsTwoPair
+        ///A test for IsTwoPair - Trivial
         ///</summary>
         [TestMethod()]
-        public void IsTwoPairTest()
+        public void IsTwoPairTrivialTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsTwoPair(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Diamonds),
+                new Card(CardFace.King, CardSuit.Hearts),
+                new Card(CardFace.King, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Diamonds)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsTwoPair(hand);
+            Assert.IsTrue(actual);
         }
 
         /// <summary>
-        ///A test for IsThreeOfAKind
+        ///A test for IsThreeOfAKind - trivial
         ///</summary>
         [TestMethod()]
-        public void IsThreeOfAKindTest()
+        public void IsThreeOfAKindTrivialTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsThreeOfAKind(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Diamonds),
+                new Card(CardFace.Two, CardSuit.Hearts),
+                new Card(CardFace.Four, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsThreeOfAKind(hand);
+            Assert.IsTrue(actual);
+        }
+
+        /// <summary>
+        ///A test for IsThreeOfAKind - only two of a kind
+        ///</summary>
+        [TestMethod()]
+        public void IsThreeOfAKindOnlyTwoOFAKindTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Diamonds),
+                new Card(CardFace.Ace, CardSuit.Hearts),
+                new Card(CardFace.Four, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsThreeOfAKind(hand);
+            Assert.IsFalse(actual);
+        }
+
+        /// <summary>
+        ///A test for IsThreeOfAKind - five of equal suit
+        ///</summary>
+        [TestMethod()]
+        public void IsThreeOfAKindFiveOfEqualSuitTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Five, CardSuit.Clubs),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Clubs),
+                new Card(CardFace.Seven, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsThreeOfAKind(hand);
+            Assert.IsFalse(actual);
         }
 
         /// <summary>
@@ -121,12 +167,11 @@ namespace TestPoker
         {
             PokerHandsChecker target = new PokerHandsChecker();
             List<ICard> cards = new List<ICard>() { 
-                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Jack, CardSuit.Clubs),
                 new Card(CardFace.King, CardSuit.Clubs),
                 new Card(CardFace.Queen, CardSuit.Clubs),
-                new Card(CardFace.Jack, CardSuit.Clubs),
-                new Card(CardFace.Ten, CardSuit.Clubs),
-                new Card(CardFace.Ace, CardSuit.Clubs)
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Ten, CardSuit.Clubs)
             };
             Hand hand = new Hand(cards);
             bool actual = target.IsStraightFlush(hand);
@@ -134,33 +179,79 @@ namespace TestPoker
         }
 
         /// <summary>
-        ///A test for IsStraight
+        ///A test for IsStraightFlush - not a stright flush
         ///</summary>
         [TestMethod()]
-        public void IsStraightTest()
+        public void IsStraightFlushNotAStrightFlushTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsStraight(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Jack, CardSuit.Clubs),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Queen, CardSuit.Clubs),
+                new Card(CardFace.Two, CardSuit.Clubs),
+                new Card(CardFace.Ten, CardSuit.Diamonds)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsStraightFlush(hand);
+            Assert.IsFalse(actual);
         }
 
         /// <summary>
-        ///A test for IsOnePair
+        ///A test for IsStraight - Trivial
         ///</summary>
         [TestMethod()]
-        public void IsOnePairTest()
+        public void IsStraightTrivialTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsOnePair(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Queen, CardSuit.Diamonds),
+                new Card(CardFace.Jack, CardSuit.Diamonds),
+                new Card(CardFace.Ten, CardSuit.Diamonds)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsStraight(hand);
+            Assert.IsTrue(actual);
+        }
+
+        /// <summary>
+        ///A test for IsStraight - Not a stright
+        ///</summary>
+        [TestMethod()]
+        public void IsStraightNotAStrightTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.King, CardSuit.Clubs),
+                new Card(CardFace.Queen, CardSuit.Clubs),
+                new Card(CardFace.Jack, CardSuit.Clubs),
+                new Card(CardFace.Ten, CardSuit.Clubs)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsStraight(hand);
+            Assert.IsFalse(actual);
+        }
+
+        /// <summary>
+        ///A test for IsOnePair - trivial
+        ///</summary>
+        [TestMethod()]
+        public void IsOnePairTrivialTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Diamonds),
+                new Card(CardFace.Two, CardSuit.Hearts),
+                new Card(CardFace.King, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Diamonds)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsOnePair(hand);
+            Assert.IsTrue(actual);
         }
 
         /// <summary>
@@ -169,28 +260,55 @@ namespace TestPoker
         [TestMethod()]
         public void IsHighCardTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsHighCard(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Four, CardSuit.Diamonds),
+                new Card(CardFace.King, CardSuit.Hearts),
+                new Card(CardFace.King, CardSuit.Spades),
+                new Card(CardFace.Seven, CardSuit.Diamonds)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsHighCard(hand);
+            Assert.IsTrue(actual);
         }
 
         /// <summary>
-        ///A test for IsFullHouse
+        ///A test for IsFullHouse - trivial
         ///</summary>
         [TestMethod()]
-        public void IsFullHouseTest()
+        public void IsFullHouseTrivialTest()
         {
-            PokerHandsChecker target = new PokerHandsChecker(); // TODO: Initialize to an appropriate value
-            IHand hand = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.IsFullHouse(hand);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Diamonds),
+                new Card(CardFace.Queen, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Spades),
+                new Card(CardFace.Queen, CardSuit.Spades)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsFullHouse(hand);
+            Assert.IsTrue(actual);
+        }
+
+        /// <summary>
+        ///A test for IsFullHouse - not a fullhouse
+        ///</summary>
+        [TestMethod()]
+        public void IsFullHouseNotAFullHouseTest()
+        {
+            PokerHandsChecker target = new PokerHandsChecker();
+            List<ICard> cards = new List<ICard>() { 
+                new Card(CardFace.Ace, CardSuit.Clubs),
+                new Card(CardFace.Three, CardSuit.Diamonds),
+                new Card(CardFace.Queen, CardSuit.Clubs),
+                new Card(CardFace.Ace, CardSuit.Spades),
+                new Card(CardFace.Queen, CardSuit.Spades)
+            };
+            Hand hand = new Hand(cards);
+            bool actual = target.IsFullHouse(hand);
+            Assert.IsFalse(actual);
         }
 
         /// <summary>
@@ -249,7 +367,6 @@ namespace TestPoker
             bool actual = target.IsFourOfAKind(hand);
             Assert.IsFalse(actual);
         }
-
 
         /// <summary>
         ///A test for IsFlush - Trivial

@@ -104,5 +104,65 @@ namespace TestPoker
             Card target = new Card(face, suit);
             Assert.AreEqual(CardFace.Jack, target.Face);
         }
+
+        /// <summary>
+        ///A test for CompareTo - smaller
+        ///</summary>
+        [TestMethod()]
+        public void CompareToSmallerTest()
+        {
+            CardFace faceOne = new CardFace();
+            faceOne = CardFace.Jack;
+            CardSuit suitOne = new CardSuit();
+            suitOne = CardSuit.Hearts;
+            Card cardOne = new Card(faceOne, suitOne);
+            CardFace faceTwo = new CardFace();
+            faceTwo = CardFace.King;
+            CardSuit suitTwo = new CardSuit();
+            suitTwo = CardSuit.Hearts;
+            Card cardTwo = new Card(faceTwo, suitTwo);
+            int result = cardOne.CompareTo(cardTwo);
+            Assert.AreEqual(-1, result);
+        }
+
+        /// <summary>
+        ///A test for CompareTo - bigger
+        ///</summary>
+        [TestMethod()]
+        public void CompareToBiggerTest()
+        {
+            CardFace faceOne = new CardFace();
+            faceOne = CardFace.Jack;
+            CardSuit suitOne = new CardSuit();
+            suitOne = CardSuit.Hearts;
+            Card cardOne = new Card(faceOne, suitOne);
+            CardFace faceTwo = new CardFace();
+            faceTwo = CardFace.Two;
+            CardSuit suitTwo = new CardSuit();
+            suitTwo = CardSuit.Hearts;
+            Card cardTwo = new Card(faceTwo, suitTwo);
+            int result = cardOne.CompareTo(cardTwo);
+            Assert.AreEqual(1, result);
+        }
+
+        /// <summary>
+        ///A test for CompareTo - equal
+        ///</summary>
+        [TestMethod()]
+        public void CompareToEqualTest()
+        {
+            CardFace faceOne = new CardFace();
+            faceOne = CardFace.Jack;
+            CardSuit suitOne = new CardSuit();
+            suitOne = CardSuit.Hearts;
+            Card cardOne = new Card(faceOne, suitOne);
+            CardFace faceTwo = new CardFace();
+            faceTwo = CardFace.Jack;
+            CardSuit suitTwo = new CardSuit();
+            suitTwo = CardSuit.Hearts;
+            Card cardTwo = new Card(faceTwo, suitTwo);
+            int result = cardOne.CompareTo(cardTwo);
+            Assert.AreEqual(0, result);
+        }
     }
 }

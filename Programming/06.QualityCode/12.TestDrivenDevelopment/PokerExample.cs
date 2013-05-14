@@ -7,10 +7,6 @@ namespace Poker
     {
         static void Main()
         {
-            //Card test = new Card(CardFace.Ace, CardSuit.Diamonds);
-
-            //Console.WriteLine(test.ToString());
-
             ICard card = new Card(CardFace.Ace, CardSuit.Clubs);
             Console.WriteLine(card);
 
