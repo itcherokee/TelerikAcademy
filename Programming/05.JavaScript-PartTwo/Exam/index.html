@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test area</title>
+    <script type="text/javascript" src="source.js"> </script>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="image-gallery-holder"></div>
+    <div id="zoomed-picture">
+    </div>
+
+    <!-- Task number: 1 Implemented -->
+    <script>
+
+        var gallery = controls.getImageGallery("#image-gallery-holder");
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+        gallery.addImage("JS Ninja", "images/js-ninja.png");
+        var ninjasAlbum = gallery.addAlbum("Ninjas");
+        ninjasAlbum.addImage("JS Ninja", "images/js-ninja.png");
+        ninjasAlbum.addImage("JS Ninja", "images/js-ninja.png");
+        ninjasAlbum.addImage("JS Ninja", "images/js-ninja.png");
+    </script>
+
+    <!-- Task number: 2 Implemented -->
+    <script>
+        var kidsAlbum = ninjasAlbum.addAlbum("Kids Ninjas");
+        kidsAlbum.addImage("JS Ninja", "images/js-ninja.png");
+        kidsAlbum.addImage("JS Ninja", "images/js-ninja.png");
+        kidsAlbum.addImage("JS Ninja", "images/js-ninja.png");
+        gallery.render();
+
+    </script>
+
+    <!-- Task number: 3  - Implemented -->
+    <!-- Task number: 4  - Not implemented -->
+    <!-- Task number: 5  - Not implemented -->
+    <!-- Task number: 6  - Not implemented -->
+    <!-- Task number: 7  - Implemented -->
+    <!-- Task number: 8  - Not implemented -->
+</body>
+</html>
