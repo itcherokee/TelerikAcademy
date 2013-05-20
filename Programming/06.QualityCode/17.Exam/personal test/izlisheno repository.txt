@@ -1,0 +1,61 @@
+
+
+    //public class PhonebookRepository : IPhonebookRepository
+    //{
+    //    private OrderedSet<Record> sorted = new OrderedSet<Record>();
+    //    private Dictionary<string, Record> dict = new Dictionary<string, Record>();
+    //    private MultiDictionary<string, Record> multidict = new MultiDictionary<string, Record>(false);
+
+    //    public bool AddPhone(string name, IEnumerable<string> nums)
+    //    {
+    //        string name2 = name.ToLowerInvariant();
+    //        Record entry;
+    //        bool flag = !this.dict.TryGetValue(name2, out entry);
+    //        if (flag)
+    //        {
+    //            entry = new Record(); entry.Name = name;
+    //            entry.Strings = new SortedSet<string>(); this.dict.Add(name2, entry);
+    //            this.sorted.Add(entry);
+    //        }
+
+    //        foreach (var num in nums)
+    //        {
+    //            this.multidict.Add(num, entry);
+    //        }
+
+    //        entry.Strings.UnionWith(nums);
+    //        return flag;
+    //    }
+
+    //    public int ChangePhone(string oldent, string newent)
+    //    {
+    //        var found = this.multidict[oldent].ToList();
+    //        foreach (var entry in found)
+    //        {
+    //            entry.Strings.Remove(oldent);
+    //            this.multidict.Remove(oldent, entry);
+    //            entry.Strings.Add(newent);
+    //            this.multidict.Add(newent, entry);
+    //        }
+
+    //        return found.Count;
+    //    }
+
+    //    public Record[] ListEntries(int startIndex, int count)
+    //    {
+    //        if (startIndex < 0 || startIndex + count > this.dict.Count)
+    //        {
+    //            //Console.WriteLine("Invalid start index or count.");
+    //            return null;
+    //        }
+
+    //        Record[] list = new Record[count];
+    //        for (int i = startIndex; i <= startIndex + count - 1; i++)
+    //        {
+    //            Record entry = this.sorted[i];
+    //            list[i - startIndex] = entry;
+    //        }
+
+    //        return list;
+    //    }
+    //}
