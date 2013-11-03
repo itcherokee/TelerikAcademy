@@ -1,12 +1,14 @@
 ﻿using System;
 
-class PrintMyName
+/// <summary>
+/// Task: "3. Modify the application to print your name."
+/// </summary>
+public class PrintMyName
 {
-    static void Main()
+    public static void Main()
     {
-        Console.Title = "My name";
+        Console.Title = "Print my name";
         Console.WriteLine("My name is Peter.");
         Console.ReadKey();
     }
 }
-

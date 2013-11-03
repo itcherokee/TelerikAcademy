@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Text;
 
-class MostPopularProgrammingLanguages
+/// <summary>
+/// Task: "10. Provide a short list with information about the most popular programming languages. How do they differ from C#"
+/// </summary>
+public class MostPopularProgrammingLanguages
 {
-    static void Main()
+    public static void Main()
     {
         string topicCSharp = "Език за програмиране от .NET платформата на Microsoft. Той е изцяло обектно-ориентиран език. Събира в себе си най-доброто от C, "
                             + "C++, Java, Python и други. Позволява лесно и бързо изграждане на сложни приложения.\r\n";
@@ -13,8 +16,8 @@ class MostPopularProgrammingLanguages
         string topicJava = "Език разработен от фирмата SUN. Той е изцяло обектно-ориентиран език и един от първите езици (дали не и първият) създаден с идеята "
                             + "за платформено независим код). Изключително популярен днес, като намира все повече приложение и при мобилните платформи (Android).\r\n";
         string topicCPP = "Език за програмиране, явяващ се пряк наследник на процедурният език \"С\". За разлика от \"С\", цялата концепция, на която се базира "
-                            + "\"С++\" е обектно-ориентираното програмиране. Използва масово, но предимно за изучаване на програмирането (но не само), "
-                            + "както например и в платформи не подържащи (поне native) .NET Framework (използва се масово за програмиране под Linux среда).\r\n";
+                            + "\"С++\" е обектно-ориентираното програмиране. Използва се масово, но предимно за изучаване на програмирането (но не само), "
+                            + "както например и в платформи не подържащи (не native) .NET Framework (използва се масово за програмиране под Linux среда).\r\n";
         string topicPHP = "Широко използван език за сървърни приложения и разработването на динамични web приложения. Базаран е на езика \"C\" и езика \"Perl\".\r\n";
         Console.SetWindowSize(80, 35);
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -35,23 +38,23 @@ class MostPopularProgrammingLanguages
         Console.ReadKey();
     }
 
-    static void PrintLines(string content)
+    private static void PrintLines(string content)
     {
         Console.ForegroundColor = ConsoleColor.White;
-        int lineLimit = 60;
-        StringBuilder wordLine = new StringBuilder("");
+        int maxCharsPerLine = 60;
+        StringBuilder lineWithWords = new StringBuilder();
         string[] topic = content.Split(' ');
         for (int index = 0; index < topic.Length; index++)
         {
-            wordLine.Append(topic[index]);
-            wordLine.Append(" ");
-            if ((wordLine.Length > lineLimit) || (index == topic.Length - 1))
+            lineWithWords.Append(topic[index]);
+            lineWithWords.Append(" ");
+            if ((lineWithWords.Length > maxCharsPerLine) || (index == topic.Length - 1))
             {
-                Console.WriteLine(wordLine);
-                wordLine.Clear();
+                Console.WriteLine(lineWithWords);
+                lineWithWords.Clear();
             }
         }
+
         Console.ForegroundColor = ConsoleColor.Green;
     }
 }
-

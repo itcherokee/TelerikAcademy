@@ -8,7 +8,8 @@ public class PrintThreeNumbers
     public static void Main()
     {
         Console.Title = "Print three numbers (1, 101, 1001)";
-        Console.WriteLine("Numbers: {0}, {1}, {2}", 1, 101, 1001);
+        Console.WriteLine("{0}, {1}, {2}", 1, 101, 1001);
         Console.ReadKey();
     }
 }
+

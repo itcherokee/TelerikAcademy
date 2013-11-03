@@ -1,13 +1,17 @@
 ﻿using System;
 
-class PrintCurrentDateTime
+/// <summary>
+/// Task: "7. Create a console application that prints the current date and time.".
+/// </summary>
+public class PrintCurrentDateTime
 {
-    static void Main()
+    public static void Main()
     {
         Console.Title = "Print current date & time";
-        Console.Write("Precise date and time at the moment are: ");
-        Console.WriteLine(DateTime.Now.ToString());
+        Console.WriteLine("Precise date and time at the moment are: ");
+        DateTime currentDateTime = DateTime.Now;
+        Console.WriteLine("Date: {0}", currentDateTime.ToLongDateString());
+        Console.WriteLine("Time: {0}", currentDateTime.ToLongTimeString());
         Console.ReadKey();
     }
 }
-

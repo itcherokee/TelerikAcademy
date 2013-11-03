@@ -1,12 +1,14 @@
 ﻿using System;
 
-class PrintHelloCSharp
+/// <summary>
+/// Task: "2. Create, compile and run a “Hello C#” console application."
+/// </summary>
+public class PrintHelloCSharp
 {
-    static void Main()
+    public static void Main()
     {
         Console.Title = "Hello C#!";
         Console.WriteLine("Hello C#!");
         Console.ReadKey();
     }
 }
-

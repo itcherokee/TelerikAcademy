@@ -1,12 +1,17 @@
 ﻿using System;
 
-class PrintSquareOfNumberSolutionTwo
+/// <summary>
+/// Task: "8. Create a console application that calculates and prints the square of the number 12345."
+/// </summary>
+public class PrintSquareOfNumberSolutionTwo
 {
-    static void Main()
+    public static void Main()
     {
         Console.Title = "Print square of a number - ver.2";
-        Console.WriteLine("The square of number 12345 is: {0}",Math.Pow(12345,2).ToString());  //компилатора разрешава (скрито преобразуване) и без употребата на "ToString()", но така смятам, че е по прегледно
+        int number = 12345;
+        Console.Write("The square of number {0} is: ", number);
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("{0}", Math.Pow(number, 2).ToString());
         Console.ReadKey();
     }
 }
-
