@@ -9,6 +9,7 @@
 public class Employee
 {
     private char gender;
+    private int employeeId;
 
     public char Gender
     {
@@ -36,7 +37,25 @@ public class Employee
 
     public byte Age { get; set; }
 
-    public string PersonalID { get; set; }
+    public string PersonalId { get; set; }
 
-    public int EmployeeID { get; set; }
+    public int EmployeeId 
+    {
+        get
+        {
+            return this.employeeId;
+        } 
+        
+        set
+        {
+            if (value >= 27560000 && value <= 27569999)
+            {
+                this.employeeId = value;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid value provided for Gender!");
+            }
+        }
+    }
 }
