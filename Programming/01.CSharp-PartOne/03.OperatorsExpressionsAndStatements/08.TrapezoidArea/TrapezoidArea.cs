@@ -1,41 +1,39 @@
 ﻿using System;
 
-class TrapezoidArea
+/// <summary>
+/// Task: "8. Write an expression that calculates trapezoid's area by given sides a and b and height h."
+/// </summary>
+public class TrapezoidArea
 {
-    //Write an expression that calculates trapezoid's area by given sides a and b and height h.
-
-    static double EnterValue(string value)
+    public static void Main()
     {
-        // Management of the input from Console - entering data
+        Console.Title = "Calculation of trapezoid area";
+        Trapezoid trapezoid = new Trapezoid();
+        trapezoid.BottomBase = EnterValue("a - botton base");
+        trapezoid.UpperBase = EnterValue("b - upper base");
+        trapezoid.Height = EnterValue("h - height");
+        Console.WriteLine("The area of trapezoid with the given parameters is S={0} (square cm.)", trapezoid.GetArea().ToString());
+        Console.ReadKey();
+    }
+
+    private static double EnterValue(string value)
+    {
         double result = 0.0f;
-        bool wrongInput = false;
+        bool isValidInput = false;
         do
         {
             Console.Write("Enter the \"{0}\" of Trapezoid in cm: ", value);
-            wrongInput = double.TryParse(Console.ReadLine(), out result);
-            if (wrongInput != true)
+            isValidInput = double.TryParse(Console.ReadLine(), out result);
+            if (isValidInput != true)
             {
                 Console.WriteLine("You have entered not a number! Try again (press a key).");
                 Console.ReadKey();
                 Console.Clear();
             }
-        } while (!wrongInput);
+        }
+        while (!isValidInput);
+
         Console.Clear();
         return result;
-    }
-
-    static void Main()
-    {
-        double trapezoidAreaCalc = 0.0;
-        double trapezoidBottomBase = 0.0;
-        double trapezoidUpperBase = 0.0;
-        double trapezoidHeight = 0.0;
-        Console.Title = "Calculation of trapezoid area";
-        trapezoidBottomBase = EnterValue("a");
-        trapezoidUpperBase = EnterValue("b");
-        trapezoidHeight = EnterValue("h");
-        trapezoidAreaCalc = ((trapezoidBottomBase + trapezoidUpperBase) / 2) * trapezoidHeight;
-        Console.WriteLine("The area of trapezoid with the given parameters is S={0} (square cm.)", trapezoidAreaCalc.ToString());
-        Console.ReadKey();
     }
 }

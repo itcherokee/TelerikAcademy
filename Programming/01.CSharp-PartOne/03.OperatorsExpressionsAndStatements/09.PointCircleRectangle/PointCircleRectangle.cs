@@ -1,56 +1,62 @@
 ﻿using System;
 
-class PointCircleRectangle
+/// <summary>
+/// Task: "9. Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) 
+/// and out of the rectangle R(top=1, left=-1, width=6, height=2)."
+/// </summary>
+public class PointCircleRectangle
 {
-    // Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3)
-    // and out of the rectangle R(top=1, left=-1, width=6, height=2).
-
-
-    // Input from Console management
-    static double EnterData(string pointCoordinate)
+    public static void Main()
     {
-        bool correctPointValue = false;
+        Console.Title = "Check a Point is within a circle and outside rectangle";
+        Console.WriteLine("Settings by task definition:");
+        Console.ForegroundColor = ConsoleColor.White;
+
+        // creates circle
+        Console.WriteLine("Circle coordinates K((1,1),3).");
+        Circle circle = new Circle(radius: 3.0d, x: 1.0d, y: 1.0d);
+
+        // creates rectangle
+        Console.WriteLine("Rectangle coordinates LU(-1,1) and RB(5,-1).\n");
+        Rectangle rectangle = new Rectangle(leftUpX: -1.0d, leftUpY: 1.0d, rightDownX: 5.0d, rightDownY: -1.0d);
+
+        // creates 2D-Point
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("Enter 2D-Point coordinates.");
+        Point point = new Point(x: EnterData("X"), y: EnterData("Y"));
+
+        // check point position against Circle
+        bool checkAgainsCircle = (((point.X - circle.X) * (point.X - circle.X)) + ((point.Y - circle.Y) * (point.Y - circle.Y)))
+            <= (circle.Radius * circle.Radius);
+
+        // ccheck point position against Rectangle
+        bool checkAgainstRectangle = (point.X < rectangle.LeftUp.X) || (point.X > rectangle.RightDown.X) ||
+            (point.Y > rectangle.LeftUp.Y) || (point.Y < rectangle.RightDown.Y);
+        bool result = checkAgainsCircle && checkAgainstRectangle;
+
+        Console.WriteLine("2D-Point is within a circle and outside rectangle - {0}", result.ToString());
+        Console.ReadKey();
+    }
+
+    private static double EnterData(string pointCoordinate)
+    {
+        bool isValidInput = false;
         double enteredValue = 0.0d;
         do
         {
-            Console.Write("Please enter value for \"{0}\" coordinate of a point: ", pointCoordinate);
-            correctPointValue = double.TryParse(Console.ReadLine(), out enteredValue);
-            if (correctPointValue)
-            { correctPointValue = true; }
-            else
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("\"{0}\" coordinate value: ", pointCoordinate);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = double.TryParse(Console.ReadLine(), out enteredValue);
+            if (!isValidInput)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You have entered incorrect number or symbol(s). Try again (press key).");
                 Console.ReadKey();
-                Console.Clear();
             }
-        } while (!correctPointValue);
-        Console.Clear();
-        return enteredValue;
-    }
+        }
+        while (!isValidInput);
 
-    static void Main()
-    {
-        double pointX = 0.0d;
-        double pointY = 0.0d;
-        double rectLeftUpX = -1.0d;
-        double rectLeftUpY = 1.0d;
-        double rectRightDownX = 5.0d;
-        double rectRightDownY = -1.0d;
-        double circleX = 1.0d;
-        double circleY = 1.0d;
-        double circleR = 3.0d;
-        Console.Title = "Point within a circle and outside rectangle";
-        pointX = EnterData("X");
-        pointY = EnterData("Y");
-        if (((((pointX - circleX) * (pointX - circleX)) + ((pointY - circleY) * (pointY - circleY))) <= (circleR * circleR))
-            && ((pointX < rectLeftUpX) || (pointX > rectRightDownX) || (pointY > rectLeftUpY) || (pointY < rectRightDownY)))
-        {
-            Console.WriteLine("Point is within circle and outside rectangle.");
-        }
-        else
-        {
-            Console.WriteLine("Point is not covering the task condition \n(point is both in circle and rectangle or only in rectangle or outside both)");
-        }
-        Console.ReadKey();
+        return enteredValue;
     }
 }

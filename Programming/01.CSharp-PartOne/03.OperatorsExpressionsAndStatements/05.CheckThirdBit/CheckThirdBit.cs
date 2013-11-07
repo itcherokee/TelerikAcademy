@@ -11,7 +11,7 @@ public class CheckThirdBit
 
         int checkedNumber = 0;
         int checkedNumberMasked = 0;
-        int mask = 8; // 3rd bit set
+        int mask = 0x08; // 3rd bit set
         int bitResult = 0;
         bool isValidInput = false;
         do
@@ -34,11 +34,11 @@ public class CheckThirdBit
         bitResult = checkedNumberMasked >> 3;
         if (bitResult == 0)
         {
-            Console.Write("The bit at the 3rd position (counting from 0) is 0 - ");
+            Console.WriteLine("The bit at the 3rd position (counting from 0) is 0");
         }
         else
         {
-            Console.Write("The bit at the 3rd position (counting from 0) is 1 - ");
+            Console.WriteLine("The bit at the 3rd position (counting from 0) is 1");
         }
 
         Console.WriteLine(Convert.ToString(checkedNumber, 2).PadLeft(32, '0'));

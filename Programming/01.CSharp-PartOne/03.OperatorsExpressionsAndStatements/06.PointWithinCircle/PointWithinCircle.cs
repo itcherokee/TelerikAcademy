@@ -1,51 +1,54 @@
 ﻿using System;
 
-class PointWithinCircle
+/// <summary>
+/// Task: "6. Write an expression that checks if given point (x,  y) is within a circle K(O, 5)."
+/// </summary>
+public class PointWithinCircle
 {
-    // Write an expression that checks if given point (x,y) is within a circle K((0,0),5).
-
-    // Input data management
-    static int EnterData(string pointCoordinate)
+    public static void Main()
     {
-        bool correctPointValue = false;
-        int enteredValue = 0;
-        do
-        {
-            Console.Write("Please enter value for \"{0}\" coordinate of a point (integer):", pointCoordinate);
-            correctPointValue = int.TryParse(Console.ReadLine(), out enteredValue);
-            if (correctPointValue)
-            { correctPointValue = true; }
-            else
-            {
-                Console.WriteLine("You have entered incorrect number or symbol(s). Try again (press key).");
-                Console.ReadKey();
-                Console.Clear();
-            }
-        } while (!correctPointValue);
-        Console.Clear();
-        return enteredValue;
-    }
-
-    static void Main()
-    {
-        int pointX = 0;
-        int pointY = 0;
-        int radius = 5;
-        bool wrongInput = false;
         Console.Title = "Point within a circle?";
-        do
+        Console.WriteLine("Circle coordinates are set as (0,0) with radius of 5 by definition.");
+        Circle circle = new Circle(5);
+        Console.WriteLine("Let set the coordinates of the point:");
+        Point point = new Point();
+        point.X = InputData("X");
+        point.Y = InputData("Y");
+        if (((point.X * point.X) + (point.Y * point.Y)) <= (circle.Radius * circle.Radius))
         {
-            pointX = EnterData("X");
-            pointY = EnterData("Y");
-        } while (wrongInput);
-        if (((pointX * pointX) + (pointY * pointY)) <= (radius * radius))
-        {
-            Console.WriteLine("Point with coordinates ({0},{1}) is WITHIN a given circle ((0,0),5).", pointX, pointY);
+            Console.WriteLine("Point with coordinates ({0},{1}) is WITHIN a given circle [(0,0),5].", point.X, point.Y);
         }
         else
         {
-            Console.WriteLine("Point with coordinates ({0},{1}) is OUTSIDE a given circle ((0,0),5).", pointX, pointY);
+            Console.WriteLine("Point with coordinates ({0},{1}) is OUTSIDE a given circle ((0,0),5).", point.X, point.Y);
         }
+
         Console.ReadKey();
+    }
+
+    private static int InputData(string message)
+    {
+        bool isValidInput = false;
+        int inputValue = 0;
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Please enter integer value for \"{0}\": ", message);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = int.TryParse(Console.ReadLine(), out inputValue);
+            if (isValidInput)
+            {
+                isValidInput = true;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have entered incorrect number (not integer) or symbol(s). Try again (press key).");
+                Console.ReadKey();
+            }
+        }
+        while (!isValidInput);
+
+        return inputValue;
     }
 }
