@@ -39,7 +39,9 @@ public class ExchangeThreeBits
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.ForegroundColor = ConsoleColor.Gray;
                     break;
-                default: Console.Write(resultBits[i]); break;
+                default: 
+                    Console.Write(resultBits[i]); 
+                    break;
             }
         }
 
