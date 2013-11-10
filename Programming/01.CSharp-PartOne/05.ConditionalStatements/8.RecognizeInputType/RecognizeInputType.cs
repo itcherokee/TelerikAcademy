@@ -1,20 +1,18 @@
 ﻿using System;
 
-class RecognizeInputType
+/// <summary>
+/// Task: "8. Write a program that, depending on the user's choice inputs int, 
+/// double or string variable. If the variable is integer or double, increases 
+/// it with 1. If the variable is string, appends "*" at its end. The program 
+/// must show the value of that variable as a console output. Use switch statement."
+/// </summary>
+public class RecognizeInputType
 {
-    static void Main()
+    public static void Main()
     {
-        //Write a program that, depending on the user's choice inputs int, 
-        //double or string variable. If the variable is integer or double, 
-        //increases it with 1. If the variable is string, appends "*" at its end. 
-        //The program must show the value of that variable as a console output. 
-        //Use switch statement.
-        int inputValueInt = 0;
-        double inputValueDouble = 0.0;
-        string inputValueString = "";
-        bool wrongSelector = false;
-        bool wrongInput = true;
         Console.Title = "Recognize user input type";
+        bool isValidSelect = false;
+        bool isValidInput = true;
         do
         {
             Console.WriteLine("Select the type of the value to enter:");
@@ -25,39 +23,46 @@ class RecognizeInputType
             switch (Console.ReadLine())
             {
                 case "1":
+                    int inputValueInt = 0;
                     do
                     {
                         Console.Write("Make your input:");
-                        wrongInput = int.TryParse(Console.ReadLine(), out inputValueInt);
+                        isValidInput = int.TryParse(Console.ReadLine(), out inputValueInt);
                         inputValueInt++;
-                    } while (!wrongInput);
-                    wrongSelector = false;
+                    }
+                    while (!isValidInput);
+
+                    isValidSelect = false;
                     Console.WriteLine("The entered value +1 is: {0}", inputValueInt);
                     break;
                 case "2":
+                    double inputValueDouble = 0.0;
                     do
                     {
                         Console.Write("Make your input:");
-                        wrongInput = double.TryParse(Console.ReadLine(), out inputValueDouble);
+                        isValidInput = double.TryParse(Console.ReadLine(), out inputValueDouble);
                         inputValueDouble++;
-                    } while (!wrongInput);
-                    wrongSelector = false;
+                    }
+                    while (!isValidInput);
+
+                    isValidSelect = false;
                     Console.WriteLine("The entered value +1 is: {0}", inputValueDouble);
                     break;
                 case "3":
                     Console.Write("Make your input:");
-                    inputValueString = Console.ReadLine();
+                    string inputValueString = Console.ReadLine();
                     inputValueString += "*";
-                    wrongSelector = false;
+                    isValidSelect = false;
                     Console.WriteLine("The entered value + \"*\" symbol is: {0}", inputValueString);
                     break;
                 default:
                     Console.WriteLine("There is no such selector, try again. Press a key...");
                     Console.ReadKey();
                     Console.Clear();
-                    wrongSelector = true;
+                    isValidSelect = true;
                     break;
             }
-        } while (wrongSelector);
+        }
+        while (isValidSelect);
     }
 }

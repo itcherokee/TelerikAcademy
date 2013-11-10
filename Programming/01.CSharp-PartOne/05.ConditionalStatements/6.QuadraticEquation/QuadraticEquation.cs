@@ -1,39 +1,26 @@
 ﻿using System;
 
-class QuadraticEquation
+/// <summary>
+/// Task: "6. Write a program that enters the coefficients a, b and c of a quadratic equation
+/// a*x² + b*x + c = 0 and calculates and prints its real roots. Note that quadratic equations 
+/// may have 0, 1 or 2 real roots.
+/// </summary>
+public class QuadraticEquation
 {
-    static void Main()
+    public static void Main()
     {
-        //Write a program that reads the coefficients a, b and c 
-        //of a quadratic equation ax2+bx+c=0 and solves it (prints its real roots).
-
-        double coefficientA, coefficientB, coefficientC, discriminant, roots;
-        //Handling of Console Input
-        bool noError = true;
         Console.Title = "Program to solve quadratic equation ax" + '\u00B2' + "+bx+c=0";
         Console.WriteLine("Enter the three coefficients in order to find equation real roots.");
-        do
-        {
-            Console.Write("Coefficient \"а\": ");
-            noError = double.TryParse(Console.ReadLine(), out coefficientA);
-        } while (!noError);
-        do
-        {
-            Console.Write("Coefficient \"coefficientB\": ");
-            noError = double.TryParse(Console.ReadLine(), out coefficientB);
-        } while (!noError);
-        do
-        {
-            Console.Write("Coefficient \"c\": ");
-            noError = double.TryParse(Console.ReadLine(), out coefficientC);
-        } while (!noError);
-        // Logic of the program starts here
+        double coefficientA = EnterData("Coefficient \"а\": ");
+        double coefficientB = EnterData("Coefficient \"b\": ");
+        double coefficientC = EnterData("Coefficient \"c\": ");
         if ((coefficientA == 0) && (coefficientB == 0) && (coefficientC == 0))
         {
             Console.WriteLine("You have entered only 0 for all coefficients and the result is NaN (not a number) or in other words, there is no solution!");
         }
         else
         {
+            double roots = default(double);
             if (coefficientA == 0)
             {
                 roots = -(coefficientB / (2 * coefficientA));
@@ -41,7 +28,7 @@ class QuadraticEquation
             }
             else
             {
-                discriminant = Math.Pow(coefficientB, 2) - (4 * coefficientA * coefficientC);
+                double discriminant = Math.Pow(coefficientB, 2) - (4 * coefficientA * coefficientC);
                 if (discriminant == 0)
                 {
                     roots = -(coefficientB / (2 * coefficientA));
@@ -59,6 +46,32 @@ class QuadraticEquation
                 }
             }
         }
+
         Console.ReadKey();
+    }
+
+    private static double EnterData(string message)
+    {
+        bool isValidInput = default(bool);
+        double enteredValue = default(double);
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = double.TryParse(Console.ReadLine(), out enteredValue);
+            if (!isValidInput)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have entered invalid number! Try again <press any key...>");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        while (!isValidInput);
+
+        Console.ForegroundColor = ConsoleColor.White;
+        return enteredValue;
     }
 }

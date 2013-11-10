@@ -1,64 +1,84 @@
 ﻿using System;
 
-class BiggestOfThree
+/// <summary>
+/// Task: "3. Write a program that finds the biggest of three integers using nested if statements."
+/// </summary>
+public class BiggestOfThree
 {
-    static void Main()
+    public static void Main()
     {
-        //Write a program that finds the biggest of three integers using nested if statements.
-
-        int numOne = 0, numTwo = 0, numThree = 0;
-        bool noError = true;
-        bool equalNumbers = false;
         Console.Title = "Find the biggest number out of three";
-        Console.WriteLine("Enter three different integers and program will find the biggest one.");
+
+        int numberOne = default(int);
+        int numberTwo = default(int);
+        int numberThree = default(int);
+        bool areEqualNumbers = false;
         do
         {
-            do
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Enter three different integers and program will find the biggest one.");
+            numberOne = EnterData("Number 1: ");
+            numberTwo = EnterData("Number 2: ");
+            numberThree = EnterData("Number 3: ");
+            if ((numberOne == numberTwo) || (numberOne == numberThree) || (numberTwo == numberThree))
             {
-                Console.Write("Number 1: ");
-                noError = int.TryParse(Console.ReadLine(), out numOne);
-            } while (!noError);
-            do
-            {
-                Console.Write("Number 2: ");
-                noError = int.TryParse(Console.ReadLine(), out numTwo);
-            } while (!noError);
-            do
-            {
-                Console.Write("Number 3: ");
-                noError = int.TryParse(Console.ReadLine(), out numThree);
-            } while (!noError);
-            if ((numOne == numTwo) || (numOne == numThree) || (numTwo == numThree))
-            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You have entered 2 or 3 numbers with equal values. Please reenter all.");
-                equalNumbers = true;
+                areEqualNumbers = true;
             }
             else
             {
-                equalNumbers = false;
+                areEqualNumbers = false;
             }
-        } while (equalNumbers);
-        if (numOne > numTwo)
-        {
-            if (numOne > numThree)
-            {
-                Console.WriteLine("First number is the biggest: {0}", numOne);
-            }
-            else
-            {
-                Console.WriteLine("Third number is the biggest: {0}", numThree);
-            }
-
         }
-        else if (numTwo > numThree)
+        while (areEqualNumbers);
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        if (numberOne > numberTwo)
         {
-            Console.WriteLine("Second number is the biggest: {0}", numTwo);
+            if (numberOne > numberThree)
+            {
+                Console.WriteLine("First number is the biggest: {0}", numberOne);
+            }
+            else
+            {
+                Console.WriteLine("Third number is the biggest: {0}", numberThree);
+            }
+        }
+        else if (numberTwo > numberThree)
+        {
+            Console.WriteLine("Second number is the biggest: {0}", numberTwo);
         }
         else
         {
-            Console.WriteLine("Third number is the biggest: {0}", numThree);
+            Console.WriteLine("Third number is the biggest: {0}", numberThree);
         }
+
         Console.ReadKey();
     }
-}
 
+    private static int EnterData(string message)
+    {
+        bool isValidInput = default(bool);
+        int enteredValue = default(int);
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = int.TryParse(Console.ReadLine(), out enteredValue);
+            if (!isValidInput)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have entered invalid number! Try again <press any key...>");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        while (!isValidInput);
+
+        Console.ForegroundColor = ConsoleColor.White;
+        return enteredValue;
+    }
+}

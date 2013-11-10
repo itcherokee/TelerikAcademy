@@ -1,23 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.CompareAndExchange", "1.CompareAndExchange\1.CompareAndExchange.csproj", "{E2569F5F-5E0F-4A35-A408-63363C6C6084}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CompareAndExchange", "1.CompareAndExchange\01.CompareAndExchange.csproj", "{E2569F5F-5E0F-4A35-A408-63363C6C6084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.BiggestOfThree", "3.BiggestOfThree\3.BiggestOfThree.csproj", "{8680E7E9-23C6-4537-A69C-D29AE8C2F993}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.BiggestOfThree", "3.BiggestOfThree\03.BiggestOfThree.csproj", "{8680E7E9-23C6-4537-A69C-D29AE8C2F993}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.SortRealNumbers", "4.SortRealNumbers\4.SortRealNumbers.csproj", "{8B5D20BD-B68F-4559-81EF-F4847B7C43FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SortRealNumbers", "4.SortRealNumbers\04.SortRealNumbers.csproj", "{8B5D20BD-B68F-4559-81EF-F4847B7C43FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.SignOfProduct", "2.SignOfProduct\2.SignOfProduct.csproj", "{D8E9C3BB-528F-4F48-997F-A89A3F8724B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.SignOfProduct", "2.SignOfProduct\02.SignOfProduct.csproj", "{D8E9C3BB-528F-4F48-997F-A89A3F8724B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.ShowNameOfDigit", "5.ShowNameOfDigit\5.ShowNameOfDigit.csproj", "{AAC5D1F8-945C-4A1C-BC15-525C180FB337}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.ShowNameOfDigit", "5.ShowNameOfDigit\05.ShowNameOfDigit.csproj", "{AAC5D1F8-945C-4A1C-BC15-525C180FB337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.QuadraticEquation", "6.QuadraticEquation\6.QuadraticEquation.csproj", "{4646D7E1-38BF-4C15-A472-27BDD2B48D6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.QuadraticEquation", "6.QuadraticEquation\06.QuadraticEquation.csproj", "{4646D7E1-38BF-4C15-A472-27BDD2B48D6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.GreatestOfFive", "7.GreatestOfFive\7.GreatestOfFive.csproj", "{D372B8BD-1C9C-4E48-91A6-E5C4062A8515}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.GreatestOfFive", "7.GreatestOfFive\07.GreatestOfFive.csproj", "{D372B8BD-1C9C-4E48-91A6-E5C4062A8515}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.RecognizeInputType", "8.RecognizeInputType\8.RecognizeInputType.csproj", "{87270B90-0789-4A46-8791-BA88C423A8E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.RecognizeInputType", "8.RecognizeInputType\08.RecognizeInputType.csproj", "{87270B90-0789-4A46-8791-BA88C423A8E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.SubSetSum", "9.SubSetSum\9.SubSetSum.csproj", "{884073E4-570B-4A61-A106-19E4B21BBF5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.SubSetSum", "9.SubSetSum\09.SubSetSum.csproj", "{884073E4-570B-4A61-A106-19E4B21BBF5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.BonusSystem", "10.BonusSystem\10.BonusSystem.csproj", "{2D2DCCC1-B285-415F-986E-5DC85130592D}"
 EndProject
