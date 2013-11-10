@@ -1,29 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.ThreeIntegers", "1.ThreeIntegers\1.ThreeIntegers.csproj", "{F5FD5920-0680-4F18-B5D5-CFBE003AAD35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ThreeIntegers", "1.ThreeIntegers\01.ThreeIntegers.csproj", "{F5FD5920-0680-4F18-B5D5-CFBE003AAD35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.CircleAreaAndPerimeter", "2.CircleAreaAndPerimeter\2.CircleAreaAndPerimeter.csproj", "{A909D888-E5E9-481D-B1E1-10155223A0CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CircleAreaAndPerimeter", "2.CircleAreaAndPerimeter\02.CircleAreaAndPerimeter.csproj", "{A909D888-E5E9-481D-B1E1-10155223A0CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.Fibonacci", "9.Fibonacci\9.Fibonacci.csproj", "{7B84304D-F754-434B-BBDA-52E168029E2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.Fibonacci", "9.Fibonacci\09.Fibonacci.csproj", "{7B84304D-F754-434B-BBDA-52E168029E2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.QuadraticEquation", "6.QuadraticEquation\6.QuadraticEquation.csproj", "{4646D7E1-38BF-4C15-A472-27BDD2B48D6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.QuadraticEquation", "6.QuadraticEquation\06.QuadraticEquation.csproj", "{4646D7E1-38BF-4C15-A472-27BDD2B48D6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.GreaterNumber", "5.GreaterNumber\5.GreaterNumber.csproj", "{607382F1-7AC4-4BEF-8FAF-CE4AC3177547}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.GreaterNumber - v1", "5.GreaterNumber\05.GreaterNumber - v1.csproj", "{607382F1-7AC4-4BEF-8FAF-CE4AC3177547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.SumOfNumbers", "7.SumOfNumbers\7.SumOfNumbers.csproj", "{870D0A69-325C-4AA1-8D6F-98AEF4A78BEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.SumOfNumbers", "7.SumOfNumbers\07.SumOfNumbers.csproj", "{870D0A69-325C-4AA1-8D6F-98AEF4A78BEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.PrintScope", "8.PrintScope\8.PrintScope.csproj", "{42E750EF-9194-4046-8C8D-0C00E476CEEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.PrintScope", "8.PrintScope\08.PrintScope.csproj", "{42E750EF-9194-4046-8C8D-0C00E476CEEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.PrintNoReminder", "4.PrintNoReminder\4.PrintNoReminder.csproj", "{CB768192-CC5E-484D-AC9E-86EC30B6340B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.PrintNoReminder", "4.PrintNoReminder\04.PrintNoReminder.csproj", "{CB768192-CC5E-484D-AC9E-86EC30B6340B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.CompanyManager", "3.CompanyManager\3.CompanyManager.csproj", "{A6459FCC-5EBD-45D8-AB98-51E68DCFC7EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CompanyManager", "3.CompanyManager\03.CompanyManager.csproj", "{A6459FCC-5EBD-45D8-AB98-51E68DCFC7EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.CalculateSum", "10.CalculateSum\10.CalculateSum.csproj", "{2D492DC8-7666-4830-963F-216B9152AC9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.FallingRocks", "11.FallingRocks\11.FallingRocks.csproj", "{A6B72EE0-C790-4608-951E-9AB83E165629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.GreaterNumberV2", "5.GreaterNumberV2\5.GreaterNumberV2.csproj", "{E13BB91F-9F39-46FD-9954-80614B18C894}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.GreaterNumber - v2", "5.GreaterNumberV2\05.GreaterNumber - v2.csproj", "{E13BB91F-9F39-46FD-9954-80614B18C894}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

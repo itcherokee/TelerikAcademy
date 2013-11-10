@@ -1,24 +1,48 @@
 ﻿using System;
 
-class SumOfNNumbers
+/// <summary>
+/// Task: "7. Write a program that gets a number n and after that gets more n numbers 
+/// and calculates and prints their sum."
+/// </summary>
+public class SumOfNNumbers
 {
-    static void Main()
+    public static void Main()
     {
-        //Write a program that gets a number n and after that gets 
-        //more n numbers and calculates and prints their sum. 
-
         Console.Title = "Sum of all entered numbers";
-        Console.Write("Enter the number of digits to be entered (sum): ");
-        long totalNumbers = 0;
-        long sumOfAllNumbers = 0;
-        totalNumbers = long.Parse(Console.ReadLine());
+        long totalNumbers = EnterData("Enter the count of numbers to be calculated (sum): ");
+        long sumOfAllNumbers = default(long);
         for (int i = 0; i < totalNumbers; i++)
         {
-            Console.Write("Enter digit number {0}: ", i + 1);
-            sumOfAllNumbers += long.Parse(Console.ReadLine());
+            sumOfAllNumbers += EnterData(string.Format("Enter digit number {0}: ", i + 1));
         }
-        Console.WriteLine("Sum of all entered numbers is {0}: ", sumOfAllNumbers);
+
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("Sum of all entered numbers is: {0}", sumOfAllNumbers);
         Console.ReadKey();
     }
-}
 
+    private static long EnterData(string message)
+    {
+        bool isValidInput = default(bool);
+        long enteredValue = default(long);
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = long.TryParse(Console.ReadLine(), out enteredValue);
+            if (!isValidInput)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have entered invalid number! Try again <press any key...>");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        while (!isValidInput);
+
+        Console.ForegroundColor = ConsoleColor.White;
+        return enteredValue;
+    }
+}
