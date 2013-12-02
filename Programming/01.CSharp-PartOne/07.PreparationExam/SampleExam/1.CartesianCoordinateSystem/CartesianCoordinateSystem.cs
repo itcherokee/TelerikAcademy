@@ -1,8 +1,8 @@
 ﻿using System;
 
-class CartesianCoordinateSystem
+public class CartesianCoordinateSystem
 {
-    static void Main()
+    public static void Main()
     {
         decimal x = decimal.Parse(Console.ReadLine());
         decimal y = decimal.Parse(Console.ReadLine());
@@ -13,16 +13,20 @@ class CartesianCoordinateSystem
                 Console.WriteLine("0");
             }
             else
-
+            {
                 if (x == 0)
                 {
                     Console.WriteLine("5");
                 }
-                else Console.WriteLine("6");
+                else
+                {
+                    Console.WriteLine("6");
+                }
+            }
         }
         else if (x > 0)
         {
-            if (y>0) 
+            if (y > 0)
             {
                 Console.WriteLine("1");
             }
@@ -37,14 +41,17 @@ class CartesianCoordinateSystem
             {
                 Console.WriteLine("1");
             }
+
             if (x > 0 && y < 0)
             {
                 Console.WriteLine("4");
             }
+
             if (x < 0 && y < 0)
             {
                 Console.WriteLine("3");
             }
+
             if (x < 0 && y > 0)
             {
                 Console.WriteLine("2");

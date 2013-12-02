@@ -1,17 +1,14 @@
 ﻿using System;
 
-class ForestRoad
+public class ForestRoad
 {
-
-    static void Main()
+    public static void Main()
     {
-        //var stopwatch = System.Diagnostics.Stopwatch.StartNew();
         int numberInput = int.Parse(Console.ReadLine());
-        //if ((numberInput < 2) || (numberInput > 79)) { return; }
         bool direction = true;
         int pathMark = 1;
         int row = 1;
-        string mapRow = "";
+        string mapRow = string.Empty;
         do
         {
             for (int i = 1; i <= numberInput; i++)
@@ -25,6 +22,7 @@ class ForestRoad
                     mapRow += '.';
                 }
             }
+
             Console.WriteLine(mapRow);
             if (direction)
             {
@@ -34,6 +32,7 @@ class ForestRoad
             {
                 pathMark--;
             }
+
             if (pathMark == numberInput)
             {
                 direction = false;
@@ -42,10 +41,10 @@ class ForestRoad
             {
                 direction = true;
             }
+
             row++;
-            mapRow = "";
-        } while (row != (2 * numberInput));
-        //stopwatch.Stop();
-        //Console.WriteLine(stopwatch.Elapsed);
+            mapRow = string.Empty;
+        }
+        while (row != (2 * numberInput));
     }
 }

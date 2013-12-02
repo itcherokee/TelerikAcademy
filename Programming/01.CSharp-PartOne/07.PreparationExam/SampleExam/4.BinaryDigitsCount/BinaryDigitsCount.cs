@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
 
-class BinaryDigitsCount
+public class BinaryDigitsCount
 {
-    static void Main()
+    public static void Main()
     {
-        //var stopwatch = System.Diagnostics.Stopwatch.StartNew();
         byte binary = byte.Parse(Console.ReadLine());
         ushort numberOfDigits = ushort.Parse(Console.ReadLine());
         uint resultMask = 0;
@@ -15,11 +14,12 @@ class BinaryDigitsCount
         {
             numbers.Add(uint.Parse(Console.ReadLine()));
         }
+
         foreach (uint number in numbers)
         {
             uint mask = 1;
             uint modifiedMask = 0;
-            int MSB = 0;
+            int msb = 0;
             for (int i = 31; i >= 0; i--)
             {
                 modifiedMask = mask << i;
@@ -27,10 +27,12 @@ class BinaryDigitsCount
                 resultMask = resultMask >> i;
                 if (resultMask == 1)
                 {
-                    MSB = i; break;
+                    msb = i;
+                    break;
                 }
             }
-            for (int i = 0; i <= MSB; i++)
+
+            for (int i = 0; i <= msb; i++)
             {
                 modifiedMask = mask << i;
                 resultMask = modifiedMask & number;
@@ -40,11 +42,10 @@ class BinaryDigitsCount
                     resultBinaries++;
                 }
             }
+
             mask = 0;
             Console.WriteLine(resultBinaries);
             resultBinaries = 0;
         }
-        //stopwatch.Stop();
-        //Console.WriteLine(stopwatch.Elapsed);
     }
 }
