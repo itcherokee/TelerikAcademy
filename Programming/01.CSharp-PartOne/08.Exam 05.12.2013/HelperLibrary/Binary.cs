@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace HelperLibrary
+﻿namespace HelperLibrary
 {
+    using System;
+
     public class Binary
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace HelperLibrary
         public static int SetBitToZero(int inputNumber, int position)
         {
             int mask = 1 << position;
-            int result = inputNumber & ~(mask);
+            int result = inputNumber & ~mask;
             return result;
         }
 
@@ -114,7 +114,7 @@ namespace HelperLibrary
             }
 
             mask = (mask - 1) << position;
-            int result = inputNumber & ~(mask);
+            int result = inputNumber & ~mask;
             return result;
         }
 
@@ -225,7 +225,7 @@ namespace HelperLibrary
 
             int firstBitRange = GetRangeOfBitsAsDigit(result, positionOfFirstBitRange, countOfBits);
             int secondBitRange = GetRangeOfBitsAsDigit(result, positionOfSecondBitRange, countOfBits);
-            
+
             result = SetBitsRangeToZero(result, positionOfFirstBitRange, countOfBits);
             result = SetBitsRangeToZero(result, positionOfSecondBitRange, countOfBits);
 
