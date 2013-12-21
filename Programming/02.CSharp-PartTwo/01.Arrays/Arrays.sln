@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.BinarySearch", "11.Binar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.LetterIndex", "12.LetterIndex\12.LetterIndex.csproj", "{1510FC5C-CB5E-4BBE-A7ED-0644A3312351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_NOT_DONE-13.MergeSort", "13.MergeSort\_NOT_DONE-13.MergeSort.csproj", "{C5C09D80-3D6F-45B7-AE71-3D3220C2E34D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.MergeSort", "13.MergeSort\13.MergeSort.csproj", "{C5C09D80-3D6F-45B7-AE71-3D3220C2E34D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.QuickSort", "14.QuickSort\14.QuickSort.csproj", "{B30842C3-EB4E-4523-A089-6731D2242B95}"
 EndProject
