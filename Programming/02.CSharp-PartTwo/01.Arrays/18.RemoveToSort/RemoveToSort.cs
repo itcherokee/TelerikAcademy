@@ -18,24 +18,24 @@ public class RemoveToSort
     {
         Console.Title = "Remove elements in array in order to become sorted";
 
-        // int[] arrayOfNumbers = { 6, 1, 4, 3, 0, 3, 6, 4, 5 };
-        // int[] arrayOfNumbers = { 6, 1, 4, 2, 6, 3, 18, 4, 0, 3, 6, 4, 5, 7, 111, 112 };
-        int[] arrayOfNumbers = EnterElements();
+        // int[] numbers = { 6, 1, 4, 3, 0, 3, 6, 4, 5 };
+        // int[] numbers = { 6, 1, 4, 2, 6, 3, 18, 4, 0, 3, 6, 4, 5, 7, 111, 112 };
+        int[] numbers = EnterElements();
 
         // Using List of KeyValuePairs which will stored to number of sorted elements as Key 
         // and the patern to extract them from input array as Value
         List<KeyValuePair<int, string>> winningSequences = new List<KeyValuePair<int, string>>();
         int biggest = 0;
-        string pattern = string.Empty;
-        for (int bits = BinToDec(arrayOfNumbers.Length); bits > 0; bits--)
+        string pattern = default(string);
+        for (int bits = BinToDec(numbers.Length); bits > 0; bits--)
         {
             // Convert the binarry pattern in string format
-            pattern = Convert.ToString(bits, 2).PadLeft(arrayOfNumbers.Length, '0');
+            pattern = Convert.ToString(bits, 2).PadLeft(numbers.Length, '0');
             List<int> numberIndexes = new List<int>();
 
             // Discovering all numbers that match the pattern and adding 
             // them to candidates list which forms the candidate sorted array
-            for (int index = 0; index < arrayOfNumbers.Length; index++)
+            for (int index = 0; index < numbers.Length; index++)
             {
                 if (pattern[index] == '1')
                 {
@@ -51,16 +51,16 @@ public class RemoveToSort
                 // Analyzing does the candidate list elements are sorted
                 // if yes -> add them to winners list
                 bool isSorted = true;
-                int previousElement = arrayOfNumbers[numberIndexes[0]];
+                int previousElement = numbers[numberIndexes[0]];
                 for (int index = 1; index < numberIndexes.Count; index++)
                 {
-                    if (previousElement >= arrayOfNumbers[numberIndexes[index]])
+                    if (previousElement >= numbers[numberIndexes[index]])
                     {
                         isSorted = false;
                         break;
                     }
 
-                    previousElement = arrayOfNumbers[numberIndexes[index]];
+                    previousElement = numbers[numberIndexes[index]];
                 }
 
                 if (isSorted)
@@ -83,10 +83,10 @@ public class RemoveToSort
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Sorted array(s) found!\n");
                 Console.Write("Input  ");
-                for (int i = 0; i < arrayOfNumbers.Length; i++)
+                for (int i = 0; i < numbers.Length; i++)
                 {
-                    Console.Write("|{0,3}", arrayOfNumbers[i]);
-                    if (i == arrayOfNumbers.Length - 1)
+                    Console.Write("|{0,3}", numbers[i]);
+                    if (i == numbers.Length - 1)
                     {
                         Console.WriteLine("|");
                     }
@@ -97,18 +97,18 @@ public class RemoveToSort
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Sorted ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                for (int index = 0; index < arrayOfNumbers.Length; index++)
+                for (int index = 0; index < numbers.Length; index++)
                 {
                     if (item.Value[index] == '1')
                     {
-                        Console.Write("|{0,3}", arrayOfNumbers[index]);
+                        Console.Write("|{0,3}", numbers[index]);
                     }
                     else
                     {
                         Console.Write("|   ");
                     }
 
-                    if (index == arrayOfNumbers.Length - 1)
+                    if (index == numbers.Length - 1)
                     {
                         Console.WriteLine("|\n");
                     }

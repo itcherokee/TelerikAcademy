@@ -10,7 +10,6 @@ public class CompareTwoArrays
     {
         Console.Title = "Compare two arrays";
         Console.ForegroundColor = ConsoleColor.White;
-        int arrayLength = EnterData("Enter the size of the arrays: ");
         string[] arrayOne = EnterElements("First");
         string[] arrayTwo = EnterElements("Second");
 
@@ -39,6 +38,7 @@ public class CompareTwoArrays
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("\nArrays are {0}identical!", isIdentical ? string.Empty : "NOT ");
         Console.WriteLine("Position of first elements that are not identical is {0}", indexPosition);
+        Console.ReadKey();
     }
 
     // Manage the input of all array elements in one line of Console
@@ -52,31 +52,5 @@ public class CompareTwoArrays
         string[] elementArray = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         Console.ForegroundColor = ConsoleColor.White;
         return elementArray;
-    }
-
-    // Manage the input of single value from Console
-    private static int EnterData(string message)
-    {
-        bool isValidInput = default(bool);
-        int enteredValue = default(int);
-        do
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.Write(message);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            isValidInput = int.TryParse(Console.ReadLine(), out enteredValue);
-            if (!isValidInput)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You have entered invalid number! Try again <press any key...>");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.ReadKey();
-                Console.Clear();
-            }
-        }
-        while (!isValidInput);
-
-        Console.ForegroundColor = ConsoleColor.White;
-        return enteredValue;
     }
 }

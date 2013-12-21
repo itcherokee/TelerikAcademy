@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.MaximalSum", "06.Maximal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.SelectionSort", "07.SelectionSort\07.SelectionSort.csproj", "{627EF039-C72F-4C5F-AED3-F040FB6BB9FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_NOT-08.SequenceOfMaxSum", "08.SequenceOfMaxSum\_NOT-08.SequenceOfMaxSum.csproj", "{164F4B2E-CE07-40D5-8254-63B58CDE4A93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.SequenceOfMaxSum", "08.SequenceOfMaxSum\08.SequenceOfMaxSum.csproj", "{164F4B2E-CE07-40D5-8254-63B58CDE4A93}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.MostFrequentNumber-v1", "09.MostFrequentNumber-v1\09.MostFrequentNumber-v1.csproj", "{7184E5A2-4404-4459-B7E8-B15385B63BAA}"
 EndProject
@@ -29,9 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.BinarySearch", "11.Binar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.LetterIndex", "12.LetterIndex\12.LetterIndex.csproj", "{1510FC5C-CB5E-4BBE-A7ED-0644A3312351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_NOT-13.MergeSort", "13.MergeSort\_NOT-13.MergeSort.csproj", "{C5C09D80-3D6F-45B7-AE71-3D3220C2E34D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_NOT_DONE-13.MergeSort", "13.MergeSort\_NOT_DONE-13.MergeSort.csproj", "{C5C09D80-3D6F-45B7-AE71-3D3220C2E34D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_NOT-14.QuickSort", "14.QuickSort\_NOT-14.QuickSort.csproj", "{B30842C3-EB4E-4523-A089-6731D2242B95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.QuickSort", "14.QuickSort\14.QuickSort.csproj", "{B30842C3-EB4E-4523-A089-6731D2242B95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15.FindAllPrimeNumbers", "15.FindAllPrimeNumbers\15.FindAllPrimeNumbers.csproj", "{222AB3CD-E7E4-4DE8-8592-083D3DCE95C3}"
 EndProject
@@ -41,9 +41,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17.ThreeIntSubsetSum", "17.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18.RemoveToSort", "18.RemoveToSort\18.RemoveToSort.csproj", "{AD04EBC0-FF33-4066-BFF7-30FC40DCC84D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_NOT-19.Permutations", "19.Permutations\_NOT-19.Permutations.csproj", "{4BCAA321-BF6C-4AFB-96C0-8C441E3617A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19.Permutations", "19.Permutations\19.Permutations.csproj", "{4BCAA321-BF6C-4AFB-96C0-8C441E3617A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20.Variations", "20.Variations\20.Variations.csproj", "{0C92B0A3-B737-493F-B5A8-B43E73200BED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21.CombinationsDistinct", "21.CombinationsDistinct\21.CombinationsDistinct.csproj", "{D169DC4B-1AFA-4D77-BB71-54814D63191D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -191,6 +193,14 @@ Global
 		{0C92B0A3-B737-493F-B5A8-B43E73200BED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0C92B0A3-B737-493F-B5A8-B43E73200BED}.Release|x86.ActiveCfg = Release|x86
 		{0C92B0A3-B737-493F-B5A8-B43E73200BED}.Release|x86.Build.0 = Release|x86
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Debug|x86.ActiveCfg = Debug|x86
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Debug|x86.Build.0 = Debug|x86
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Release|x86.ActiveCfg = Release|x86
+		{D169DC4B-1AFA-4D77-BB71-54814D63191D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

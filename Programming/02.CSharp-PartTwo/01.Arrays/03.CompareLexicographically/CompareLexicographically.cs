@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Task: "3. Write a program that compares two char arrays lexicographically (letter by letter)."
@@ -26,26 +23,21 @@ public class CompareLexicographically
         Console.Title = "Compare lexicographically two char arrays";
         char[] arrayOne = EnterElements("First");
         char[] arrayTwo = EnterElements("Second");
-        bool isEqualLength = true;
-        if (arrayOne.Length != arrayTwo.Length)
-        {
-            isEqualLength = false;
-        }
-
+        bool isEqualLength = arrayOne.Length == arrayTwo.Length;
         char[] shorterArray = arrayOne.Length < arrayTwo.Length ? arrayOne : arrayTwo;
         Console.ForegroundColor = ConsoleColor.Yellow;
-
         if (arrayOne.Length != 0 && arrayTwo.Length != 0)
         {
             // Compare elements of char array by using ASCII code of each one; if difference, select winner and exit the program
             for (int index = 0; index < shorterArray.Length; index++)
             {
-                if ((int)arrayOne[index] < (int)arrayTwo[index])
+                if (arrayOne[index] < arrayTwo[index])
                 {
                     PrintWinner("First array wins!", arrayOne);
                     return;
                 }
-                else if ((int)arrayOne[index] > (int)arrayTwo[index])
+
+                if (arrayOne[index] > arrayTwo[index])
                 {
                     PrintWinner("Second array wins!", arrayTwo);
                     return;

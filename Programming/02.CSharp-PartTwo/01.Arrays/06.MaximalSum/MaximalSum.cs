@@ -21,14 +21,9 @@ public class MaximalSum
         int[] elements = new int[size];
         if (numberOfSumElements > size || numberOfSumElements == 0)
         {
-            if (numberOfSumElements != 0)
-            {
-                Terminate("Count of elements to look for maximal sum is bigger than array's size!");
-            }
-            else
-            {
-                Terminate("Count of elements to look for maximal sum is 0! No calulation possible.");
-            }
+            Terminate(numberOfSumElements != 0
+                ? "Count of elements to look for maximal sum is bigger than array's size!"
+                : "Count of elements to look for maximal sum is 0! No calulation possible.");
         }
         else
         {
@@ -65,7 +60,7 @@ public class MaximalSum
                 }
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("The elements that calculate maximal sum ({0} out of {1}) are:", numberOfSumElements, size);
+                Console.WriteLine("\nThe elements that calculate maximal sum ({0} out of {1}) are:", numberOfSumElements, size);
                 int totalSum = 0;
                 Console.ForegroundColor = ConsoleColor.Green;
                 for (int index = 0; index < sumElements.Count; index++)
@@ -76,11 +71,11 @@ public class MaximalSum
                         Console.Write(", ");
                     }
 
-                    totalSum += (int)sumElements[index].Key;
+                    totalSum += sumElements[index].Key;
                 }
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.Write("\nTotal SUM is: ");
+                Console.Write("\n\nTotal SUM is: ");
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(totalSum);
             }
@@ -89,6 +84,8 @@ public class MaximalSum
                 Terminate(string.Format("Empty or not full array (N={0}) of elements detected!", size));
             }
         }
+
+        Console.ReadKey();
     }
 
     private static void Terminate(string message)

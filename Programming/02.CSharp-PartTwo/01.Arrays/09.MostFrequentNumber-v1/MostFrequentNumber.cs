@@ -58,9 +58,9 @@ public class MostFrequentNumber
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Empty array provided!");
             Console.WriteLine("Program will exit...");
-            Console.ReadKey();
-            Environment.Exit(0);
         }
+
+        Console.ReadKey();
     }
 
     // Manage the input of all array elements in one line of Console

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 /// <summary>
@@ -117,6 +118,8 @@ public class ThreeIntSubsetSum
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Unfortunately there is no such Sum in the sequence.");
         }
+
+        Console.ReadKey();
     }
 
     // User input management
@@ -162,7 +165,7 @@ public class ThreeIntSubsetSum
             int sumBits = 0;
             for (int index = 0; index < pattern.Length; index++)
             {
-                sumBits += int.Parse(pattern[index].ToString());
+                sumBits += int.Parse(pattern[index].ToString(CultureInfo.InvariantCulture));
             }
 
             if (sumBits == elementsNumber)

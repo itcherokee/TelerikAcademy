@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 /// <summary>
@@ -90,7 +91,7 @@ public class MaximalIncreasingSequence
                 // On next line the extension method "Select" is acting like "for" loop over array's elements and converting 
                 // each int element to String, than ToArray() produce a temp array of strings (comming from "Select") which is passed
                 // to string.Join and after that we print (join) only elements which are part of increasing sequence.
-                Console.WriteLine(string.Join(",", elements.Select(x => x.ToString()).ToArray(), highSequenceStartIndex, highSequenceLength));
+                Console.WriteLine(string.Join(",", elements.Select(x => x.ToString(CultureInfo.InvariantCulture)).ToArray(), highSequenceStartIndex, highSequenceLength));
             }
         }
         else
@@ -99,5 +100,7 @@ public class MaximalIncreasingSequence
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("No elements in the array! Program will exit now...");
         }
+
+        Console.ReadKey();
     }
 }

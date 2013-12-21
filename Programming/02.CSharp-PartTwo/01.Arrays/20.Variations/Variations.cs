@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
 
 /// <summary>
 /// Task: "20. Write a program that reads two numbers N and K and generates all the variations 
@@ -8,63 +10,73 @@
 /// </summary>
 public class Variations
 {
-    private static int combinationSize = 0;
-    private static int upperBound = 0;
-    private static int[] arrayOfNumbers;
+    private static int[] numbers;
 
     public static void Main()
     {
         Console.Title = "Print all combinations of K elements from set [1..N].";
-        Console.Write("Enter upper bound of set [1..(N)]: ");
-        upperBound = int.Parse(Console.ReadLine());
-        //arrayOfNumbers = new int[upperBound];
-        Console.Write("Enter number of elements to combine (K): ");
-        combinationSize = int.Parse(Console.ReadLine());
-        Console.WriteLine("All possible variations follow...");
-        Console.Write("{");
-        for (int firstIndex = 1; firstIndex <= upperBound; firstIndex++)
+        int upperBound = EnterData("Enter upper bound of set [1..(N)]: ");
+        numbers = new int[upperBound];
+        int variationSize = EnterData("Enter number of elements to combine (K): ");
+        Console.WriteLine("\nAll possible variations follow...");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Variate(0, variationSize, upperBound);
+        Console.WriteLine();
+        Console.ReadKey();
+    }
+
+    /// <summary>
+    /// Calculates the possible variations
+    /// </summary>
+    /// <param name="cuurentBound">Current bound of the variation (up to now).</param>
+    /// <param name="variationSize">The total size of the variation to be constructed.</param>
+    /// <param name="upperBound">The size of the numbers range that is initialy provided.</param>
+    private static void Variate(int cuurentBound, int variationSize, int upperBound)
+    {
+        if (variationSize == cuurentBound)
         {
-            for (int secondIndex = 1; secondIndex <= upperBound; secondIndex++)
-            {
-                Console.Write("{");
-                for (int size = 0; size < combinationSize; size++)
-                {
-                    Console.Write("{0}{1}", arrayOfNumbers[size]);
-                    if (size < combinationSize - 1)
-                    {
-                        Console.Write(",");
-                    }
-                }
+            Print(variationSize);
+            return;
+        }
 
-                Console.Write("}");
-
-               // Console.Write("({0},{1})", firstIndex,secondIndex);
-            }
+        for (int i = 1; i <= upperBound; i++)
+        {
+            numbers[cuurentBound] = i;
+            Variate(cuurentBound + 1, variationSize, upperBound);
         }
     }
 
-    //private static void Combinate(int cuurentBound)
-    //{
-    //    if (combinationSize == cuurentBound)
-    //    {
-    //        Console.Write("{");
-    //        for (int i = 0; i < combinationSize; i++)
-    //        {
-    //            Console.Write("{0}", arrayOfNumbers[i]);
-    //            if (i < combinationSize - 1)
-    //            {
-    //                Console.Write(",");
-    //            }
-    //        }
+    // Prints single variation to the Console
+    private static void Print(int variationSize)
+    {
+        Console.Write("{");
+        Console.Write(string.Join(",", numbers.Select(x => x.ToString(CultureInfo.InvariantCulture)).ToArray(), 0, variationSize));
+        Console.Write("} ");
+    }
 
-    //        Console.Write("} ");
-    //        return;
-    //    }
+    // Handles user input
+    private static int EnterData(string message)
+    {
+        bool isValidInput = default(bool);
+        int enteredValue = default(int);
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = int.TryParse(Console.ReadLine(), out enteredValue);
+            if (!isValidInput)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have entered invalid number! Try again <press any key...>");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        while (!isValidInput);
 
-    //    for (int i = 1; i <= upperBound; i++)
-    //    {
-    //        arrayOfNumbers[cuurentBound] = i;
-    //        Combinate(cuurentBound + 1);
-    //    }
-    //}
+        Console.ForegroundColor = ConsoleColor.White;
+        return enteredValue;
+    }
 }

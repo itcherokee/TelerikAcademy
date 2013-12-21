@@ -23,6 +23,9 @@ public class FindAllPrimeNumbers
 
         // List will hold all primes that we discover
         List<int> primeNumbers = new List<int>();
+
+        // Eratosthenes algorythm
+        Console.Write("Calculating...");
         for (int counter = 2; counter < numberArray.Length; counter++)
         {
             if (numberArray[counter].HasValue)
@@ -40,6 +43,17 @@ public class FindAllPrimeNumbers
             }
         }
 
-        Console.WriteLine("Primes: {0}", string.Join(", ", primeNumbers));
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write("\nDo you want preview of all numbers (Y/N): ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        string answer = Console.ReadLine();
+        if (answer == "Y" || answer == "y")
+        {
+            Console.WriteLine("Primes: {0}", string.Join(", ", primeNumbers));
+        }
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Total prime numbers in the range are: {0}", primeNumbers.Count);
+        Console.ReadKey();
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Globalization;
 
 /// <summary>
 /// Task: "12. Write a program that creates an array containing all letters from the alphabet (A-Z). 
@@ -11,6 +9,8 @@ public class LetterIndex
 {
     public static void Main()
     {
+        Console.Title = "Print index of letter";
+
         // Create the array with alphabet (A-Z) - no small letters
         char[] alphabet = new char[26];
         for (int index = 0; index < 26; index++)
@@ -34,22 +34,17 @@ public class LetterIndex
         Console.WriteLine(new string('-', 22));
         Console.ForegroundColor = ConsoleColor.Yellow;
         int letterIndex = 0;
-        string arrayIndex = string.Empty;
-        for (int index = 0; index < word.Length; index++)
+        string arrayIndex = default(string);
+        foreach (char symbol in word)
         {
-            letterIndex = Array.BinarySearch(alphabet, word[index]);
+            letterIndex = Array.BinarySearch(alphabet, symbol);
 
-            // checks does symbol exists in our array - everything else than capital Letters A..Z
-            if (letterIndex < 0)
-            {
-                arrayIndex = "-";
-            }
-            else
-            {
-                arrayIndex = letterIndex.ToString();
-            }
+            // Checks does symbol exists in our array - everything else than capital Letters A..Z
+            arrayIndex = letterIndex < 0 ? "-" : letterIndex.ToString(CultureInfo.InvariantCulture);
 
-            Console.WriteLine("  {0,-7}  {1,-6} {2}", word[index], arrayIndex, (int)letterIndex + 65);
+            Console.WriteLine("  {0,-7}  {1,-6} {2}", symbol, arrayIndex, letterIndex + 65);
         }
+
+        Console.ReadKey();
     }
 }

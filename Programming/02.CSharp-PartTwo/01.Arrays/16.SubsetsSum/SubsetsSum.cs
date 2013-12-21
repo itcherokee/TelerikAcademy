@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 /// <summary>
 /// Task: "16. * We are given an array of integers and a number S. Write a program 
@@ -27,10 +26,10 @@ public class SubsetsSum
         // int[] arrayOfNumbers = { 2, 1, 2, 4, 3, 5, 2, 6 };
         // int[] arrayOfNumbers = { 2, 88, 2, 4, 3, 5, 111, 6, 10, 10 };
         int[] arrayOfNumbers = { -2, 4, 6, -8, -10, -99, 76 };
+        Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Given array: " + string.Join(", ", arrayOfNumbers));
-        Console.Write("Enter Sum to search: ");
-        int sumToSearch = int.Parse(Console.ReadLine());
-        string pattern = string.Empty;
+        int sumToSearch = EnterData("Enter Sum to search: ");
+        string pattern = default(string);
         int currentSum = 0;
         bool isSumFound = false;
 
@@ -61,7 +60,7 @@ public class SubsetsSum
             }
 
             currentSum = 0;
-        } 
+        }
 
         // Output to Console
         if (isSumFound)
@@ -93,7 +92,7 @@ public class SubsetsSum
                     }
                     else
                     {
-                        Console.Write("|     ", arrayOfNumbers[index]);
+                        Console.Write("|     ");
                     }
 
                     if (index == arrayOfNumbers.Length - 1)
@@ -108,6 +107,8 @@ public class SubsetsSum
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Unfortunately there is no such Sum in the sequence.");
         }
+
+        Console.ReadKey();
     }
 
     // Generating the patern to be used against array elements
@@ -120,5 +121,31 @@ public class SubsetsSum
         }
 
         return result;
+    }
+
+    // Handles user input
+    private static int EnterData(string message)
+    {
+        bool isValidInput = default(bool);
+        int enteredValue = default(int);
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(message);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            isValidInput = int.TryParse(Console.ReadLine(), out enteredValue);
+            if (!isValidInput)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You have entered invalid number! Try again <press any key...>");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+        while (!isValidInput);
+
+        Console.ForegroundColor = ConsoleColor.White;
+        return enteredValue;
     }
 }

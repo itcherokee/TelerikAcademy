@@ -13,75 +13,61 @@ public class SelectionSort
     {
         string[] array = EnterElements();
         int[] numbers = array.Select(x => int.Parse(x)).ToArray();
-        Console.Write("Run algorythm with Insert in front the smallest number or not (Y/N): ");
-        bool withInsert = Console.ReadLine().ToUpper() == "Y" ? true : false;
-        Console.Write("Do you want view of each sort step (Y/N): ");
+
+        // Eventually provides preview on each step is user request it
+        Console.Write("\nDo you want preview of each sort step (Y/N): ");
         bool withPreview = Console.ReadLine().ToUpper() == "Y" ? true : false;
-        Sort(numbers, withInsert, withPreview);
-        Console.Write("Sorted array: ");
-        StepsPreview(numbers);
+        Sort(numbers, withPreview);
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write("\n\nSorted array: ");
+        Print(numbers);
+        Console.WriteLine();
         Console.ReadKey();
     }
 
-    // Print on Console each step of sorting algorythm
-    private static void StepsPreview(int[] numbers)
-    {
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(string.Join(",", numbers));
-    }
-
     // Sorting algorythm implementation
-    private static void Sort(int[] numbers, bool withInsert, bool withPreview = false)
+    private static void Sort(int[] numbers, bool withPreview = false)
     {
         bool smallerExist = false;
+        int stepCounter = 1;
         int currentSmallestNumberIndex = default(int);
-        for (int outer = 0; outer < numbers.Length; outer++)
+        for (int outerIndex = 0; outerIndex < numbers.Length; outerIndex++)
         {
-            if (withInsert)
+            currentSmallestNumberIndex = outerIndex;
+            smallerExist = false;
+            for (int innerIndex = outerIndex + 1; innerIndex < numbers.Length; innerIndex++)
             {
-                currentSmallestNumberIndex = outer;
-                for (int inner = outer + 1; inner < numbers.Length; inner++)
+                // Find smaller number than current selected
+                if (numbers[innerIndex] < numbers[currentSmallestNumberIndex])
                 {
-                    if (numbers[inner] < numbers[currentSmallestNumberIndex])
-                    {
-                        currentSmallestNumberIndex = inner;
-                        numbers[outer] ^= numbers[currentSmallestNumberIndex];
-                        numbers[currentSmallestNumberIndex] ^= numbers[outer];
-                        numbers[outer] ^= numbers[currentSmallestNumberIndex];
-                    }
+                    currentSmallestNumberIndex = innerIndex;
+                    smallerExist = true;
+                }
 
-                    if (withPreview)
-                    {
-                        StepsPreview(numbers);
-                    }
+                // Handles preview
+                if (withPreview)
+                {
+                    Console.Write("\nStep{0,3}: ", stepCounter++);
+                    Print(numbers);
                 }
             }
-            else
+
+            if (smallerExist)
             {
-                currentSmallestNumberIndex = outer;
-                smallerExist = false;
-                for (int inner = outer + 1; inner < numbers.Length; inner++)
-                {
-                    if (numbers[inner] < numbers[currentSmallestNumberIndex])
-                    {
-                        currentSmallestNumberIndex = inner;
-                        smallerExist = true;
-                    }
-
-                    if (withPreview)
-                    {
-                        StepsPreview(numbers);
-                    }
-                }
-
-                if (smallerExist)
-                {
-                    numbers[outer] ^= numbers[currentSmallestNumberIndex];
-                    numbers[currentSmallestNumberIndex] ^= numbers[outer];
-                    numbers[outer] ^= numbers[currentSmallestNumberIndex];
-                }
+                // Smaller number has been found, so positions of numbers are swaped
+                numbers[outerIndex] ^= numbers[currentSmallestNumberIndex];
+                numbers[currentSmallestNumberIndex] ^= numbers[outerIndex];
+                numbers[outerIndex] ^= numbers[currentSmallestNumberIndex];
             }
         }
+    }
+
+    // Output to Console
+    private static void Print(int[] numbers)
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(string.Join(",", numbers));
+        Console.ForegroundColor = ConsoleColor.White;
     }
 
     // Manage the input of all array elements in one line of Console

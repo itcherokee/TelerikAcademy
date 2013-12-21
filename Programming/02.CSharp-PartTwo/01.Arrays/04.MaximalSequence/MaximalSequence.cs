@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Task: "4. Write a program that finds the maximal sequence of equal elements in an array.
@@ -76,5 +73,7 @@ public class MaximalSequence
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("No elements in the array! Program will exit now...");
         }
+
+        Console.ReadKey();
     }
 }

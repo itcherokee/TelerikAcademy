@@ -12,16 +12,17 @@ public class ArrayOf20Integers
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Initial value of array elements:");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        int[] smallArray = new int[20];
-        Console.WriteLine(string.Join(", ", smallArray));
-        for (int index = 0; index < smallArray.Length; index++)
+        int[] numbers = new int[20];
+        Console.WriteLine(string.Join(", ", numbers));
+        for (int index = 0; index < numbers.Length; index++)
         {
-            smallArray[index] = index * 5;
+            numbers[index] = index * 5;
         }
 
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("\nArray elements' index multiplied by 5 and assigned to each:");
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine(string.Join(", ", smallArray));
+        Console.WriteLine(string.Join(", ", numbers));
+        Console.ReadKey();
     }
 }

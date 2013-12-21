@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 /// <summary>
@@ -23,6 +24,11 @@ public class SequenceOfSum
     {
         Console.Title = "A sequence of integers in array equal to given Sum";
         int sum = EnterData("What is the value of the Sum to be searched: ");
+
+        // User input is converted to int array by using lambda expression - simplify by skipping FOR loops
+        // The expression: "x => int.Parse(x)", could be also replaced by just "int.Parse", but current one
+        // is more readable; This is not the best solution as we do not do checks for wrong data input, 
+        // but I thought that might be interested.
         int[] numbers = EnterElements().Select(x => int.Parse(x)).ToArray();
         int currentSum = 0;
         int start = 0;
@@ -42,7 +48,8 @@ public class SequenceOfSum
             {
                 start = outer;
                 end = outer;
-                PrintFinalResult(string.Format("The sequence of elements equal to Sum ({0}) is {1}", sum, string.Join(",", numbers.Select(x => x.ToString()).ToArray(), start, end - start + 1)));
+                string subRange = string.Join(",", numbers.Select(x => x.ToString(CultureInfo.InvariantCulture)).ToArray(), start, end - start + 1);
+                PrintFinalResult(string.Format("The sequence of elements equal to Sum ({0}) is {1}", sum, subRange));
             }
 
             for (int inner = outer + 1; inner < numbers.Length; inner++)
@@ -60,7 +67,8 @@ public class SequenceOfSum
                 {
                     start = outer;
                     end = inner;
-                    PrintFinalResult(string.Format("The sequence of elements equal to Sum ({0}) is {1}", sum, string.Join(",", numbers.Select(x => x.ToString()).ToArray(), start, end - start + 1)));
+                    string subRange = string.Join(",", numbers.Select(x => x.ToString(CultureInfo.InvariantCulture)).ToArray(), start, end - start + 1);
+                    PrintFinalResult(string.Format("The sequence of elements equal to Sum ({0}) is {1}", sum, subRange));
                 }
             }
         }

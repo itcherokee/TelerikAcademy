@@ -26,10 +26,10 @@ public class MostFrequentNumber
             // and Value is the times a Key is met in input array.
             SortedDictionary<int, int> result = new SortedDictionary<int, int>();
             int currentKey = default(int);
-            for (int index = 0; index < numbers.Length; index++)
+            foreach (int number in numbers)
             {
-                currentKey = numbers[index];
-                if (result.ContainsKey(numbers[index]))
+                currentKey = number;
+                if (result.ContainsKey(number))
                 {
                     // increment the Value of the Key
                     result[currentKey]++;
@@ -61,9 +61,9 @@ public class MostFrequentNumber
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Empty array provided!");
             Console.WriteLine("Program will exit...");
-            Console.ReadKey();
-            Environment.Exit(0);
         }
+
+        Console.ReadKey();
     }
 
     // Manage the input of all array elements in one line of Console
