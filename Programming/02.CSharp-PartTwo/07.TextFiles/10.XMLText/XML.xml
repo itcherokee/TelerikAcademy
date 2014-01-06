@@ -1,0 +1,169 @@
+﻿	<set name="ButtonLabel">
+		<str name="Quit" translate="yes">
+			<val>Salir</val>
+		</str>
+		<str name="Yes" translate="yes">
+			<val>Sí</val>
+		</str>
+		<str name="Cancel" translate="yes">
+			<val>Cancelar</val>
+		</str>
+		<str name="Browse" translate="yes">
+			<val>Examinar</val>
+		</str>
+		<str name="Retry" translate="yes">
+			<val>Reintentar</val>
+		</str>
+		<str name="Pause" translate="yes">
+			<val>Pausar</val>
+		</str>
+		<str name="Resume" translate="yes">
+			<val>Reanudar</val>
+		</str>
+		<str name="No" translate="yes">
+			<val>No</val>
+		</str>
+		<str name="save" translate="yes">
+			<val>Guardar</val>
+		</str>
+		<str name="decline" translate="yes">
+			<val>No aceptar</val>
+		</str>
+		<str name="accept" translate="yes">
+			<val>Aceptar</val>
+		</str>
+		<str name="cancelInstall" translate="yes">
+			<val>Cancelar instalación</val>
+		</str>
+		<str name="continue" translate="yes">
+			<val>Continuar</val>
+		</str>
+	</set>
+	<set name="downloadScreen">
+		<str name="title" translate="yes">
+			<val>Descargar</val>
+		</str>
+	</set>
+	<set name="Updates">
+		<str name="regularUp" translate="yes">
+			<val>Actualizaciones regulares</val>
+		</str>
+		<str name="regularUpWithReboot" translate="yes">
+			<val>Actualizaciones regulares. (Es necesario reiniciar)</val>
+		</str>
+		<str name="Update" translate="yes">
+			<val>Actualizar</val>
+		</str>
+		<str name="UpToDate" translate="yes">
+			<val>Actualizado</val>
+		</str>
+		<str name="newFeatures" translate="yes">
+			<val>Nuevas funciones</val>
+		</str>
+		<str name="newFeaturesWtihReboot" translate="yes">
+			<val>Nuevas funciones.</val>
+		</str>
+		<str name="RestartReq" translate="yes">
+			<val>(Es necesario reiniciar)</val>
+		</str>
+		<str name="securityUp" translate="yes">
+			<val>Actualizaciones de seguridad.</val>
+		</str>
+		<str name="securityUpWithReboot" translate="yes">
+			<val>Actualizaciones de seguridad. (Es necesario reiniciar)</val>
+		</str>
+		<str name="Updates" translate="yes">
+			<val>Actualizaciones</val>
+		</str>
+		<str name="UpdatesCount" translate="yes">
+			<val>Actualizaciones ({0})</val>
+		</str>
+		<str name="Updating" translate="yes">
+			<val>Actualizando...</val>
+		</str>
+		<str name="UpdateFail" translate="yes">
+			<val>Fallo en la actualización</val>
+		</str>
+		<str name="Updated" translate="yes">
+			<val>Actualizado</val>
+		</str>
+		<str name="UpdateAll" translate="yes">
+			<val>Actualizar todo</val>
+		</str>
+		<str name="finishingUp" translate="yes">
+			<val>Finalizando...</val>
+		</str>
+		<str name="UpdateWait" translate="yes">
+			<val>Esperando a actualizar</val>
+		</str>
+		<str name="NoNewUpdate" translate="yes">
+			<val>Completado. No hay actualizaciones nuevas.</val>
+		</str>
+		<str name="UpdatingAll" translate="yes">
+			<val>Actualizando todas las aplicaciones...</val>
+		</str>
+		<str name="CancellingUpdate" translate="yes">
+			<val>Cancelando la actualización...</val>
+		</str>
+		<str name="CancelUpdate" translate="yes">
+			<val>Cancelar actualización</val>
+		</str>
+	</set>
+	<set name="EulaScreen">
+		<str name="title" translate="yes">
+			<val>Acuerdo de licencia del software de Adobe</val>
+		</str>
+	</set>
+	<set name="NavigationPanel">
+		<str name="preferences" translate="yes">
+			<val>Mis preferencias</val>
+		</str>
+		<str name="OnlyPreferences" translate="yes">
+			<val>Preferencias</val>
+		</str>
+		<str name="help" translate="yes">
+			<val>Ayuda</val>
+		</str>
+		<str name="signOut" translate="yes">
+			<val>Cerrar sesión</val>
+		</str>
+		<str name="allApps" translate="yes">
+			<val>Todo</val>
+		</str>
+		<str name="allAppsCount" translate="yes">
+			<val>Todo ({0})</val>
+		</str>
+		<str name="newApps" translate="yes">
+			<val>Nuevas aplicaciones ({0})</val>
+		</str>
+	</set>
+
+	<set name="PreferenceScreen">
+		<str name="title" translate="yes">
+			<val>Preferencias</val>
+		</str>
+		<str name="installOptions" translate="yes">
+			<val>Opciones de instalación</val>
+		</str>
+		<str name="language" translate="yes">
+			<val>Idioma:</val>
+		</str>
+		<str name="installLocation" translate="yes">
+			<val>Ubicación:</val>
+		</str>
+		<str name="useDefaultInstallLocation" translate="yes">
+			<val>Utilizar ubicación predeterminada...</val>
+		</str>
+		<str name="usingDefaultInstallLocation" translate="yes">
+			<val>Ubicación predeterminada…</val>
+		</str>
+		<str name="defaultOptions" translate="yes">
+			<val>Utilizar siempre las opciones de instalación predeterminadas.</val>
+		</str>
+		<str name="reportsTitle" translate="yes">
+			<val>Informes</val>
+		</str>
+		<str name="analyticsReport" translate="yes">
+			<val>Colaborar con Adobe para mejorar la experiencia de descarga e instalación enviando informes sobre el estado de la instalación.</val>
+		</str>
+	</set>
