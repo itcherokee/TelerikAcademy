@@ -29,7 +29,7 @@ public class TriangleSurface
         Console.WriteLine("{0} sq.cm.\n", threeSides.AreaThreeSides());
 
         // Two sides and angle between them
-        Triangle twoSidesAngle = new Triangle(sideA: 3, sideB: 4, angleSiseASideB: 90.0f);
+        Triangle twoSidesAngle = new Triangle(sideA: 8, sideB: 12, angleSiseASideB: 48.0f);
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write("Area by side A ({0}cm.), side B ({1}cm.) and angle ({2}\u00B0) = ", twoSidesAngle.SideA, twoSidesAngle.SideB, twoSidesAngle.AngleSideASideB);
         Console.ForegroundColor = ConsoleColor.Green;

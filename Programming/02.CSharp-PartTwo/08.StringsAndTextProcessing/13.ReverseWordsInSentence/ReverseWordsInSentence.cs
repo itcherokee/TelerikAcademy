@@ -45,7 +45,7 @@ public class ReverseWordsInSentence
         {
             startIndex = result.ToString().IndexOf(words[index], startIndex, StringComparison.OrdinalIgnoreCase);
             endIndex = result.ToString().LastIndexOf(words[words.Length - 1 - index], endIndex, StringComparison.OrdinalIgnoreCase);
-            if (startIndex == endIndex)
+            if (startIndex >= endIndex)
             {
                 break;
             }
