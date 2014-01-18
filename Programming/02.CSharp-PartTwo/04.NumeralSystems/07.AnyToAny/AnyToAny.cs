@@ -51,7 +51,12 @@ public class AnyToAny
         Console.ReadKey();
     }
 
-    // Convert the number to Decimal numeral system
+    /// <summary>
+    /// Convert the number to Decimal numeral system.
+    /// </summary>
+    /// <param name="numberToConvert">Number to be converted.</param>
+    /// <param name="fromBase">Whatis the base system of the number to be converted.</param>
+    /// <returns>Converted number into decimal base.</returns>
     private static long ConvertToTen(string[] numberToConvert, int fromBase)
     {
         int position = numberToConvert.Length - 1;
@@ -175,9 +180,9 @@ public class AnyToAny
     // Converts a string representing Binary digit group to Hex and oposite and vice versa
     private static string Convert(string numberToSearch, int fromBase)
     {
-        string[] formBase = fromBase == 2 ? binNumbers : hexNumbers;
+        string[] fromBase = fromBase == 2 ? binNumbers : hexNumbers;
         string[] toBase = fromBase == 2 ? hexNumbers : binNumbers;
-        int index = Array.BinarySearch(formBase, 0, 16, numberToSearch);
+        int index = Array.BinarySearch(fromBase, 0, 16, numberToSearch);
         return toBase[index];
     }
 }
