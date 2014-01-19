@@ -5,7 +5,9 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DurankulakNumbers 100", "01.DurankulakNumbers\01.DurankulakNumbers 100.csproj", "{E5731272-D459-474A-ABB8-5C935FDBBA9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.CSharpBrackets", "04.CSharpBrackets\04.CSharpBrackets.csproj", "{CF6E021B-5ABF-4AEC-9986-9323DE7D43B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.CSharpBrackets 100", "04.CSharpBrackets\04.CSharpBrackets 100.csproj", "{CF6E021B-5ABF-4AEC-9986-9323DE7D43B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.JoroTheRabbit 100", "02.JoroTheRabbit\02.JoroTheRabbit 100.csproj", "{1C6A97C5-21F9-43CD-AF45-5E4F490B4C1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CF6E021B-5ABF-4AEC-9986-9323DE7D43B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF6E021B-5ABF-4AEC-9986-9323DE7D43B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF6E021B-5ABF-4AEC-9986-9323DE7D43B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6A97C5-21F9-43CD-AF45-5E4F490B4C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6A97C5-21F9-43CD-AF45-5E4F490B4C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6A97C5-21F9-43CD-AF45-5E4F490B4C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6A97C5-21F9-43CD-AF45-5E4F490B4C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
