@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{171C9B7F-9882-4F94-B6FC-C09838FE65FE}</ProjectGuid>
+    <ProjectGuid>{1927AAA2-6AF9-4CDD-A4F2-234221AAB1E0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TheyAreGreen</RootNamespace>
-    <AssemblyName>TheyAreGreen</AssemblyName>
+    <RootNamespace>FeaturingWithGrisko</RootNamespace>
+    <AssemblyName>FeaturingWithGrisko</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TheyAreGreen.TheyAreGreenExec</StartupObject>
+    <StartupObject>FeaturingWithGrisko.FeaturingWithGriskoExec</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -44,8 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Permutations.cs" />
-    <Compile Include="TheyAreGreenExec.cs" />
+    <Compile Include="FeaturingWithGriskoExec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

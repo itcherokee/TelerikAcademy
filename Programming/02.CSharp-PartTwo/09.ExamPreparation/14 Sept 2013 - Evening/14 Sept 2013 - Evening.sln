@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Zerg 100", "01.Zerg\01.Z
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Moving Letters 100", "02.Moving Letters\02.Moving Letters 100.csproj", "{3C67FF86-A712-4F2F-A585-ECF2F45E7BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Trails3D", "03.Trails3D\03.Trails3D.csproj", "{491F112D-FBE2-45DA-BAB8-56577E9EC1FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03.Trails3D - not finished", "03.Trails3D\_03.Trails3D - not finished.csproj", "{491F112D-FBE2-45DA-BAB8-56577E9EC1FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DecodeAndDecrypt 100", "04.DecodeAndDecrypt\04.DecodeAndDecrypt 100.csproj", "{EDCF0F66-B2D1-423E-9184-6B0ABB89F2D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.TheyAreGreen", "05.TheyAreGreen\05.TheyAreGreen.csproj", "{171C9B7F-9882-4F94-B6FC-C09838FE65FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.TheyAreGreen 72", "05.TheyAreGreen\05.TheyAreGreen 72.csproj", "{171C9B7F-9882-4F94-B6FC-C09838FE65FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

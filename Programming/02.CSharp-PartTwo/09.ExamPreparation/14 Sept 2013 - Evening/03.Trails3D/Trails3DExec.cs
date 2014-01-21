@@ -1,7 +1,4 @@
 ﻿// Task description is in the solution folder
-
-using System.Data;
-
 namespace Trails3D
 {
     using System;
@@ -24,7 +21,6 @@ namespace Trails3D
         {
             // X, Y, Z
             int[] cuboidSizes = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
         }
 
         private class Player
@@ -41,7 +37,7 @@ namespace Trails3D
                 set;
             }
 
-            public Direction direction
+            public Direction Direction
             {
                 get;
                 set;

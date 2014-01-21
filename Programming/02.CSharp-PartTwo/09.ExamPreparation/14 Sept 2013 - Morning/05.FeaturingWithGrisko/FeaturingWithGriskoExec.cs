@@ -1,25 +1,20 @@
 ﻿// Task description is in the solution folder
-namespace TheyAreGreen
+namespace FeaturingWithGrisko
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    public class TheyAreGreenExec
+    public class FeaturingWithGriskoExec
     {
         private static HashSet<string> result = new HashSet<string>();
         private static int numberOfLetters;
 
         public static void Main()
         {
-            numberOfLetters = int.Parse(Console.ReadLine());
-            StringBuilder letters = new StringBuilder(numberOfLetters);
-            for (int i = 0; i < numberOfLetters; i++)
-            {
-                letters.Append(Console.ReadLine());
-            }
-
-            Permutation(string.Empty, letters.ToString());
+            string letters = Console.ReadLine();
+            numberOfLetters = letters.Length;
+            Permutation(string.Empty, letters);
             Console.WriteLine(result.Count);
         }
 
@@ -29,20 +24,21 @@ namespace TheyAreGreen
             {
                 if (!result.Contains(combinedSoFar) && combinedSoFar.Length == numberOfLetters)
                 {
-                    bool isValid = true;
-                    for (int i = 0; i < combinedSoFar.Length - 1; i++)
-                    {
-                        if (combinedSoFar[i].Equals(combinedSoFar[i + 1]))
-                        {
-                            isValid = false;
-                            break;
-                        }
-                    }
+                    // bool isValid = true;
+                    // for (int i = 0; i < soFar.Length - 1; i++)
+                    // {
+                    //    if (soFar[i].Equals(soFar[i + 1]))
+                    //    {
+                    //        isValid = false;
+                    //        break;
+                    //    }
+                    // }
 
-                    if (isValid)
-                    {
-                        result.Add(combinedSoFar);
-                    }
+                    // if (isValid)
+                    // {
+                    result.Add(combinedSoFar);
+
+                    // }
                 }
 
                 return;

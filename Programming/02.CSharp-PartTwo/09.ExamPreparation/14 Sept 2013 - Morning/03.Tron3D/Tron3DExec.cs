@@ -7,13 +7,21 @@ namespace Tron3D
     using System.Text;
     using System.Threading.Tasks;
 
+    enum Direction
+    {
+        North,
+        East,
+        South,
+        West,
+    }
+
     public class Tron3DExec
     {
         public static void Main()
         {
             // x, y, z
             byte[] dimensions = Console.ReadLine().Split().Select(byte.Parse).ToArray();
-            byte[,]playboard = new byte[dimensions[0],dimensions[1]*2 + dimensions[2]*2];
+            byte[,] playboard = new byte[dimensions[0], dimensions[1] * 2 + dimensions[2] * 2];
 
             string PlayerOneMoves;
             string PlayerTwoMoves;
@@ -33,11 +41,5 @@ namespace Tron3D
 
     }
 
-    enum Direction
-    {
-        North,
-        East,
-        South,
-        West,
-    }
+
 }

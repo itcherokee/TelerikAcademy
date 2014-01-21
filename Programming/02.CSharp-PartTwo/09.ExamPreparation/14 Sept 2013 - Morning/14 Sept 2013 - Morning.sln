@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.MultiverseCommunication", "01.MultiverseCommunication\01.MultiverseCommunication.csproj", "{684DDC05-C229-4F83-9E54-3D25E4D3424E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.MultiverseCommunication 100", "01.MultiverseCommunication\01.MultiverseCommunication 100.csproj", "{684DDC05-C229-4F83-9E54-3D25E4D3424E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.MagicWords", "02.MagicWords\02.MagicWords.csproj", "{12B10F98-A2ED-40F7-9150-27B790056FD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.MagicWords 100", "02.MagicWords\02.MagicWords 100.csproj", "{12B10F98-A2ED-40F7-9150-27B790056FD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DecodeAndDecrypt", "04.DecodeAndDecrypt\04.DecodeAndDecrypt.csproj", "{EDCF0F66-B2D1-423E-9184-6B0ABB89F2D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DecodeAndDecrypt 100", "04.DecodeAndDecrypt\04.DecodeAndDecrypt 100.csproj", "{EDCF0F66-B2D1-423E-9184-6B0ABB89F2D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03.Tron3D", "03.Tron3D\_03.Tron3D.csproj", "{CE2ABEA8-EC38-4051-8D28-56275DFADBB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03.Tron3D - not finished", "03.Tron3D\_03.Tron3D - not finished.csproj", "{CE2ABEA8-EC38-4051-8D28-56275DFADBB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.FeaturingWithGrisko 72", "05.FeaturingWithGrisko\05.FeaturingWithGrisko 72.csproj", "{1927AAA2-6AF9-4CDD-A4F2-234221AAB1E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CE2ABEA8-EC38-4051-8D28-56275DFADBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2ABEA8-EC38-4051-8D28-56275DFADBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2ABEA8-EC38-4051-8D28-56275DFADBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1927AAA2-6AF9-4CDD-A4F2-234221AAB1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1927AAA2-6AF9-4CDD-A4F2-234221AAB1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1927AAA2-6AF9-4CDD-A4F2-234221AAB1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1927AAA2-6AF9-4CDD-A4F2-234221AAB1E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
