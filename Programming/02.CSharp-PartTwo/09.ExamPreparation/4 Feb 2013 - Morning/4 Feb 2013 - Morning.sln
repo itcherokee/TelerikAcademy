@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.GreedyDwarf 100", "02.Gr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.ConsoleJustification 100", "04.ConsoleJustification\04.ConsoleJustification 100.csproj", "{240ACFCD-6CF3-47BE-88C9-2D5B12AFDAB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.OneTaskIsNotEnough", "05.OneTaskIsNotEnough\05.OneTaskIsNotEnough.csproj", "{0A7A2906-9AD5-4981-902B-E72814FEC354}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.OneTaskIsNotEnough 30", "05.OneTaskIsNotEnough\05.OneTaskIsNotEnough 30.csproj", "{0A7A2906-9AD5-4981-902B-E72814FEC354}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
