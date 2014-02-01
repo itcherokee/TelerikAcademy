@@ -16,7 +16,7 @@ public class TriangleSurface
         Console.ForegroundColor = ConsoleColor.White;
 
         // Side and altitude to it
-        Triangle sideAltitude = new Triangle(sideA: 3, altitudeSideA: 4, noSideBAndSideCAndAngle: true);
+        Triangle sideAltitude = new Triangle(sideA: 1, altitudeSideA: 2, noSideBAndSideCAndAngle: true);
         Console.Write("Area by side ({0}cm.) and altitude ({1}cm.) = ", sideAltitude.SideA, sideAltitude.AltitudeSideA);
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("{0} sq.cm.\n", sideAltitude.AreaSideAltitude());
