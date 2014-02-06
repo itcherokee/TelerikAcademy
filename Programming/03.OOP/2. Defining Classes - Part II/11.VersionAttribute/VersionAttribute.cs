@@ -1,8 +1,8 @@
-﻿// Create a [Version] attribute that can be applied to structures, classes, interfaces, 
-// enumerations and methods and holds a version in the format major.minor (e.g. 2.11). 
-// Apply the version attribute to a sample class and display its version at runtime.
+﻿// Task 11: Create a [Version] attribute that can be applied to structures, classes, interfaces, enumerations 
+//          and methods and holds a version in the format major.minor (e.g. 2.11). 
+//          Apply the version attribute to a sample class and display its version at runtime.
 
-namespace MyAttribute
+namespace VersionAttribute
 {
     using System;
 
@@ -24,7 +24,7 @@ namespace MyAttribute
             this.version.Minor = minor;
         }
 
-        public string VersionAttr
+        public string Version
         {
             get
             {

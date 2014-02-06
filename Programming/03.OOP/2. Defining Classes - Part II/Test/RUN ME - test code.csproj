@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DFBA9A21-5EAE-4175-B891-90979CA70F4A}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2A5FFF73-FA3A-4D2E-9684-4727284DB51F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VersionAttribute</RootNamespace>
-    <AssemblyName>VersionAttribute</AssemblyName>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,12 +23,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Test.Test</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -39,9 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestAttributeClass.cs" />
-    <Compile Include="VersionAttribute.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\01-04.Euclidian3DSpace\01-04.Euclidian3DSpace.csproj">
+      <Project>{3c38e488-681c-4f98-b6ee-876f82a3b04b}</Project>
+      <Name>01-04.Euclidian3DSpace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\05-07.GenericList\05-07.GenericList.csproj">
+      <Project>{7c42f1ff-e1ec-4128-9a28-7c7a0d3621ae}</Project>
+      <Name>05-07.GenericList</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\08-10.GenericMatrix\08-10.GenericMatrix.csproj">
+      <Project>{1fba6c98-4d6e-4bff-b2df-556390b6f05d}</Project>
+      <Name>08-10.GenericMatrix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\11.VersionAttribute\11.VersionAttribute.csproj">
+      <Project>{dfba9a21-5eae-4175-b891-90979ca70f4a}</Project>
+      <Name>11.VersionAttribute</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,4 @@
-﻿namespace MyAttribute
+﻿namespace VersionAttribute
 {
     using System;
 
