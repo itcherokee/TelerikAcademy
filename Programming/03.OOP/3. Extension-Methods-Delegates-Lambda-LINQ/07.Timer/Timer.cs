@@ -1,13 +1,21 @@
-﻿// Using delegates write a class Timer that has can execute certain method at each t seconds.
+﻿// Task 7: Using delegates write a class Timer that has can execute certain method at each t seconds.
 
 namespace MyTimer
 {
-    using System;
     using System.Threading;
+
+    public delegate void ExecuteTask();
 
     public class Timer
     {
-        public delegate void ExecuteTask();
+        /// <summary>
+        /// Instantiate an object of Timer with interval set to rise an event
+        /// </summary>
+        /// <param name="interval">Miliseconds</param>
+        public Timer(int interval)
+        {
+            this.Interval = interval;
+        }
 
         public int Interval { get; private set; }
 
@@ -17,15 +25,6 @@ namespace MyTimer
         /// Stop the timer by setting the value to False
         /// </summary>
         public bool Stop { get; set; }
-
-        /// <summary>
-        /// Instantiate an object of Timer with interval set to rise an event
-        /// </summary>
-        /// <param name="interval">Miliseconds</param>
-        public Timer(int interval)
-        {
-            this.Interval = interval;
-        }
 
         /// <summary>
         /// Starts the background process

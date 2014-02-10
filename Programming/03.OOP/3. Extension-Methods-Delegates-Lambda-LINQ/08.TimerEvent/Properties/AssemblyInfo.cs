@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("08.TimerEvent")]
+[assembly: AssemblyTitle("TimerEvent")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("sanofi-aventis")]
-[assembly: AssemblyProduct("08.TimerEvent")]
-[assembly: AssemblyCopyright("Copyright © sanofi-aventis 2013")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("TimerEvent")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

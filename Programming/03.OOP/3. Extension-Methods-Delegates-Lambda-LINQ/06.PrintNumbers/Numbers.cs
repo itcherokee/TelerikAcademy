@@ -1,6 +1,5 @@
-﻿// Write a program that prints from given array of integers all numbers 
-// that are divisible by 7 and 3. Use the built-in extension methods and lambda expressions. 
-// Rewrite the same with LINQ.
+﻿// Task 6: Write a program that prints from given array of integers all numbers that are divisible by 7 and 3. 
+//         Use the built-in extension methods and lambda expressions. Rewrite the same with LINQ.
 
 namespace MyNumbers
 {
@@ -16,7 +15,7 @@ namespace MyNumbers
         /// </summary>
         /// <param name="arrayOfNumbers">Array of integers</param>
         /// <returns>Array of integers</returns>
-        public static int[] DivideLINQ(int[] arrayOfNumbers)
+        public static int[] DivideLinq(int[] arrayOfNumbers)
         {
             var query = from number in arrayOfNumbers
                         where number % 21 == 0
@@ -44,8 +43,10 @@ namespace MyNumbers
             }
 
             // Print result to Console
-            Console.WriteLine("\n" + new string('-', 60) + "\nTests methods (LINQ and Extension) to print numbers\ndivisible by 3 and 7 simultaneously  - Task 6\n" + new string('-', 60));
-            Console.WriteLine("By using LINQ: " + string.Join(", ", DivideLINQ(sourceArray)));
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(new string('-', 60) + "\nTests methods (LINQ and Extension) to print numbers\ndivisible by 3 and 7 simultaneously  - Task 6\n" + new string('-', 60));
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("By using LINQ: " + string.Join(", ", DivideLinq(sourceArray)));
             Console.WriteLine("By using Extension methods: " + string.Join(", ", DivideExtension(sourceArray)));
         }
     }

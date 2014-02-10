@@ -77,7 +77,8 @@
         {
             get
             {
-                return new List<Call>(this.callHistory);
+                return this.callHistory.AsReadOnly();
+                //  return new List<Call>(this.callHistory);
             }
         }
 

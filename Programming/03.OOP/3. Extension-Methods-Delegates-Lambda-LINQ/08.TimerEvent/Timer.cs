@@ -1,4 +1,4 @@
-﻿// Using delegates write a class Timer that has can execute certain method at each t seconds.
+﻿// Task 8: * Using delegates write a class Timer that has can execute certain method at each t seconds.
 
 namespace MyTimerEvent
 {
@@ -7,6 +7,15 @@ namespace MyTimerEvent
 
     public class Timer
     {
+        /// <summary>
+        /// Instantiate an object of Timer with interval set to rise an event
+        /// </summary>
+        /// <param name="interval">Miliseconds</param>
+        public Timer(int interval)
+        {
+            this.Interval = interval;
+        }
+
         // event declaration
         public event EventHandler TimerEvent;
 
@@ -16,15 +25,6 @@ namespace MyTimerEvent
         /// Stop the timer by setting the value to False
         /// </summary>
         public bool Stop { get; set; }
-
-        /// <summary>
-        /// Instantiate an object of Timer with interval set to rise an event
-        /// </summary>
-        /// <param name="interval">Miliseconds</param>
-        public Timer(int interval)
-        {
-            this.Interval = interval;
-        }
 
         /// <summary>
         /// Starts the background process
@@ -38,10 +38,11 @@ namespace MyTimerEvent
         }
 
         /// <summary>
-        /// Event invocation on TImer object
+        /// Event invocation on TImer object.
         /// </summary>
-        /// <param name="e">Event arguments</param>
-        protected virtual void OnTimeElapsed(EventArgs e)
+        /// <param name="sender">Who has fired event.</param>
+        /// <param name="e">Event arguments.</param>
+        protected virtual void OnTimeElapsed(object sender, EventArgs e)
         {
             EventHandler handler = this.TimerEvent;
             if (handler != null)
@@ -58,7 +59,7 @@ namespace MyTimerEvent
             while (!this.Stop)
             {
                 Thread.Sleep(this.Interval);
-                this.OnTimeElapsed(new EventArgs());
+                this.OnTimeElapsed(this, new EventArgs());
             }
         }
     }

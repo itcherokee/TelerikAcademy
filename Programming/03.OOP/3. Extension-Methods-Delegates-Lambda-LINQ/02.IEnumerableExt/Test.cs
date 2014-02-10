@@ -1,13 +1,11 @@
-﻿namespace IEnumerableExt
+﻿namespace IEnumerableExtensions
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
-    class Test
+    public class Test
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             // Tests IEnumerable<T>'s extension methods - Task 2
             Console.WriteLine("\n" + new string('-', 50) + "\nTests IEnumerable<T>'s extension methods - Task 2\n" + new string('-', 50));
@@ -17,24 +15,26 @@
             Console.WriteLine("Elements: " + string.Join(", ", enumerable));
 
             // Sum
-            Console.WriteLine("Sum of all elements is: {0}", enumerable.sum());
+            Console.WriteLine("Sum of all elements is: {0}", enumerable.Sum());
 
             // Product
-            Console.WriteLine("Product of all elements is: {0}", enumerable.product());
+            Console.WriteLine("Product of all elements is: {0}", enumerable.Product());
 
             // Average
-            Console.WriteLine("Average of all elements is: {0}", enumerable.average());
+            Console.WriteLine("Average of all elements is: {0}", enumerable.Average());
 
             // Min & Max  - works with dates as well
-            Console.WriteLine("Min element is: {0}", enumerable.min());
-            Console.WriteLine("Max element is: {0}", enumerable.max());
-            List<DateTime> enumerableDate = new List<DateTime>() 
-                            { new DateTime(1099, 1, 21), 
-                              new DateTime(2000, 12, 31), 
-                              new DateTime(1000, 2, 2) };
+            Console.WriteLine("Min element is: {0}", enumerable.Min());
+            Console.WriteLine("Max element is: {0}", enumerable.Max());
+            var enumerableDate = new List<DateTime>() 
+                            { 
+                                new DateTime(1099, 1, 21), 
+                                new DateTime(2000, 12, 31), 
+                                new DateTime(1000, 2, 2) 
+                            };
             Console.WriteLine("Dates are: \n\t" + string.Join("\n\t", enumerableDate));
-            Console.WriteLine("Min Date is: {0}", enumerableDate.min());
-            Console.WriteLine("Max Date is: {0}", enumerableDate.max());
+            Console.WriteLine("Min Date is: {0}", enumerableDate.Min());
+            Console.WriteLine("Max Date is: {0}", enumerableDate.Max());
         }
     }
 }

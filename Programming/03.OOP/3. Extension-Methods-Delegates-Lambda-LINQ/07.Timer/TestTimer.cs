@@ -6,8 +6,10 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("\n" + new string('-', 30) + "\nTests Timer class - Task 7\n" + new string('-', 30));
-            
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(new string('-', 30) + "\nTests Timer class - Task 7\n" + new string('-', 30));
+            Console.ForegroundColor = ConsoleColor.White;
+
             // instantiates a Timer object with default interval for the event
             Timer runningTimer = new Timer(1000);
 

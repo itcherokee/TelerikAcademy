@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyTimerEvent
+﻿namespace MyTimerEvent
 {
+    using System;
+
     public class Test
     {
         public static void PrintMessage(object sender, EventArgs e)
@@ -22,7 +18,7 @@ namespace MyTimerEvent
 
             // subscribe to the Timer event
             runningTimer.TimerEvent += PrintMessage;
-            
+
             // starts the Timer
             runningTimer.Start();
 
