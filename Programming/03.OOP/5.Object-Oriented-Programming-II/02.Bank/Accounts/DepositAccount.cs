@@ -12,6 +12,12 @@
             this.Deposit(initialAmount);
         }
 
+        public DepositAccount(Customer customer, decimal monthlyInterestRate, decimal initialAmount, DateTime accountStartDate)
+            : base(customer, monthlyInterestRate, accountStartDate)
+        {
+            this.Deposit(initialAmount);
+        }
+
         public override decimal Balance
         {
             get
@@ -52,7 +58,7 @@
 
         public override decimal Interest()
         {
-            if (this.Balance > 0 && this.Balance < 1000)
+            if (base.Balance > 0 && base.Balance < 1000)
             {
                 return 0.0m;
             }

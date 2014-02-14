@@ -1,8 +1,7 @@
-﻿using System.Text;
-
-namespace Banking.Accounts
+﻿namespace Banking.Accounts
 {
     using System;
+    using System.Text;
     using Customers;
 
     public abstract class Account
@@ -10,9 +9,9 @@ namespace Banking.Accounts
         private decimal balance;
         private decimal monthlyInterestRate;
 
-        protected Account(Customer customer, decimal monthlyInterestRate)
+        protected Account(Customer customer, decimal monthlyInterestRate, DateTime accountStartDate = default(DateTime))
         {
-            this.AccountStartDate = DateTime.Today;
+            this.AccountStartDate = accountStartDate == default(DateTime) ? DateTime.Today : accountStartDate;
             this.MonthlyInterestRate = monthlyInterestRate;
             this.Customer = customer;
             this.Balance = 0.0m;

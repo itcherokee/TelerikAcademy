@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Banking.Customers
+﻿namespace Banking.Customers
 {
     using System;
     using Utils;
@@ -41,7 +39,7 @@ namespace Banking.Customers
                         this.eik = value;
                     }
                 }
-                catch (ArgumentException e)
+                catch (ArgumentException)
                 {
                     // retransmit the inner error up
                     throw;

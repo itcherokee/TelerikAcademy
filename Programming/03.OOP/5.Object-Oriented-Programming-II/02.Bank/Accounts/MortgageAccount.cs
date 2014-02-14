@@ -17,6 +17,12 @@ namespace Banking.Accounts
             this.MortageAmount = mortageAmount;
         }
 
+        public MortgageAccount(Customer customer, decimal monthlyInterestRate, decimal mortageAmount, DateTime accountStartDate)
+            : base(customer, monthlyInterestRate, accountStartDate)
+        {
+            this.MortageAmount = mortageAmount;
+        }
+
         public decimal MortageAmount
         {
             get

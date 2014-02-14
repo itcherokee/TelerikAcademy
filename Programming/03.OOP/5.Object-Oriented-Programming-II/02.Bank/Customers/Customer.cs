@@ -1,8 +1,7 @@
-﻿using System.Text;
-
-namespace Banking.Customers
+﻿namespace Banking.Customers
 {
     using System;
+    using System.Text;
 
     public abstract class Customer
     {

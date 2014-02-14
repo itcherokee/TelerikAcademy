@@ -14,6 +14,12 @@
             this.LoanAmount = loanAmount;
         }
 
+        public LoanAccount(Customer customer, decimal monthlyInterestRate, decimal loanAmount, DateTime accountStartDate)
+            : base(customer, monthlyInterestRate, accountStartDate)
+        {
+            this.LoanAmount = loanAmount;
+        }
+
         public decimal LoanAmount
         {
             get
