@@ -1,14 +1,12 @@
-﻿// Define abstract class Human with first name and last name. 
-// Define new class Student which is derived from Human and has 
-// new field – grade. Define class Worker derived from Human with 
-// new property WeekSalary and WorkHoursPerDay and method MoneyPerHour() 
-// that returns money earned by hour by the worker. Define the proper 
-// constructors and properties for this hierarchy. Initialize a list of 
-// 10 students and sort them by grade in ascending order (use LINQ or OrderBy() 
-// extension method). Initialize a list of 10 workers and sort them by money 
-// per hour in descending order. Merge the lists and sort them by first name and last name.
+﻿// Task 2:  Define abstract class Human with first name and last name. Define new class Student which is 
+//          derived from Human and has new field – grade. Define class Worker derived from Human with new 
+//          property WeekSalary and WorkHoursPerDay and method MoneyPerHour() that returns money earned by 
+//          hour by the worker. Define the proper constructors and properties for this hierarchy. Initialize 
+//          a list of 10 students and sort them by grade in ascending order (use LINQ or OrderBy() extension 
+//          method). Initialize a list of 10 workers and sort them by money per hour in descending order. 
+//          Merge the lists and sort them by first name and last name.
 
-namespace MyHuman
+namespace People
 {
     using System;
     using System.Collections.Generic;
@@ -19,84 +17,85 @@ namespace MyHuman
         public static void Main()
         {
             // create list with/and students
-            List<Student> students = new List<Student>()
+            var students = new List<Student>()
             {
-                        new Student("AsenOne", "Tsakov"),
-                        new Student("AsenTwo", "Makov"),
-                        new Student("AsenThree", "Zizov"),
-                        new Student("AsenFour", "Tetkov"),
-                        new Student("AsenFive", "Mikov"),
-                        new Student("AsenSix", "Kikov"),
-                        new Student("AsenSeven", "Tetinchov"),
-                        new Student("AsenEight", "Gurbev"),
-                        new Student("AsenNine", "Pudarchov"),
-                        new Student("AsenTen", "Tikvenov") 
+                        new Student("Asen", "Asenov"),
+                        new Student("Asen", "Balakov"),
+                        new Student("Asen", "Georgiev"),
+                        new Student("Asen", "Ivanov"),
+                        new Student("Asen", "Kamarov"),
+                        new Student("Asen", "Nikolov"),
+                        new Student("Asen", "Petrov"),
+                        new Student("Asen", "Rusev"),
+                        new Student("Asen", "Sosev"),
+                        new Student("Asen", "Yonkov", GradeScore.Six) 
             };
 
-            // assign random grades to sstudents
+            // Assign random grades to students without last one who already have
             Random grade = new Random();
-            for (int index = 0; index < students.Count; index++)
+            for (int index = 0; index < students.Count - 1; index++)
             {
-                students[index].SetGrade((Student.GradeScores)grade.Next(2, 7));
+                students[index].Grade = (GradeScore)grade.Next(1, 7);
             }
 
-            // print students sorted by grade in ascending order
+            // Query and print students sorted by grade in ascending order
             var queryStudents = from student in students
                                 orderby student.Grade
                                 select student;
             Console.WriteLine("Students:");
             foreach (var student in queryStudents)
             {
-                Console.Write("{0}  Grade: {1}\n", student.ToString(), student.Grade);
-
+                Console.Write("{0}  Grade: {1}\n", student, student.Grade);
             }
-            // create list with/and workers
-            List<Worker> workers = new List<Worker>() 
+
+            // Create list with workers
+            var workers = new List<Worker>() 
             {
-                        new Worker("AsenOne", "Asenchov"),
-                        new Worker("AsenTwo", "Petkanov"),
-                        new Worker("AsenThree", "Zevzekov"),
-                        new Worker("AsenFour", "Rahitov"),
-                        new Worker("AsenFive", "Nikolov"),
-                        new Worker("AsenSix", "Tutkov"),
-                        new Worker("AsenSeven", "Asenchov"),
-                        new Worker("AsenEight", "Krastev"),
-                        new Worker("AsenNine", "Pippov"),
-                        new Worker("AsenTen", "Petranov") 
+                        new Worker("Zelyo", "Asenov"),
+                        new Worker("Zelyo", "Bozev"),
+                        new Worker("Zelyo", "Cocev"),
+                        new Worker("Zelyo", "Ivanov"),
+                        new Worker("Zelyo", "Kirov"),
+                        new Worker("Zelyo", "Lyolev"),
+                        new Worker("Zelyo", "Minkov"),
+                        new Worker("Zelyo", "Naroden"),
+                        new Worker("Zelyo", "Onev"),
+                        new Worker("Zelyo", "Zelyov", 3, 1000.0m) 
             };
 
-            // assign random working hours per day to workers
+            // Assign random working hours per day to workers (except last one who already have)
             Random workHoursPerDay = new Random();
-            for (int index = 0; index < workers.Count; index++)
+            for (int index = 0; index < workers.Count - 1; index++)
             {
                 workers[index].WorkHoursPerDay = workHoursPerDay.Next(0, 23);
             }
 
-            // assign random week salaries to workers
+            // Assign random week salaries to workers (except last one who already have)
             Random salary = new Random();
-            for (int index = 0; index < workers.Count; index++)
+            for (int index = 0; index < workers.Count - 1; index++)
             {
-                workers[index].SetWeekSalary(salary.Next(1, 800));
+                workers[index].WeekSalary = salary.Next(1, 8000);
             }
 
-            // print students sorted by grade in ascending order
-            //var salaryPerHourSorted = workers.OrderByDescending(x => x.MoneyPerHour());
-            var queryWorkers = from worker in workers
-                               orderby worker.MoneyPerHour()
-                               select worker;
+            // Print workers sorted by money per hour
+            var queryWorkers = workers.OrderByDescending(x => x.MoneyPerHour());
 
+            // var queryWorkers = from worker in workers
+            //                   orderby worker.MoneyPerHour()
+            //                   select worker;
             Console.WriteLine("\nWorkers:");
             foreach (var worker in queryWorkers)
             {
-                Console.Write("{0}  Salary per Hour: {1:C2}\n", worker.ToString(), worker.MoneyPerHour());
-
+                Console.Write("{0}  Salary per Hour: {1:C2}\n", worker, worker.MoneyPerHour());
             }
 
-            // Merge and sort the lists
+            // Merge and sort the lists (Students & Workers)
             Console.WriteLine("\nCombined List:");
-            IEnumerable<Human> merge =
-                queryStudents.Concat<Human>(queryWorkers).OrderByDescending(x => x.FirstName).ThenByDescending(x => x.LastName);
-            Console.WriteLine(string.Join("\n", merge));
+            IEnumerable<Human> mergedList = queryStudents
+                                            .Concat<Human>(queryWorkers)
+                                            .OrderBy(x => x.FirstName)
+                                            .ThenByDescending(x => x.LastName);
+            Console.WriteLine(string.Join("\n", mergedList));
         }
     }
 }

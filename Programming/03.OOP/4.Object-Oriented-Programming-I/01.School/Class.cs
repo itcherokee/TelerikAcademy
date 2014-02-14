@@ -2,29 +2,49 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
 
     public class Class : ICommentable
     {
-        public string NameID { get; private set; }
+        private string id;
 
-        public List<Student> Students { get; private set; }
+        /// <summary>
+        /// Instantiate an object of type Class. 
+        /// It also instantiates both lists holding collections of Student & Teacher objects.
+        /// </summary>
+        /// <param name="id">String value holding class nameID.</param>
+        public Class(string id)
+        {
+            this.Id = id;
+            this.Students = new Dictionary<uint, Student>();
+            this.Teachers = new List<Teacher>();
+        }
+
+        public string Id
+        {
+            get
+            {
+                return this.id;
+            }
+
+            private set
+            {
+                if (value != string.Empty && !string.IsNullOrWhiteSpace(value))
+                {
+                    this.id = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Class name could not be null, empty or whitespace!");
+                }
+            }
+        }
+
+        public Dictionary<uint, Student> Students { get; private set; }
 
         public List<Teacher> Teachers { get; private set; }
 
         public string Comment { get; set; }
-
-        /// <summary>
-        /// Instantiate an object of type Class. It also instantiates both lists holding collections of Student & Teacher objects
-        /// </summary>
-        /// <param name="nameID">String value holding class nameID</param>
-        public Class(string nameID)
-        {
-            this.NameID = nameID;
-            this.Students = new List<Student>();
-            this.Teachers = new List<Teacher>();
-        }
 
         /// <summary>
         /// Add Student to the list 
@@ -32,58 +52,83 @@
         /// <param name="student">Student object</param>
         public void AddStudent(Student student)
         {
-            if (this.Students.Exists(x => x.ClassNumber != student.ClassNumber) || this.Students.Count == 0)
+            if (!this.Students.ContainsKey(student.ClassNumber))
             {
-                this.Students.Add(student);
+                this.Students.Add(student.ClassNumber, student);
             }
             else
             {
-                throw new ArgumentException("Provided Student's ID is not unique!");
+                throw new ArgumentException("Provided Student's ClassNumber is not unique!");
             }
         }
 
         /// <summary>
-        /// Add Teacher to the list 
+        /// Add Teacher to the list of Teachers leading lectures in that class.
         /// </summary>
-        /// <param name="teacher">Student object</param>
+        /// <param name="teacher">Teacher instance to be added.</param>
         public void AddTeacher(Teacher teacher)
         {
-            this.Teachers.Add(teacher);
+            if (!this.Teachers.Contains(teacher))
+            {
+                this.Teachers.Add(teacher);
+            }
         }
 
         /// <summary>
-        /// Removes Student from the list
+        /// Removes Student from the list.
+        /// If Student instance (student with that ClassNumber) is not found no change is applied.
         /// </summary>
         /// <param name="student">Student object</param>
         public void RemoveStudent(Student student)
         {
-            this.Students.Remove(student);
+            if (student != null)
+            {
+                if (this.Students.ContainsKey(student.ClassNumber))
+                {
+                    this.Students.Remove(student.ClassNumber);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("Student instance cannot be null!");
+            }
         }
 
         /// <summary>
-        /// Removes Teacher from the list
+        /// Removes Teacher from the list.
+        /// If Teacher instance is not found, no change is applied.
         /// </summary>
-        /// <param name="student">Teacher object</param>
+        /// <param name="teacher">Instance of Teacher to be removed.</param>
         public void RemoveTeacher(Teacher teacher)
         {
-            this.Teachers.Remove(teacher);
+            if (teacher != null)
+            {
+                if (this.Teachers.Contains(teacher))
+                {
+                    this.Teachers.Remove(teacher);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("Teacher instance cannot be null!");
+            }
         }
 
         /// <summary>
-        /// Prints object's Class details in special modified string format
+        /// Format object's Class details in special modified string format.
         /// </summary>
-        /// <returns>String value</returns>
+        /// <returns>Class instance as String value.</returns>
         public override string ToString()
         {
-            StringBuilder output = new StringBuilder();
-            output.Append(string.Format("Class nameID: {0}\n\n", this.NameID));
-            output.Append("Students in this class: \n");
+            var output = new StringBuilder();
+            output.AppendLine(string.Format("Class ID: {0}\n", this.Id));
+            output.AppendLine("Students in this class:");
             if (this.Students.Count != 0)
             {
                 // Students list is not empty, so we can enumerate
-                foreach (Student item in this.Students)
+                foreach (var student in this.Students)
                 {
-                    output.Append(item.ToString());
+                    output.AppendLine(student.Value.ToString());
                 }
 
                 output.Append("\n");
@@ -93,13 +138,13 @@
                 output.Append("None");
             }
 
-            output.Append("Teachers in this class: \n");
+            output.AppendLine("Teachers in this class:");
             if (this.Teachers.Count != 0)
             {
                 // Teacher list is not empty, so we can enumerate
-                foreach (Teacher item in this.Teachers)
+                foreach (var teacher in this.Teachers)
                 {
-                    output.Append(item.ToString());
+                    output.AppendLine(teacher.FullName);
                 }
             }
             else

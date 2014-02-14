@@ -1,7 +1,5 @@
-﻿namespace MyBank
+﻿namespace Banking.Interfaces
 {
-    using System;
-
     public interface IWithdrawable
     {
         void Withdraw(decimal amount);

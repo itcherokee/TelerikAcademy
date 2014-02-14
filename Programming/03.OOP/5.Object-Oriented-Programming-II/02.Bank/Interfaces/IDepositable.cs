@@ -1,7 +1,5 @@
-﻿namespace MyBank
+﻿namespace Banking.Interfaces
 {
-    using System;
-
     public interface IDepositable
     {
         void Deposit(decimal amount);

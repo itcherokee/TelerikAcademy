@@ -1,13 +1,10 @@
-﻿namespace MyShape
+﻿namespace MyShape.Shapes
 {
-    using System;
-
     public class Rectangle : Shape
     {
         public Rectangle(double height, double width)
+            : base(height, width)
         {
-            this.Height = height;
-            this.Width = width;
         }
 
         public override double CalculateSurface()

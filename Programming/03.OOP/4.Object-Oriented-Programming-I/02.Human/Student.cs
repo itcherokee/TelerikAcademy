@@ -1,4 +1,4 @@
-﻿namespace MyHuman
+﻿namespace People
 {
     using System;
     using System.Linq;
@@ -6,39 +6,32 @@
 
     public class Student : Human
     {
-        public enum GradeScores
-        {
-            Two = 2,
-            Three = 3,
-            Four = 4,
-            Five = 5,
-            Six = 6
-        }
+        private GradeScore grade;
 
-        public GradeScores Grade { get; private set; }
-
-        public Student(string firstName, string lastName)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-        }
-
-        public Student(string firstName, string lastName, GradeScores grade)
-            : this(firstName, lastName)
+        public Student(string firstName, string lastName, GradeScore grade = GradeScore.Undefined)
+            : base(firstName, lastName)
         {
             this.Grade = grade;
         }
 
-        public void SetGrade(GradeScores grade)
+        public GradeScore Grade
         {
-            this.Grade = grade;
-        }
+            get
+            {
+                return this.grade;
+            }
 
-        public override string ToString()
-        {
-            StringBuilder output = new StringBuilder();
-            output.Append("Name: " + this.FirstName + " " + this.LastName);
-            return output.ToString();
+            set
+            {
+                if (Enum.IsDefined(typeof(GradeScore), value))
+                {
+                    this.grade = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Not valid grade score provided!");
+                }
+            }
         }
     }
 }

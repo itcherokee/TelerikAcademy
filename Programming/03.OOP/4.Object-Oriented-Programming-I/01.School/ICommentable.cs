@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MySchool
+﻿namespace MySchool
 {
     public interface ICommentable
     {

@@ -7,7 +7,7 @@
     <ProjectGuid>{979BA312-CEC7-4DF7-BB76-900D53155F76}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyAnimals</RootNamespace>
+    <RootNamespace>Animals</RootNamespace>
     <AssemblyName>MyAnimals</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>MyAnimals.TestRun</StartupObject>
+    <StartupObject>Animals.TestRun</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,7 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Frog.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="ISound.cs" />
     <Compile Include="Kitten.cs" />
     <Compile Include="TestRun.cs" />

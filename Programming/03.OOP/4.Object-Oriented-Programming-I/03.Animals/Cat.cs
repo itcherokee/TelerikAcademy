@@ -1,10 +1,8 @@
-﻿namespace MyAnimals
+﻿namespace Animals
 {
-    using System;
-
-    public class Cat : Animal, ISound
+    public abstract class Cat : Animal, ISound
     {
-        public Cat(string name, int age, Gender sex)
+        protected Cat(string name, int age, Gender sex)
             : base(name, age, sex)
         {
         }

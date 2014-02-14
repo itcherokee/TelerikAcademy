@@ -1,53 +1,90 @@
 ﻿namespace MySchool
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using System;
 
     public class School
     {
-        public HashSet<Class> Classes { get; private set; }
+        private readonly Dictionary<string, Class> classes;
 
         /// <summary>
-        /// Instantiates an object of type School. It also instantiates the HashSet collection to hold objects of type Class
+        /// Instantiates an object of type School. 
+        /// It also instantiates the Dictionary collection to hold instances of type Class.
         /// </summary>
         public School()
         {
-            this.Classes = new HashSet<Class>();
+            this.classes = new Dictionary<string, Class>();
         }
 
         /// <summary>
-        /// Add Class to school
+        /// Gets readonly list with currently enrolled classes in the school.
         /// </summary>
-        /// <param name="klas">Class object</param>
-        public void AddClass(Class klas)
+        public IEnumerable<Class> Classes
         {
-            this.Classes.Add(klas);
+            get
+            {
+                return this.classes.Select(x => x.Value).ToList().AsReadOnly();
+            }
         }
 
         /// <summary>
-        /// Remove class from school
+        /// Add Instance of a Class to school list of student classes.
         /// </summary>
-        /// <param name="klas">Class object</param>
-        public void RemoveDiscipline(Class klas)
+        /// <param name="studentClass">Instance of a student class to be added to the list of school classes.</param>
+        public void AddClass(Class studentClass)
         {
-            this.Classes.Remove(klas);
+            if (studentClass != null)
+            {
+                if (!this.Classes.Contains(studentClass))
+                {
+                    this.classes.Add(studentClass.Id, studentClass);
+                }
+                else
+                {
+                    throw new ArgumentException("This instance of class already exist in the school list of classes!");
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("Class instance can not be null!");
+            }
         }
 
         /// <summary>
-        /// Prints object's School details in special modified string format
+        /// Remove class instance from school.
+        /// If class instance is not discovered, no changes are applied.
         /// </summary>
-        /// <returns>String value</returns>
+        /// <param name="studentClass">Instance of a student class to be removed from school list.</param>
+        public void RemoveClass(Class studentClass)
+        {
+            if (studentClass != null)
+            {
+                if (this.Classes.Contains(studentClass))
+                {
+                    this.classes.Remove(studentClass.Id);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("Class instance can not be null!");
+            }
+        }
+
+        /// <summary>
+        /// Format instance details in special modified string format.
+        /// </summary>
+        /// <returns>Instance formated as string.</returns>
         public override string ToString()
         {
-            StringBuilder output = new StringBuilder();
-            if (this.Classes.Count != 0)
+            var output = new StringBuilder();
+            if (this.Classes.Count() != 0)
             {
                 // Classes list is not empty, so we can enumerate
-                foreach (Class item in this.Classes)
+                foreach (var item in this.Classes)
                 {
-                    output.Append(item.ToString() + " ");
+                    output.AppendLine(item.ToString());
                 }
             }
             else

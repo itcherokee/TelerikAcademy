@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MySchool</RootNamespace>
-    <AssemblyName>MySchool</AssemblyName>
+    <AssemblyName>School</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MySchool.TestExec</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,15 +48,17 @@
     <Compile Include="Discipline.cs" />
     <Compile Include="ICommentable.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="TestExec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="School.cs" />
+    <Compile Include="School.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram.cd" />
+    <None Include="SchoolClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

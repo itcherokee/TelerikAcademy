@@ -1,7 +1,5 @@
-﻿namespace MyAnimals
+﻿namespace Animals
 {
-    using System;
-
     internal interface ISound
     {
         // Produce sound depending on Animal

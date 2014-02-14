@@ -7,8 +7,8 @@
     <ProjectGuid>{9CE769E4-0A85-4DB3-AA9B-620B851240DB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_02.Bank</RootNamespace>
-    <AssemblyName>02.Bank</AssemblyName>
+    <RootNamespace>Banking</RootNamespace>
+    <AssemblyName>Bank</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Banking.TestRun</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -41,22 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="Company.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="DepositAccount.cs" />
-    <Compile Include="IDepositable.cs" />
-    <Compile Include="Individual.cs" />
-    <Compile Include="IWithdrawable.cs" />
-    <Compile Include="LoanAccount.cs" />
-    <Compile Include="MortgageAccount.cs" />
+    <Compile Include="Accounts\Account.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="Customers\Company.cs" />
+    <Compile Include="Customers\Customer.cs" />
+    <Compile Include="Accounts\DepositAccount.cs" />
+    <Compile Include="Interfaces\IDepositable.cs" />
+    <Compile Include="Customers\Individual.cs" />
+    <Compile Include="Interfaces\IWithdrawable.cs" />
+    <Compile Include="Accounts\LoanAccount.cs" />
+    <Compile Include="Accounts\MortgageAccount.cs" />
     <Compile Include="TestRun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\EGNValidator.cs" />
+    <Compile Include="Utils\EIKValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,28 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MySchool
+﻿namespace MySchool
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     public class Teacher : Person, ICommentable
     {
         // Using HashSet in order to overcome duplicate records and faster access than List<T>
-        private HashSet<Discipline> disciplines;
-
-        public List<Discipline> Disciplines
-        {
-            get
-            {
-                // Returns List<Discipline> in order list to be indexable
-                return this.disciplines.ToList();
-            }
-        }
-
-        public string Comment { get; set; }
+        private readonly HashSet<Discipline> disciplines;
 
         /// <summary>
-        /// Instantiate an object of type Teacher. It also instantiates the HashSet collection to hold objects of type Discipline
+        /// Instantiate an object of type Teacher. 
+        /// It also instantiates an empty HashSet collection to hold objects of type Discipline
         /// </summary>
         /// <param name="firstName">String value holding first name of the Teacher</param>
         /// <param name="lastName">String value holding last name of the Teacher</param>
@@ -33,38 +23,88 @@ namespace MySchool
         }
 
         /// <summary>
-        /// Add discipline lead by the teacher
+        /// Instantiate an object of type Teacher. 
+        /// It also instantiates the HashSet collection to hold objects of type Discipline
         /// </summary>
-        /// <param name="discipline">Discipline object</param>
-        public void Add(Discipline discipline)
+        /// <param name="firstName">String value holding first name of the Teacher</param>
+        /// <param name="lastName">String value holding last name of the Teacher</param>
+        /// <param name="discipline">A discipline to be attached to Teacher instance.</param>
+        public Teacher(string firstName, string lastName, Discipline discipline)
+            : this(firstName, lastName)
         {
-            this.disciplines.Add(discipline);
+            this.AddDiscipline(discipline);
         }
 
         /// <summary>
-        /// Remove discipline lead by the teacher
+        /// Gets list of disciplines that teacher is enrolled to lead as a ReadOnly list 
+        /// in order to prevent changes to that list from outside the Teacher class.
         /// </summary>
-        /// <param name="discipline">Discipline object</param>
+        public IEnumerable<Discipline> Disciplines
+        {
+            get
+            {
+                return this.disciplines.ToList().AsReadOnly();
+            }
+        }
+
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Add discipline to the list of disciplines lead by the teacher.
+        /// If discipline already exist in the list, no changes are applied.
+        /// </summary>
+        /// <param name="discipline">Discipline instance to be added to the list.</param>
+        public void AddDiscipline(Discipline discipline)
+        {
+            if (discipline != null)
+            {
+                if (!this.Disciplines.Contains(discipline))
+                {
+                    this.disciplines.Add(discipline);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("You can add null discipline reference to list!");
+            }
+        }
+
+        /// <summary>
+        /// Remove discipline from the list of disciplines lead by the teacher.
+        /// If discipline is not available, no exception is thrown as well as no change is introduced.
+        /// </summary>
+        /// <param name="discipline">Discipline instance to be removed.</param>
         public void Remove(Discipline discipline)
         {
-            this.disciplines.Remove(discipline);
+            if (discipline != null)
+            {
+                if (this.Disciplines.Contains(discipline))
+                {
+                    this.disciplines.Remove(discipline);
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException("Discipline instance can not be null!");
+            }
         }
 
         /// <summary>
-        /// Prints object Teacher details in special modified string format
+        /// Format object Teacher details in special modified string format.
         /// </summary>
-        /// <returns>String value</returns>
+        /// <returns>Teacher object in string format.</returns>
         public override string ToString()
         {
-            StringBuilder output = new StringBuilder();
+            var output = new StringBuilder();
             output.Append(string.Format("Name: {0}\n", this.FullName));
-            output.Append("Teaches Disciplines: "); 
+            output.Append("Teaches Disciplines: ");
             if (this.disciplines.Count != 0)
             {
                 // Disciplines list is not empty, so we can enumerate
                 foreach (Discipline item in this.disciplines)
                 {
-                    output.Append(item.Name.ToString() + " ");
+                    output.Append(item.Name);
+                    output.Append(" ");
                 }
             }
             else

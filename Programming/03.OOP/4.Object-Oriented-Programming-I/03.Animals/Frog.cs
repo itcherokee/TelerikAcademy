@@ -1,7 +1,5 @@
-﻿namespace MyAnimals
+﻿namespace Animals
 {
-    using System;
-
     public class Frog : Animal, ISound
     {
         public Frog(string name, int age, Gender sex)

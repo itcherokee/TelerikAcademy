@@ -7,8 +7,8 @@
     <ProjectGuid>{6555549F-8585-495A-8F6C-F63AEA33D13B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03.Exception</RootNamespace>
-    <AssemblyName>03.Exception</AssemblyName>
+    <RootNamespace>MyRangeException</RootNamespace>
+    <AssemblyName>RangeExceptionTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvalidRangeException.cs" />
+    <Compile Include="RangeException\InvalidRangeException.cs" />
     <Compile Include="TestRun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace MyShape
+﻿namespace MyShape.Shapes
 {
     using System;
 
