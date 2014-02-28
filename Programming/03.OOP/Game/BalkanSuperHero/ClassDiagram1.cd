@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="BalkanSuperHero.GameObjects.Sprite" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAgAAAAIAAgAAgAAACAAAAAAAAAAAAAAAAAABCAAA=</HashCode>
+      <FileName>GameObjects\Sprite.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Character" Collapsed="true">
+    <Position X="4.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Vendor" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Vendor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Creature">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACIgACAAEAQBAAAAAAABAAAAAAAAAIA=</HashCode>
+      <FileName>GameObjects\Creature.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Enemy">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACKgACAAEAQBAAAAAAQBAAAAIAAAAIA=</HashCode>
+      <FileName>GameObjects\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.NPC" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\NPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Player">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BalkanSuperHero.GameObjects.Player.Singleton" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GameObjects\Player.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACKgACAAEAQBAIIAAAAjQEAAIgAAAIA=</HashCode>
+      <FileName>GameObjects\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.InanimateObject" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\InanimateObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Treasury">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Treasury.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Environment">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Environment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Item" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAQAAAAAAQAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjects\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.Exceptions.GameItemTypeException" Collapsed="true">
+    <Position X="8.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\GameItemTypeException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.Exceptions.GameGeneralException" Collapsed="true">
+    <Position X="8.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\GameGeneralException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameObjects.Playground" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>GameObjects\Playground.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BalkanSuperHero.GameEngine.Engine">
+    <Position X="11.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAII=</HashCode>
+      <FileName>GameEngine\Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="BalkanSuperHero.Position" Collapsed="true">
+    <Position X="14.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Structs\Position.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BalkanSuperHero.Structs.Powers" Collapsed="true">
+    <Position X="16.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAGAAAAAAAQAAEAABAAAAABAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Structs\Powers.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="BalkanSuperHero.Interfaces.IDrawable" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAAAAAAAgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IMovable" Collapsed="true">
+    <Position X="1.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAAAAAACCAAACAAAAQAgAAAAAAAAAAgAAAEAAA=</HashCode>
+      <FileName>Interfaces\IMovable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.ISelfMovable" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interfaces\ISelfMovable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.ITeleportable" Collapsed="true">
+    <Position X="2.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Interfaces\ITeleportable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IHealable" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Interfaces\IHealable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IRenderer" Collapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAwAAAAAAAAAAAAAAgQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IInputControl" Collapsed="true">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAQ=</HashCode>
+      <FileName>Interfaces\IInputControl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IFightable" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAgAAAAAgAAAAA=</HashCode>
+      <FileName>Interfaces\IFightable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IColideable">
+    <Position X="18.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAACAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Interfaces\IColideable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IColideDispatcher" Collapsed="true">
+    <Position X="18.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IColideDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.ILevelable">
+    <Position X="5.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ILevelable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.ILevelUpable">
+    <Position X="5.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ILevelUpable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.ITalkable" Collapsed="true">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITalkable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BalkanSuperHero.Interfaces.IAutoHealable" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IAutoHealable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BalkanSuperHero.Enumerations.ObjectType" Collapsed="true">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumerations\ObjectType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BalkanSuperHero.Enumerations.ItemType" Collapsed="true">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enumerations\ItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
