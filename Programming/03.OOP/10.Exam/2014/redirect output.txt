@@ -1,0 +1,6 @@
+var sw = new StreamWriter(new FileStream("../../../output.txt", FileMode.Create));
+Console.SetOut(sw);
+
+<program>
+
+sw.Close();

@@ -25,7 +25,7 @@
                 // new ParticleAttractor(new MatrixCoords(15, 20), new MatrixCoords(), 1),
                 new ChaoticParticle(new MatrixCoords(15, 15), new MatrixCoords(0, 0)),
                 new ChaoticParticle(new MatrixCoords(10, 10), new MatrixCoords(0, 0)),
-                new ChickenParticle(new MatrixCoords(15, 15), new MatrixCoords(3, 3), 5),
+                new ChickenParticle(new MatrixCoords(15, 15), new MatrixCoords(0, 0), 5),
                 new ParticleRepeller(new MatrixCoords(15, 14), new MatrixCoords(0, 0), 2),
             };
 

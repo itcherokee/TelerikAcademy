@@ -9,8 +9,8 @@
     /// </summary>
     public class ChickenParticle : ChaoticParticle
     {
+        private readonly int simulationTickStops;
         private int timer;
-        private int simulationTickStops;
 
         public ChickenParticle(MatrixCoords position, MatrixCoords speed, int simulationTickStops)
             : base(position, speed)
@@ -31,7 +31,10 @@
 
                 this.timer = this.simulationTickStops;
                 chickens.Add(
-                    new ChickenParticle(new MatrixCoords(this.Position.Row, this.Position.Col), new MatrixCoords(1, 1), this.simulationTickStops));
+                    new ChickenParticle(
+                        new MatrixCoords(this.Position.Row, this.Position.Col),
+                        new MatrixCoords(this.Speed.Row, this.Speed.Col),
+                        this.simulationTickStops));
             }
             else
             {

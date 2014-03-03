@@ -58,16 +58,11 @@
             foreach (var attractor in this.currentTickAttractors)
             {
                 var currParticleToAttractorVector = attractor.Position - particle.Position;
-
                 int partToAttrRow = currParticleToAttractorVector.Row;
                 partToAttrRow = DecreaseVectorCoordToPower(attractor, partToAttrRow);
-
                 int partToAttrCol = currParticleToAttractorVector.Col;
                 partToAttrCol = DecreaseVectorCoordToPower(attractor, partToAttrCol);
-
-                var currAcceleration = new MatrixCoords(partToAttrRow, partToAttrCol);
-
-                particle.Accelerate(currAcceleration);
+                particle.Accelerate(new MatrixCoords(partToAttrRow, partToAttrCol));
             }
         }
 
@@ -77,9 +72,9 @@
             {
                 if (this.Distance(repeller.Position, particle.Position) <= repeller.RepulsionRadius)
                 {
-                    var inversePartRow = particle.Speed.Row * 2 * -1;
-                    var inversePartCol = particle.Speed.Col * 2 * -1;
-                    particle.Accelerate(new MatrixCoords(inversePartRow, inversePartCol));
+                    var inverseParticalRow = particle.Speed.Row * 2 * -1;
+                    var inverseParticalCol = particle.Speed.Col * 2 * -1;
+                    particle.Accelerate(new MatrixCoords(inverseParticalRow, inverseParticalCol));
                 }
             }
         }
