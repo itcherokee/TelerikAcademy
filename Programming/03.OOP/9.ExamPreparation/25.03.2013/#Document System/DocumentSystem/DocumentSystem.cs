@@ -1,9 +1,9 @@
-﻿using System.Linq;
-
-namespace DocSystem
+﻿namespace DocSystem
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+
 
     public class DocumentSystem
     {

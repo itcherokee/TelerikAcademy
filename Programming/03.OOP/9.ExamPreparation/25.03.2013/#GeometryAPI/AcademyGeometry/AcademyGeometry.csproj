@@ -7,7 +7,7 @@
     <ProjectGuid>{F9FC438A-14C4-499C-A94E-33DB6D916107}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AcademyGeometry</RootNamespace>
+    <RootNamespace>GeometryAPI</RootNamespace>
     <AssemblyName>AcademyGeometry</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,8 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
+    <Compile Include="Cylinder.cs" />
+    <Compile Include="ExtendedFigureController.cs" />
+    <Compile Include="Figure.cs" />
+    <Compile Include="FigureController.cs" />
+    <Compile Include="IAreaMeasurable.cs" />
+    <Compile Include="IFlat.cs" />
+    <Compile Include="ILengthMeasurable.cs" />
+    <Compile Include="ITransformable.cs" />
+    <Compile Include="IVolumeMeasurable.cs" />
+    <Compile Include="LineSegment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Triangle.cs" />
+    <Compile Include="Vector.cs" />
+    <Compile Include="Vector3D.cs" />
+    <Compile Include="Vertex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
