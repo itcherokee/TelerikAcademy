@@ -14,6 +14,8 @@
         private readonly Display gsmDisplay;
         private readonly List<Call> callHistory;
         private decimal? price;
+        private string model;
+        private string manufacturer;
 
         public GSM()
             : this("Generic", "Unknown")
@@ -54,9 +56,41 @@
             }
         }
 
-        public string Model { get; set; }
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
 
-        public string Manufacturer { get; set; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("Model cannot be null, empty or whitespaces!");
+                }
+
+                this.name = value;
+            }
+        }
+
+        public string Manufacturer
+        {
+            get
+            {
+                return this.manufacturer;
+            }
+
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("Manufacturer cannot be null, empty or whitespaces!");
+                }
+
+                this.manufacturer = value;
+            }
+        }
 
         public string Owner { get; set; }
 
