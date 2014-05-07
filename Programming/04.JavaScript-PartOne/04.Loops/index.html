@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Loops Homework</title>
+    <meta charset="UTF-8" />
+    <link href="style/style.css" rel="stylesheet" />
+    <link href="style/js-console.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <h1>Loops</h1>
+    </header>
+    <article>
+        <fieldset id="tasks-select">
+            <legend>Tasks:</legend>
+            <ul>
+                <li>
+                    <input type="radio" name="tasks" value="1" checked="checked">Task 1
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="2">Task 2
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="3">Task 3
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="4">Task 4
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset id="summary">
+            <legend> Task Definition: </legend>
+            <div>
+                <span>Write a script that prints all the numbers from 1 to N.</span>
+                <span>Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time.</span>
+                <span>Write a script that finds the max and min number from a sequence of numbers.</span>
+                <span>Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects.</span>
+            </div>
+        </fieldset>
+        <div id="buttons">
+            <button id="btn-task1-summary">Run JavaScript code</button>
+            <button id="btn-taks1-show" title="Under IE browser, will open the JS file within your IDE after approval.">Show JavaScript code</button>
+        </div>
+        <div id="note">
+            If you have enabled popup-blocker, clicking the "Show" button will not open it. <br />
+            You need to view the corresponding "taskX.js" file from the directory (located in the "tasks" folder).
+        </div>
+    </article>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script src="tasks/task1.js"></script>
+    <script src="tasks/task2.js"></script>
+    <script src="tasks/task3.js"></script>
+    <script src="tasks/task4.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>

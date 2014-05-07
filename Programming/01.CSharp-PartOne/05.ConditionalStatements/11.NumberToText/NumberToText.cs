@@ -119,7 +119,7 @@ public class NumberToText
                         finalTranslation.Append(" ");
                     }
 
-                    if (units != 0)
+                    if (units != 0 && tens != 1)
                     {
                         finalTranslation.Append(numberNames[units]);
                     }
