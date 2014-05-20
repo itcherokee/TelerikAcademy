@@ -25,10 +25,11 @@ var taskSix = function () {
 
     function enterData() {
         var enteredSequence = prompt("Enter sequence splited by comma (,)").split(/(?:,| )+/);
-        var len = enteredSequence.length;
-        var input = [];
-        var index = 0;
-        var isValid = true;
+        var len = enteredSequence.length,
+            input = [],
+            index = 0,
+            isValid = true;
+
         // convert to numbers the input
         for (index; index < len; index++) {
             var element = parseInt(enteredSequence[index], 10);

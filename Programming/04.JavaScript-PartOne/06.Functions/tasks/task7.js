@@ -24,8 +24,9 @@ var taskSeven = function () {
 
     function firstBigger(arr) {
         if (arr.length !== 1) {
-            var index = 0;
-            var len = arr.length;
+            var index = 0,
+                len = arr.length;
+
             for (index; index < len; index++) {
                 if (isBigger(arr, index)) {
                     return index;

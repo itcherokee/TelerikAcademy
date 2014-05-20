@@ -6,10 +6,11 @@ var taskTwo = function () {
     var brake = "<br />";
 
     function reverse(digit) {
-        var work = digit.toString();
-        var result = "";
-        var len = work.length;
-        var index = len - 1;
+        var work = digit.toString(),
+            result = "",
+            len = work.length,
+            index = len - 1;
+
         for (index; index >= 0; index--) {
             result += work[index];
         }

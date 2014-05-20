@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Using Objects Homework</title>
+    <meta charset="utf-8" />
+    <link href="style/style.css" rel="stylesheet" />
+    <link href="style/js-console.css" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <h1>Using Objects</h1>
+    </header>
+    <article>
+        <fieldset id="tasks-select">
+            <legend>Tasks:</legend>
+            <ul>
+                <li>
+                    <input id="check" type="radio" name="tasks" value="1">Task 1
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="2" autocomplete="off">Task 2
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="3">Task 3
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="4">Task 4
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="5">Task 5
+                </li>
+                <li>
+                    <input type="radio" name="tasks" value="6">Task 6
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset id="summary">
+            <legend> Task Definition: </legend>
+            <div>
+                <span>Write functions for working with shapes in standard Planar coordinate system:<br />- Points are represented by coordinates P(X, Y)<br />- Lines are represented by two points, marking their beginning and ending<br />- L(P1(X1,Y1),P2(X2,Y2))<br />- Calculate the distance between two points<br />- Check if three segment lines can form a triangle</span>
+                <span>Write a function that removes all elements with a given value:<br />- Attach it to the array type<br />- Read about prototypeand how to attach methods</span>
+                <span>Write a function that makes a deep copy of an object<br />- The function should work for both primitive and reference types</span>
+                <span>Write a function that checks if a given object contains a given property.</span>
+                <span>Write a function that finds the youngest person in a given array of persons and prints his/hers full name.<br />Note: Solution is done with OOP JavaScript simulating list (array with person is encapsulated in that list)</span>
+                <span>Write a function that groups an array of persons by age, first or last name. The function must return an associative array, with keys -the groups, and values -arrays with persons in this groups<br />- Use function overloading (i.e. just one function).</span>
+            </div>
+        </fieldset>
+        <div id="buttons">
+            <button id="btn-task1-summary">Run JavaScript code</button>
+            <button id="btn-taks1-show" title="Under IE browser, will open the JS file within your IDE after approval.">Show JavaScript code</button>
+        </div>
+        <div id="note">
+            If you have enabled popup-blocker, clicking the "Show" button will not open it. <br />
+            You need to view the corresponding "taskX.js" file from the directory (located in the "tasks" folder).
+        </div>
+    </article>
+    <div id="js-console">
+    </div>
+    <script src="script/js-console.js"></script>
+    <script src="tasks/task1.js"></script>
+    <script src="tasks/task2.js"></script>
+    <script src="tasks/task3.js"></script>
+    <script src="tasks/task4.js"></script>
+    <script src="tasks/task5.js"></script>
+    <script src="tasks/task6.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>

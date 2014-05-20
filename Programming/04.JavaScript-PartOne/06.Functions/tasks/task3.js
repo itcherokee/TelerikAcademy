@@ -18,8 +18,8 @@ var taskThree = function () {
     }
 
     function countWord(array, wrd, caseInsensite) {
-        var result = 0;
-        var word = wrd;
+        var result = 0,
+            word = wrd;
         switch (arguments.length) {
             case 2: result = count(array, wrd); break;
             case 3:

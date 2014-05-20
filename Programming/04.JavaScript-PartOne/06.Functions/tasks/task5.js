@@ -21,9 +21,10 @@ var taskFive = function () {
         var output = brake;
         var enteredSequence = prompt("Enter sequence splited by comma (,)").split(/(?:,| )+/);
         output += "Elements: " + enteredSequence + brake;
-        var len = enteredSequence.length;
-        var input = [];
-        var index = 0;
+        var len = enteredSequence.length,
+            input = [],
+            index = 0;
+        
         // convert to numbers the input
         for (index; index < len; index++) {
             var element = parseInt(enteredSequence[index], 10);
