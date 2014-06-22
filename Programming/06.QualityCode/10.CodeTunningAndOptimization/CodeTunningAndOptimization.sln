@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.SimpleMathPerformance", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.AdvancedMathPerformance", "03.AdvancedMathPerformance\03.AdvancedMathPerformance.csproj", "{0E82FBE1-DDC8-4E55-B816-6457F2CE51F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SortAlgorithmPerformance", "04.SortAlgorythmPerformance\04.SortAlgorithmPerformance.csproj", "{83218FA3-0817-4185-B6ED-9E8CA173CE69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithm.Test", "SortAlgorithm.Test\SortAlgorithm.Test.csproj", "{B9969EB3-DD3F-416F-9C43-E2D65F748199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{0E82FBE1-DDC8-4E55-B816-6457F2CE51F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E82FBE1-DDC8-4E55-B816-6457F2CE51F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E82FBE1-DDC8-4E55-B816-6457F2CE51F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83218FA3-0817-4185-B6ED-9E8CA173CE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83218FA3-0817-4185-B6ED-9E8CA173CE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83218FA3-0817-4185-B6ED-9E8CA173CE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83218FA3-0817-4185-B6ED-9E8CA173CE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9969EB3-DD3F-416F-9C43-E2D65F748199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9969EB3-DD3F-416F-9C43-E2D65F748199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9969EB3-DD3F-416F-9C43-E2D65F748199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9969EB3-DD3F-416F-9C43-E2D65F748199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

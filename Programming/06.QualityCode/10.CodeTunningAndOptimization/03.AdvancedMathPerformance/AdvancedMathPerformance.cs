@@ -1,5 +1,5 @@
-﻿//// Write a program to compare the performance of square root, natural logarithm, sinus 
-//// for float, double and decimal values.
+﻿// Task 3:  Write a program to compare the performance of square root, natural logarithm, sinus 
+//          for float, double and decimal values.
 
 namespace AdvancedMathPerformance
 {
@@ -8,71 +8,75 @@ namespace AdvancedMathPerformance
 
     public class AdvancedMathPerformance
     {
-        static void Main()
+        public static void Main()
         {
-            Stopwatch timeElapsed = new Stopwatch();
+            const float NumberFloat = 10000f;
+            const double NumberDouble = 10000d;
+            const decimal NumberDecimal = 10000m;
+            const float AngleFloat = 20f;
+            const double AngleDouble = 10000d;
+            const decimal AngleDecimal = 10000m;
+
+            var timeElapsed = new Stopwatch();
 
             // test square root performance
-            float numberFloat = 10000f;
+            float resultFloat;
             timeElapsed.Start();
-            float resultFloat = MathAdvanceUtils.SquareRoot(numberFloat);
+            resultFloat = MathAdvanceUtils.SquareRoot(NumberFloat);
             timeElapsed.Stop();
-            Console.WriteLine("Square root calculation of {0} presented in Float took: {1}", numberFloat, timeElapsed.Elapsed);
+            Console.WriteLine("Square root calculation of {0} in Float took: {1}", NumberFloat, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
-            double numberDouble = 10000d;
+            double resultDouble;
             timeElapsed.Start();
-            double resultDouble = MathAdvanceUtils.SquareRoot(numberDouble);
+            resultDouble = MathAdvanceUtils.SquareRoot(NumberDouble);
             timeElapsed.Stop();
-            Console.WriteLine("Square root calculation of {0} presented in Double took: {1}", numberDouble, timeElapsed.Elapsed);
+            Console.WriteLine("Square root calculation of {0} in Double took: {1}", NumberDouble, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
-            decimal numberDecimal = 10000m;
+            decimal resultDecimal;
             timeElapsed.Start();
-            decimal resultDecimal = MathAdvanceUtils.SquareRoot(numberDecimal);
+            resultDecimal = MathAdvanceUtils.SquareRoot(NumberDecimal);
             timeElapsed.Stop();
-            Console.WriteLine("Square root calculation of {0} presented in Float took: {1}", numberDecimal, timeElapsed.Elapsed);
+            Console.WriteLine("Square root calculation of {0} in Float took: {1}", NumberDecimal, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
             // test natural logarythm performance
             timeElapsed.Start();
-            resultFloat = MathAdvanceUtils.Logarithm(numberFloat);
+            resultFloat = MathAdvanceUtils.Logarithm(NumberFloat);
             timeElapsed.Stop();
-            Console.WriteLine("Natural logarythm calculation of {0} presented in Float took: {1}", numberFloat, timeElapsed.Elapsed);
+            Console.WriteLine("Natural logarythm calculation of {0} in Float took: {1}", NumberFloat, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
             timeElapsed.Start();
-            resultDouble = MathAdvanceUtils.Logarithm(numberDouble);
+            resultDouble = MathAdvanceUtils.Logarithm(NumberDouble);
             timeElapsed.Stop();
-            Console.WriteLine("Natural logarythm calculation of {0} presented in Double took: {1}", numberDouble, timeElapsed.Elapsed);
+            Console.WriteLine("Natural logarythm calculation of {0} in Double took: {1}", NumberDouble, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
             timeElapsed.Start();
-            resultDecimal = MathAdvanceUtils.Logarithm(numberDecimal);
+            resultDecimal = MathAdvanceUtils.Logarithm(NumberDecimal);
             timeElapsed.Stop();
-            Console.WriteLine("Natural logarythm calculation of {0} presented in Float took: {1}", numberDecimal, timeElapsed.Elapsed);
+            Console.WriteLine("Natural logarythm calculation of {0} in Float took: {1}", NumberDecimal, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
             // test sinus performance
-            float angleFloat = 20f;
             timeElapsed.Start();
-            resultFloat = MathAdvanceUtils.Sinus(angleFloat);
+            resultFloat = MathAdvanceUtils.Sinus(AngleFloat);
             timeElapsed.Stop();
-            Console.WriteLine("Sinus calculation of {0} degrees presented in Float took: {1}", angleFloat, timeElapsed.Elapsed);
+            Console.WriteLine("Sinus calculation of {0} degrees in Float took: {1}", AngleFloat, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
-            double angleDouble = 10000d;
             timeElapsed.Start();
-            resultDouble = MathAdvanceUtils.Sinus(angleDouble);
+            resultDouble = MathAdvanceUtils.Sinus(AngleDouble);
             timeElapsed.Stop();
-            Console.WriteLine("Sinus calculation of {0} presented in Double took: {1}", angleDouble, timeElapsed.Elapsed);
+            Console.WriteLine("Sinus calculation of {0} in Double took: {1}", AngleDouble, timeElapsed.Elapsed);
             timeElapsed.Reset();
 
-            decimal angleDecimal = 10000m;
             timeElapsed.Start();
-            resultDecimal = MathAdvanceUtils.Sinus(angleDecimal);
+            resultDecimal = MathAdvanceUtils.Sinus(AngleDecimal);
             timeElapsed.Stop();
-            Console.WriteLine("Sinus calculation of {0} presented in Float took: {1}", angleDecimal, timeElapsed.Elapsed);
+            Console.WriteLine("Sinus calculation of {0} in Float took: {1}", AngleDecimal, timeElapsed.Elapsed);
         }
     }
 }

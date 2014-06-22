@@ -1,217 +1,200 @@
-﻿//// Write a program to compare the performance of add, subtract, increment, multiply, divide 
-//// for int, long, float, double and decimal values.
+﻿// Task 2:  Write a program to compare the performance of add, subtract, increment, multiply, divide 
+//          for int, long, float, double and decimal values.
+//
+// Note:    In order to reduce as much as possible external impacts on measurement, I have removed 
+//          variable declarations and variable assignments as much as possible - working mainly with constants.
 
 namespace SimpleMathPerformance
 {
     using System;
     using System.Diagnostics;
+    using System.Globalization;
 
     public class SimpleMathPerformance
     {
-        static void Main()
+        public static void Main()
         {
-            Stopwatch timeElapsed = new Stopwatch();
+            const string Int = "int";
+            const string Long = "long";
+            const string Float = "float";
+            const string Double = "double";
+            const string Decimal = "decimal";
+
+            const int NumberOneInt = 10000;
+            const int NumberTwoInt = 1000;
+            const long NumberOneLong = 10000L;
+            const long NumberTwoLong = 1000L;
+            const float NumberOneFloat = 10000f;
+            const float NumberTwoFloat = 1000f;
+            const double NumberOneDouble = 10000d;
+            const double NumberTwoDouble = 1000d;
+            const decimal NumberOneDecimal = 10000m;
+            const decimal NumberTwoDecimal = 1000m;
+
+            var timeElapsed = new Stopwatch();
 
             // test Addition performance
-            int numberOneInt = 10000;
-            int numberTwoInt = 1000;
+            string operation = "add";
             timeElapsed.Start();
-            int resultInt = MathUtils.Add(numberOneInt, numberTwoInt);
+            int resultInt = NumberOneInt + NumberTwoInt;
             timeElapsed.Stop();
-            Console.WriteLine("Addition of {0} + {1} presented in \"int\" took: {2}", numberOneInt, numberTwoInt, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Int, NumberOneInt, NumberTwoInt, resultInt, timeElapsed.Elapsed);
 
-            long numberOneLong = 10000L;
-            long numberTwoLong = 1000L;
-            timeElapsed.Start();
-            long resultLong = MathUtils.Add(numberOneLong, numberTwoLong);
+            timeElapsed.Restart();
+            long resultLong = NumberOneLong + NumberTwoLong;
             timeElapsed.Stop();
-            Console.WriteLine("Addition of {0} + {1} presented in \"long\" took: {2}", numberOneLong, numberTwoLong, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Long, NumberOneLong, NumberTwoLong, resultLong, timeElapsed.Elapsed);
 
-            float numberOneFloat = 10000f;
-            float numberTwoFloat = 1000f;
-            timeElapsed.Start();
-            float resultFloat = MathUtils.Add(numberOneFloat, numberTwoFloat);
+            timeElapsed.Restart();
+            float resultFloat = NumberOneFloat + NumberTwoFloat;
             timeElapsed.Stop();
-            Console.WriteLine("Addition of {0} + {1} presented in \"float\" took: {2}", numberOneFloat, numberTwoFloat, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Float, (decimal)NumberOneFloat, (decimal)NumberTwoFloat, (decimal)resultFloat, timeElapsed.Elapsed);
 
-            double numberOneDouble = 10000d;
-            double numberTwoDouble = 1000d;
-            timeElapsed.Start();
-            double resultDouble = MathUtils.Add(numberOneDouble, numberTwoDouble);
+            timeElapsed.Restart();
+            double resultDouble = NumberOneDouble + NumberTwoDouble;
             timeElapsed.Stop();
-            Console.WriteLine("Addition of {0} + {1} presented in \"double\" took: {2}", numberOneDouble, numberTwoDouble, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Double, (decimal)NumberOneDouble, (decimal)NumberTwoDouble, (decimal)resultDouble, timeElapsed.Elapsed);
 
-            decimal numberOneDecimal = 10000m;
-            decimal numberTwoDecimal = 1000m;
-            timeElapsed.Start();
-            decimal resultDecimal = MathUtils.Add(numberOneDecimal, numberTwoDecimal);
+            timeElapsed.Restart();
+            decimal resultDecimal = NumberOneDecimal + NumberTwoDecimal;
             timeElapsed.Stop();
-            Console.WriteLine("Addition of {0} + {1} presented in \"decimal\" took: {2}", numberOneDecimal, numberTwoDecimal, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Decimal, NumberOneDecimal, NumberTwoDecimal, resultDecimal, timeElapsed.Elapsed);
 
             // test Subtract performance
-            numberOneInt = 10000;
-            numberTwoInt = 1000;
-            timeElapsed.Start();
-            resultInt = MathUtils.Subtract(numberOneInt, numberTwoInt);
+            operation = "subtract";
+            timeElapsed.Restart();
+            resultInt = NumberOneInt - NumberTwoInt;
             timeElapsed.Stop();
-            Console.WriteLine("Subtraction of {0} - {1} presented in \"int\" took: {2}", numberOneInt, numberTwoInt, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Int, NumberOneInt, NumberTwoInt, resultInt, timeElapsed.Elapsed);
 
-            numberOneLong = 10000L;
-            numberTwoLong = 1000L;
-            timeElapsed.Start();
-            resultLong = MathUtils.Subtract(numberOneLong, numberTwoLong);
+            timeElapsed.Restart();
+            resultLong = NumberOneLong - NumberTwoLong;
             timeElapsed.Stop();
-            Console.WriteLine("Subtraction of {0} - {1} presented in \"long\" took: {2}", numberOneLong, numberTwoLong, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Long, NumberOneLong, NumberTwoLong, resultLong, timeElapsed.Elapsed);
 
-            numberOneFloat = 10000f;
-            numberTwoFloat = 1000f;
-            timeElapsed.Start();
-            resultFloat = MathUtils.Subtract(numberOneFloat, numberTwoFloat);
+            timeElapsed.Restart();
+            resultFloat = NumberOneFloat - NumberTwoFloat;
             timeElapsed.Stop();
-            Console.WriteLine("Subtraction of {0} - {1} presented in \"float\" took: {2}", numberOneFloat, numberTwoFloat, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Float, (decimal)NumberOneFloat, (decimal)NumberTwoFloat, (decimal)resultFloat, timeElapsed.Elapsed);
 
-            numberOneDouble = 10000d;
-            numberTwoDouble = 1000d;
-            timeElapsed.Start();
-            resultDouble = MathUtils.Subtract(numberOneDouble, numberTwoDouble);
+            timeElapsed.Restart();
+            resultDouble = NumberOneDouble - NumberTwoDouble;
             timeElapsed.Stop();
-            Console.WriteLine("Subtraction of {0} - {1} presented in \"double\" took: {2}", numberOneDouble, numberTwoDouble, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Double, (decimal)NumberOneDouble, (decimal)NumberTwoDouble, (decimal)resultDouble, timeElapsed.Elapsed);
 
-            numberOneDecimal = 10000m;
-            numberTwoDecimal = 1000m;
-            timeElapsed.Start();
-            resultDecimal = MathUtils.Subtract(numberOneDecimal, numberTwoDecimal);
+            timeElapsed.Restart();
+            resultDecimal = NumberOneDecimal - NumberTwoDecimal;
             timeElapsed.Stop();
-            Console.WriteLine("Subtraction of {0} - {1} presented in \"decimal\" took: {2}", numberOneDecimal, numberTwoDecimal, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Decimal, NumberOneDecimal, NumberTwoDecimal, resultDecimal, timeElapsed.Elapsed);
 
             // test Increment performance
-            numberOneInt = 10000;
-            numberTwoInt = 1000;
-            timeElapsed.Start();
-            resultInt = MathUtils.Increment(numberOneInt, numberTwoInt);
+            operation = "increment";
+            timeElapsed.Restart();
+            resultInt = NumberOneInt + 1;
             timeElapsed.Stop();
-            Console.WriteLine("Incremention of {0} with 1, {1} times presented in \"int\" took: {2}", numberOneInt, numberTwoInt, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Int, NumberOneInt, 1, resultInt, timeElapsed.Elapsed);
 
-            numberOneLong = 10000L;
-            timeElapsed.Start();
-            resultLong = MathUtils.Increment(numberOneLong, numberTwoInt);
+            timeElapsed.Restart();
+            resultLong = NumberOneLong + 1;
             timeElapsed.Stop();
-            Console.WriteLine("Incremention of {0} with 1, {1} times presented in \"long\" took: {2}", numberOneLong, numberTwoLong, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Long, NumberOneLong, 1, resultLong, timeElapsed.Elapsed);
 
-            numberOneFloat = 10000f;
-            timeElapsed.Start();
-            resultFloat = MathUtils.Increment(numberOneFloat, numberTwoInt);
+            timeElapsed.Restart();
+            resultFloat = NumberOneFloat + 1;
             timeElapsed.Stop();
-            Console.WriteLine("Incremention of {0} with 1, {1} times presented in \"float\" took: {2}", numberOneFloat, numberTwoFloat, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Float, (decimal)NumberOneFloat, 1, (decimal)resultFloat, timeElapsed.Elapsed);
 
-            numberOneDouble = 10000d;
-            timeElapsed.Start();
-            resultDouble = MathUtils.Increment(numberOneDouble, numberTwoInt);
+            timeElapsed.Restart();
+            resultDouble = NumberOneDouble + 1;
             timeElapsed.Stop();
-            Console.WriteLine("Incremention of {0} with 1, {1} times presented in \"double\" took: {2}", numberOneDouble, numberTwoDouble, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Double, (decimal)NumberOneDouble, 1, (decimal)resultDouble, timeElapsed.Elapsed);
 
-            numberOneDecimal = 10000m;
-            timeElapsed.Start();
-            resultDecimal = MathUtils.Increment(numberOneDecimal, numberTwoInt);
+            timeElapsed.Restart();
+            resultDecimal = NumberOneDecimal + 1;
             timeElapsed.Stop();
-            Console.WriteLine("Incremention of {0} with 1, {1} times presented in \"decimal\" took: {2}", numberOneDecimal, numberTwoDecimal, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Decimal, NumberOneDecimal, 1, resultDecimal, timeElapsed.Elapsed);
 
             // test Multiply performance
-            numberOneInt = 10000;
-            numberTwoInt = 10;
-            timeElapsed.Start();
-            resultInt = MathUtils.Multiply(numberOneInt, numberTwoInt);
+            operation = "multiply";
+            timeElapsed.Restart();
+            resultInt = NumberOneInt * NumberTwoInt;
             timeElapsed.Stop();
-            Console.WriteLine("Multiply {0} by {1} presented in \"int\" took: {2}", numberOneInt, numberTwoInt, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Int, NumberOneInt, NumberTwoInt, resultInt, timeElapsed.Elapsed);
 
-            numberOneLong = 10000L;
-            numberTwoLong = 10L;
-            timeElapsed.Start();
-            resultLong = MathUtils.Multiply(numberOneLong, numberTwoLong);
+            timeElapsed.Restart();
+            resultLong = NumberOneLong * NumberTwoLong;
             timeElapsed.Stop();
-            Console.WriteLine("Multiply {0} by {1} presented in \"long\" took: {2}", numberOneLong, numberTwoLong, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Long, NumberOneLong, NumberTwoLong, resultLong, timeElapsed.Elapsed);
 
-            numberOneFloat = 10000f;
-            numberTwoFloat = 10f;
-            timeElapsed.Start();
-            resultFloat = MathUtils.Multiply(numberOneFloat, numberTwoFloat);
+            timeElapsed.Restart();
+            resultFloat = NumberOneFloat * NumberTwoFloat;
             timeElapsed.Stop();
-            Console.WriteLine("Multiply {0} by {1} presented in \"float\" took: {2}", numberOneFloat, numberTwoFloat, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Float, (decimal)NumberOneFloat, (decimal)NumberTwoFloat, (decimal)resultFloat, timeElapsed.Elapsed);
 
-            numberOneDouble = 10000d;
-            numberTwoDouble = 10d;
-            timeElapsed.Start();
-            resultDouble = MathUtils.Multiply(numberOneDouble, numberTwoDouble);
+            timeElapsed.Restart();
+            resultDouble = NumberOneDouble * NumberTwoDouble;
             timeElapsed.Stop();
-            Console.WriteLine("Multiply {0} by {1} presented in \"double\" took: {2}", numberOneDouble, numberTwoDouble, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Double, (decimal)NumberOneDouble, (decimal)NumberTwoDouble, (decimal)resultDouble, timeElapsed.Elapsed);
 
-            numberOneDecimal = 10000m;
-            numberTwoDecimal = 10m;
-            timeElapsed.Start();
-            resultDecimal = MathUtils.Multiply(numberOneDecimal, numberTwoDecimal);
+            timeElapsed.Restart();
+            resultDecimal = NumberOneDecimal * NumberTwoDecimal;
             timeElapsed.Stop();
-            Console.WriteLine("Multiply {0} by {1} presented in \"decimal\" took: {2}", numberOneDecimal, numberTwoDecimal, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Decimal, NumberOneDecimal, NumberTwoDecimal, resultDecimal, timeElapsed.Elapsed);
 
             // test Divide performance
-            numberOneInt = 10000;
-            numberTwoInt = 10;
-            timeElapsed.Start();
-            resultInt = MathUtils.Divide(numberOneInt, numberTwoInt);
+            operation = "divide";
+            timeElapsed.Restart();
+            resultInt = NumberOneInt / NumberTwoInt;
             timeElapsed.Stop();
-            Console.WriteLine("Division of {0} by {1} presented in \"int\" took: {2}", numberOneInt, numberTwoInt, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Int, NumberOneInt, NumberTwoInt, resultInt, timeElapsed.Elapsed);
 
-            numberOneLong = 10000L;
-            numberTwoLong = 10L;
-            timeElapsed.Start();
-            resultLong = MathUtils.Divide(numberOneLong, numberTwoLong);
+            timeElapsed.Restart();
+            resultLong = NumberOneLong / NumberTwoLong;
             timeElapsed.Stop();
-            Console.WriteLine("Division of {0} by {1} presented in \"long\" took: {2}", numberOneLong, numberTwoLong, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Long, NumberOneLong, NumberTwoLong, resultLong, timeElapsed.Elapsed);
 
-            numberOneFloat = 10000f;
-            numberTwoFloat = 10f;
-            timeElapsed.Start();
-            resultFloat = MathUtils.Divide(numberOneFloat, numberTwoFloat);
+            timeElapsed.Restart();
+            resultFloat = NumberOneFloat / NumberTwoFloat;
             timeElapsed.Stop();
-            Console.WriteLine("Division of {0} by {1} presented in \"float\" took: {2}", numberOneFloat, numberTwoFloat, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Float, (decimal)NumberOneFloat, (decimal)NumberTwoFloat, (decimal)resultFloat, timeElapsed.Elapsed);
 
-            numberOneDouble = 10000d;
-            numberTwoDouble = 10d;
-            timeElapsed.Start();
-            resultDouble = MathUtils.Divide(numberOneDouble, numberTwoDouble);
+            timeElapsed.Restart();
+            resultDouble = NumberOneDouble / NumberTwoDouble;
             timeElapsed.Stop();
-            Console.WriteLine("Division of {0} by {1} presented in \"double\" took: {2}", numberOneDouble, numberTwoDouble, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Double, (decimal)NumberOneDouble, (decimal)NumberTwoDouble, (decimal)resultDouble, timeElapsed.Elapsed);
 
-            numberOneDecimal = 10000m;
-            numberTwoDecimal = 10m;
-            timeElapsed.Start();
-            resultDecimal = MathUtils.Divide(numberOneDecimal, numberTwoDecimal);
+            timeElapsed.Restart();
+            resultDecimal = NumberOneDecimal / NumberTwoDecimal;
             timeElapsed.Stop();
-            Console.WriteLine("Division of {0} by {1} presented in \"decimal\" took: {2}", numberOneDecimal, numberTwoDecimal, timeElapsed.Elapsed);
-            timeElapsed.Reset();
+            ShowResult(operation, Decimal, NumberOneDecimal, NumberTwoDecimal, resultDecimal, timeElapsed.Elapsed);
+        }
+
+        private static void ShowResult(string action, string type, decimal operandOne, decimal operandTwo, decimal result, TimeSpan timeElapsed)
+        {
+            string command;
+            switch (action)
+            {
+                case "add":
+                    command = "+";
+                    break;
+                case "subtract":
+                    command = "-";
+                    break;
+                case "multiply":
+                    command = "*";
+                    break;
+                case "divide":
+                    command = "/";
+                    break;
+                case "increment":
+                    command = "++";
+                    break;
+                default:
+                    throw new ArgumentException("Invalid action has been specified!");
+            }
+
+            Console.WriteLine("({0})({1,-7}) {2} {0} {3} = {4} [time elapsed: {5}]", command, type, operandOne,
+                operandTwo != 1 ? operandTwo.ToString(CultureInfo.InvariantCulture) : string.Empty, result, timeElapsed);
         }
     }
 }

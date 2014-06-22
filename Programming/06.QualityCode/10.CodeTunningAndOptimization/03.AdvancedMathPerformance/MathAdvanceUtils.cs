@@ -2,25 +2,22 @@
 {
     using System;
 
-    class MathAdvanceUtils
+    internal class MathAdvanceUtils
     {
         internal static float SquareRoot(float operand)
         {
-            //double firstOperand = (double)operand;
-            float result = (float)Math.Sqrt((double)operand);
+            float result = (float)Math.Sqrt(operand);
             return result;
         }
 
         internal static double SquareRoot(double operand)
         {
-            //double firstOperand = (double)operand;
             double result = Math.Sqrt(operand);
             return result;
         }
 
         internal static decimal SquareRoot(decimal operand)
         {
-            //double firstOperand = (double)operand;
             decimal result = (decimal)Math.Sqrt((double)operand);
             return result;
         }
