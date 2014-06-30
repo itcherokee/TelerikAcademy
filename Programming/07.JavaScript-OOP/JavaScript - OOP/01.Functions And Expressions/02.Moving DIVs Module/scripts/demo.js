@@ -1,0 +1,13 @@
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('ellipse');
+movingShapes.add('rect');
+movingShapes.add('rect');
+movingShapes.add('rect');
+movingShapes.add('rect');
+movingShapes.add('rect');
