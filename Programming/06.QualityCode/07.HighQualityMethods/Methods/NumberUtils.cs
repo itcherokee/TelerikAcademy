@@ -41,7 +41,7 @@ namespace Methods
         /// <param name="elements">Range of integer elements.</param>
         /// <exception cref="ArgumentException">Thrown if there is no arguments provided (null or empty collection).</exception>
         /// <returns>Maximal element in provided range.</returns>
-        public static int FindMax(params int[] elements)
+        public static int FindMaxNumber(params int[] elements)
         {
             if (elements != null && elements.Length != 0)
             {
@@ -72,6 +72,7 @@ namespace Methods
         /// <returns>Formatted number as string.</returns>
         public static string FormatNumber(object number, string format)
         {
+            // TODO: convert format to Enumeration
             if (number != null)
             {
                 if (format != null)

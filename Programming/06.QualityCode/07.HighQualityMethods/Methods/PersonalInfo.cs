@@ -1,6 +1,6 @@
 ﻿// ********************************
-// <copyright file="PersonalInfo.cs" company="Telerik Academy">
-// Copyright (c) 2014 Telerik Academy. All rights reserved.
+// <copyright file="PersonalInfo.cs" company="SoftUni Academy">
+// Copyright (c) 2014 SoftUni. All rights reserved.
 // </copyright>
 //
 // ********************************
@@ -9,12 +9,13 @@ namespace Methods
     using System;
 
     /// <summary>
-    /// Represents an additional information, which can be attached to an object.
+    /// Represents an additional information, which can be attached to an object,
+    /// representing living creature (usually human).
     /// </summary>
-    public class PersonalInfo
+    internal class PersonalInfo
     {
         /// <summary>
-        /// Holds additional info (notes).
+        /// Holds additional text information (notes).
         /// </summary>
         private string notes;
 
@@ -28,7 +29,7 @@ namespace Methods
         /// </summary>
         /// <param name="birthday">Birthday date.</param>
         /// <param name="notes">Some notes.</param>
-        public PersonalInfo(DateTime? birthday = null, string notes = null)
+        public PersonalInfo(DateTime? birthday = null, string notes = default(string))
         {
             this.birthday = birthday;
             this.notes = notes;
@@ -46,13 +47,12 @@ namespace Methods
 
             set
             {
-                string currentNotes = value;
-                if (string.IsNullOrWhiteSpace(currentNotes))
+                if (value == null)
                 {
-                    currentNotes = string.Empty;
+                    throw new ArgumentNullException("value", "Notes cannot be null.");
                 }
 
-                this.notes = currentNotes;
+                this.notes = value;
             }
         }
 
