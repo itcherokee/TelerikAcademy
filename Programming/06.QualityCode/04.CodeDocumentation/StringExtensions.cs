@@ -1,9 +1,12 @@
-﻿// --------------------------------------------
+﻿// ---------------------------------------------------------------------------
+// <summary>
+//      Extension library for adding additional string handling functionalities.
+// </summary
 // <copyright file="StringExtensions.cs" company="Telerik Academy">
-//      Copyright (c) 2013 Telerik Academy. All rights reserved.
+//      Copyright (c) 2015 Telerik Academy. All rights reserved.
 // </copyright>
-// -------------------------------------------
-namespace Telerik.ILS.Common
+// ---------------------------------------------------------------------------
+namespace StringExtensions
 {
     using System;
     using System.Collections.Generic;
@@ -221,7 +224,7 @@ namespace Telerik.ILS.Common
         }
 
         /// <summary>
-        /// Extracts first <see cref="charsCount"/> characters form a string, starting from position 0.
+        /// Extracts first characters form a string, starting from position 0.
         /// </summary>
         /// <param name="input">String to be processed.</param>
         /// <param name="charsCount">Number of characters to be extracted.</param>
@@ -235,7 +238,7 @@ namespace Telerik.ILS.Common
         /// Extract the file extension from file name.
         /// </summary>
         /// <param name="fileName">File name to extract the extension.</param>
-        /// <returns>File extension of provided filename in string format. If <see cref="fileName"/>fileName input string is empty, returns empty string.</returns>
+        /// <returns>File extension of provided filename in string format. If fileName string is empty, returns empty string.</returns>
         public static string GetFileExtension(this string fileName)
         {
             if (string.IsNullOrWhiteSpace(fileName))

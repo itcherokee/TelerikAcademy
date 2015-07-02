@@ -5,23 +5,11 @@
 //          except the functions which may be called by other script
 (function () {
     "use strict";
-    var addScroll = false;
-
-    if ((navigator.userAgent.indexOf("MSIE 5") > 0) || (navigator.userAgent.indexOf("MSIE 6")) > 0) {
-        addScroll = true;
-    }
-
-    // var off = 0;
-    // var txt = "";
-
-    var browserName = navigator.appName;
-
-    if (browserName === "Netscape") {
-        document.captureEvents(Event.MOUSEMOVE);
-    }
-
-    var pointX = 0;
-    var pointY = 0;
+    var addScroll = false,
+        pointX = 0,
+        pointY = 0,
+        browserName = navigator.appName,
+        theLayer;
 
     function mouseMove(evn) {
         if (browserName === "Netscape") {
@@ -38,9 +26,6 @@
             }
         }
     }
-
-    document.onmousemove = mouseMove;
-    var theLayer;
 
     function popTip() {
         if (browserName === "Netscape") {
@@ -117,4 +102,15 @@
             theLayer.style.visibility = "visible";
         }
     }
+
+    if ((navigator.userAgent.indexOf("MSIE 5") > 0)
+            || (navigator.userAgent.indexOf("MSIE 6")) > 0) {
+        addScroll = true;
+    }
+
+    if (browserName === "Netscape") {
+        document.captureEvents(Event.MOUSEMOVE);
+    }
+
+    document.onmousemove = mouseMove;
 }());

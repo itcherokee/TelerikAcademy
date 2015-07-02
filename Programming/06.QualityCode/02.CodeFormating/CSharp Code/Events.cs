@@ -43,9 +43,6 @@ namespace CSharpCode
                         ListEvents(commandToExecute);
                         exitCode = true;
                         break;
-                    default:
-                        exitCode = false;
-                        break;
                 }
             }
 
@@ -101,6 +98,7 @@ namespace CSharpCode
         private static DateTime GetDate(string command, string commandType)
         {
             DateTime date = DateTime.Parse(command.Substring(commandType.Length + 1, 20));
+
             return date;
         }
     }

@@ -3,8 +3,8 @@
     using System;
 
     /// <summary>
-    /// Task 2: Refactor the following examples to produce code with 
-    ///         well-named identifiers in C#.
+    /// Task 2: Make_Чуек in C#; 
+    /// Refactor the following examples to produce code with well-named identifiers in C#.
     /// </summary>
     public class HumanManagement
     {

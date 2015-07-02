@@ -26,7 +26,7 @@
         /// <returns>All properties formated as string.</returns>
         public override string ToString()
         {
-            return string.Format("Sex: {0}, Name: {1}, UniqueCitizenNumber: {2}", this.Sex, this.Name, this.UniqueCitizenNumber);
+            return string.Format("Sex: {0}, Name: {1}, UCN: {2}", this.Sex, this.Name, this.UniqueCitizenNumber);
         }
     }
 }
