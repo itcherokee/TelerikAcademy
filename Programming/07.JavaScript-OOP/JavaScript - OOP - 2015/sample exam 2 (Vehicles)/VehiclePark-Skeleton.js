@@ -37,7 +37,7 @@ function processVehicleParkCommands(commands) {
                         this._name = name;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 position: {
                     get: function () {
@@ -50,7 +50,7 @@ function processVehicleParkCommands(commands) {
                         this._position = position;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 grade: {
                     get: function () {
@@ -63,7 +63,10 @@ function processVehicleParkCommands(commands) {
                         this._grade = grade;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
+                },
+                type: {
+                    value: 'Employee'
                 },
                 toString: {
                     value: function () {
@@ -105,7 +108,7 @@ function processVehicleParkCommands(commands) {
                         this._brand = brand;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 age: {
                     get: function () {
@@ -119,7 +122,7 @@ function processVehicleParkCommands(commands) {
                         this._age = age;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 terrain: {
                     get: function () {
@@ -133,7 +136,7 @@ function processVehicleParkCommands(commands) {
                         this._terrain = terrain;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 wheels: {
                     get: function () {
@@ -147,7 +150,7 @@ function processVehicleParkCommands(commands) {
                         this._wheels = wheels;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 type: {
                     get: function () {
@@ -157,7 +160,7 @@ function processVehicleParkCommands(commands) {
                         this._type = type;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 toString: {
                     value: function () {
@@ -198,7 +201,7 @@ function processVehicleParkCommands(commands) {
                         this._frameSize = frameSize;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 numberOfShifts: {
                     get: function () {
@@ -212,7 +215,7 @@ function processVehicleParkCommands(commands) {
                         this._numberOfShifts = numberOfShifts;
                     },
                     enumerable: true,
-                    configurable: false,
+                    configurable: false
                 },
                 toString: {
                     value: function () {
@@ -222,7 +225,6 @@ function processVehicleParkCommands(commands) {
                         output += parent.toString.call(this) + ",frameSize=" + this.frameSize;
                         if (this.numberOfShifts !== null) {
                             output += ',numberOfShifts=' + this.numberOfShifts;
-
                         }
 
                         return output;
@@ -279,7 +281,6 @@ function processVehicleParkCommands(commands) {
                 },
                 toString: {
                     value: function () {
-                        // -> Truck: brand=Ford,age=8.0,terrainCoverage=all,numberOfWheels=4,consumption=[10l/100km diesel],
                         return parent.toString.call(this) + ',consumption=[' + this.consumption + 'l/100km ' + this.typeOfFuel + ']';
                     },
                     enumerable: true,
@@ -332,8 +333,6 @@ function processVehicleParkCommands(commands) {
             return truck;
         })(Automobile);
 
-        // •	Limo – always has terrain coverage “road” and holds a set of employees,
-        //     has appendEmployee() and detachEmployee() methods– throws an error if it contains no such employee.
         var Limo = (function (parent) {
             var limo = Object.create(parent),
                 TERRAIN_COVERAGE = terrainType.road;
@@ -369,7 +368,6 @@ function processVehicleParkCommands(commands) {
                             throw new Error('No such employee in the list of drivers');
                         }
 
-                        // TODO: remove employee
                         this._employees.splice(this.employees.indexOf(employee), 1);
                     },
                     enumerable: true,
@@ -377,14 +375,14 @@ function processVehicleParkCommands(commands) {
                 },
                 employees: {
                     get: function () {
-                        if (this._employees === undefined ){
+                        if (this._employees === undefined) {
                             this._employees = [];
                         }
 
                         return this._employees.slice(0);
                     },
                     set: function (value) {
-                        if (this._employees === undefined ){
+                        if (this._employees === undefined) {
                             this._employees = [];
                         }
 
@@ -394,10 +392,6 @@ function processVehicleParkCommands(commands) {
                     configurable: true
                 },
                 toString: {
-                    // -> Limo: brand=GM,age=5.0,terrainCoverage=road,numberOfWheels=8,consumption=[15l/100km diesel]
-                    // --> Employees, allowed to drive: ---
-                    // --> Employees, allowed to drive:
-                    // ---> Angel,position=Trainer
                     value: function () {
                         var output = parent.toString.call(this) + '\n --> Employees, allowed to drive:',
                             i, len;
@@ -471,7 +465,6 @@ function processVehicleParkCommands(commands) {
                         _vehicles.push(object);
                         break;
                     case "employee":
-                        //object = new Models.Employee(command["name"], command["position"], parseFloat(command["grade"]));
                         object = Object.create(Models.Employee).init(command["name"], command["position"], parseFloat(command["grade"]));
                         _employees.push(object);
                         break;
@@ -479,7 +472,7 @@ function processVehicleParkCommands(commands) {
                         throw new Error("Invalid type.");
                 }
 
-                return object.constructor.name + " created.";
+                return object.type + " created.";
             }
 
             function processDeleteCommand(command) {
@@ -508,11 +501,28 @@ function processVehicleParkCommands(commands) {
                         throw new Error("Unknown type.");
                 }
 
-                return object.constructor.name + " deleted.";
+                return object.type + " deleted.";
             }
 
             function processListCommand(command) {
                 return formatOutputList(_vehicles);
+            }
+
+            function processListEmployees(command) {
+                var filteredEmployees;
+                if (command !== 'all') {
+                    filteredEmployees = _employees.filter(function (emp) {
+                        return emp.grade >= command
+                    })
+                } else {
+                    filteredEmployees = _employees.splice(0);
+                }
+
+                filteredEmployees.sort(function (a, b) {
+                    return a.name > b.name;
+                });
+
+                return formatOutputList(filteredEmployees);
             }
 
             function processAppendEmployeeCommand(command) {
@@ -588,6 +598,7 @@ function processVehicleParkCommands(commands) {
                 processInsertCommand: processInsertCommand,
                 processDeleteCommand: processDeleteCommand,
                 processListCommand: processListCommand,
+                processListEmployees: processListEmployees,
                 processAppendEmployeeCommand: processAppendEmployeeCommand,
                 processDetachEmployeeCommand: processDetachEmployeeCommand
             }
