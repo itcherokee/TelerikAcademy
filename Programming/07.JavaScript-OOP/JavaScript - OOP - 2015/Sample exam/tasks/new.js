@@ -1,64 +1,39 @@
 function solve() {
     var module = (function () {
-        var validators,
-            player,
+        var player,
             playlist,
             playable,
             audio,
             video;
 
-        validators = {
-            validateParameter: function (value) {
-                if ( value === undefined) {
-                    throw new Error('Invalid Parameter')
-                }
-            }, validateNumber: function (value) {
-               // validators.validateParameter(value);
-                if (typeof (value) !== 'number') {
-                    throw new Error('Not a Number');
-                }
-            },
-            validateInteger: function (value) {
-               // validators.validateParameter(value);
-                if (isNaN(value) || (value | 0) !== value) {
-                    throw new Error('Not an Integer');
-                }
-            },
-            validateId: function (id) {
-                //validators.validateParameter(id);
-               // validators.validateNumber(id);
-                if (id <= 0) {
-                    throw new Error('Id is not valid');
-                }
-            },
-            validateString: function (value) {
-                //validators.validateParameter(value);
-                if (typeof(value) !== 'string' || value.length < 3 || value.length > 25) {
-                    throw new Error('Invalid string')
-                }
-            }
-        };
-
         player = (function () {
-            var player = Object.create({}),
-                generatedId = 0;
-
+            var playerId = 0,
+                player = Object.create({});
             Object.defineProperties(player, {
                 init: {
                     value: function (name) {
+                        this._id = ++playerId;
                         this.name = name;
-                        this.id = ++generatedId;
-                        this._playlists = [];
+                        this._playlist = [];
 
                         return this;
                     }
+                },
+                id: {
+                    get: function () {
+                        return this._id;
+                    },
+                    enumerable: true,
+                    configurable: true
                 },
                 name: {
                     get: function () {
                         return this._name;
                     },
                     set: function (value) {
-                        validators.validateString(value);
+                        if (typeof(value) !== 'string' || value.length < 3 || value.length > 25) {
+                            throw new Error('Invalid name provided.');
+                        }
 
                         this._name = value;
                     },
@@ -66,25 +41,23 @@ function solve() {
                     configurable: true
                 },
                 addPlaylist: {
-                    value: function (playlistToAdd) {
-                      //  validators.validateParameter(playlistToAdd);
-                        if (playlistToAdd.id && playlistToAdd.name) {
-                            playlistToAdd.id = +playlistToAdd.id;
-                            this._playlists.push(playlistToAdd);
-                        } else {
-                            throw new Error('Invalid playlist provided');
+                    value: function (list) {
+                        if (list === undefined || list.id === undefined) {
+                            throw new Error('addPLaylist - not correct playlist specified')
                         }
+
+                        this._playlist.push(list);
 
                         return this;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
                 getPlaylistById: {
                     value: function (id) {
-                        id =+id;
-                        validators.validateId(id);
-                        var foundedPlaylist = this._playlists.filter(function (playlist) {
-                            return playlist.id === id;
+                        var foundedPlaylist = this._playlist.filter(function (element) {
+                            return element.id === id;
                         });
 
                         if (foundedPlaylist.length > 0) {
@@ -93,62 +66,53 @@ function solve() {
 
                         return null;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
-                removePlaylist: { // id & playlist
+                removePlaylist: {
                     value: function (value) {
-                        var foundedPlaylist,
-                            playlistId;
-
-                      //  validators.validateParameter(value);
-                        if (value.id && value.name && typeof(value.id) === 'number') {
-                            playlistId = +value.id;
-                        } else if (typeof(value) === 'number') {
-                            playlistId = +value;
-                        } else {
-                            throw new Error('Invalid playlist provided');
+                        if (typeof(value) !== 'number') {
+                            value = value.id;
+                            if (value === undefined) {
+                                throw new Error('removePlaylist - playlist without id')
+                            }
                         }
 
-                        validators.validateId(playlistId);
-                        foundedPlaylist = this.getPlaylistById(playlistId);
+                        var foundedPlaylist = this.getPlaylistById(value);
                         if (foundedPlaylist === null) {
-                            throw new Error('Non existing playlist.')
+                            throw new Error('removePlaylist - not existing playlist');
                         }
 
-                        this._playlists.splice(this._playlists.indexOf(foundedPlaylist), 1);
+                        this._playlist.splice(this._playlist.indexOf(foundedPlaylist), 1);
 
                         return this;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
                 listPlaylists: {
                     value: function (page, size) {
-                        validators.validateInteger(page);
-                        validators.validateInteger(size);
-
-                        if (page * size > this._playlists.length || page < 0 || size <= 0) {
-                            throw new Error('Invalid parameters provided.');
+                        page = page || 0;
+                        size = size || Number.MAX_NUMBER;
+                        if (page * size > this._playables.length || page < 0 || size <= 0) {
+                            throw new Error('listPlaylists - invalid size/page');
                         }
 
-                        return this._playlists.slice(0)
+                        return this._playlists
+                            .slice()
                             .sort(function (a, b) {
-                                if (a.name < b.name) {
-                                    return -1
-                                } else if (a.name > b.name) {
-                                    return 1
+                                if (a.name === b.name) {
+                                    return a.id - b.id;
                                 }
-
-                                if (a.id < b.id) {
-                                    return -1
-                                } else if (a.id > b.id) {
-                                    return 1
-                                }
-
-                                return 0;
+                                return a.name.localeCompare(b.name);
                             })
                             .splice(page * size, size);
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
                 contains: {
                     value: function (playableObj, playlistObj) {
@@ -170,38 +134,55 @@ function solve() {
 
                         throw new Error('contains - Invalid playable or playlist provided');
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
                 search: {
                     value: function (pattern) {
-                        return [];
+                        return;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 }
+
             });
+
             return player;
         })();
 
         playlist = (function () {
-            var playlist = Object.create({}),
-                generatedId = 0;
-
+            var playlistId = 0,
+                playlist = Object.create({});
             Object.defineProperties(playlist, {
                 init: {
                     value: function (name) {
-                        this.id = ++generatedId;
+                        this._id = ++playlistId;
                         this.name = name;
-                        this._playlist = [];
+                        this._playables = [];
 
                         return this;
-                    }
+                    },
+                    enumerable: true,
+                    configurable: false,
+                    writable: false
+                },
+                id: {
+                    get: function () {
+                        return this._id;
+                    },
+                    enumerable: true,
+                    configurable: true
                 },
                 name: {
                     get: function () {
                         return this._name;
                     },
                     set: function (value) {
-                        validators.validateString(value);
+                        if (typeof(value) !== 'string' || value.length < 3 || value.length > 25) {
+                            throw new Error('Invalid name provided.');
+                        }
 
                         this._name = value;
                     },
@@ -209,109 +190,65 @@ function solve() {
                     configurable: true
                 },
                 addPlayable: {
-                    value: function (value) {
-                        validators.validateParameter(value);
-                        if (value.id === undefined) {
-                            throw new Error('Not a playable Object.');
-                        }
-
-                        value.id = +value.id;
-                        validators.validateId(value.id);
-
-                        this._playlist.push(value);
-
+                    value: function (playable) {
+                        this._playables.push(playable);
                         return this;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
                 getPlayableById: {
                     value: function (id) {
-                        id = +id;
-                        validators.validateId(id);
-                        var foundedPlayable = this._playlist.filter(function (playable) {
-                            return playable.id === id;
+                        var foundedPlayable = this._playables.filter(function (element) {
+                            return element.id === id;
                         });
 
                         if (foundedPlayable.length > 0) {
                             return foundedPlayable[0];
-                        } else {
-                            return null;
                         }
+
+                        return null;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
-                removePlayable: { // id & playable
+                removePlayable: {
                     value: function (value) {
-                        //function validateId (id) {
-                        //    this.validateIfUndefined(id, 'Object id');
-                        //    if (typeof id !== 'number') {
-                        //        id = id.id;
-                        //    }
-                        //
-                        //    this.validateIfUndefined(id, 'Object must have id');
-                        //    return id;
-                        //}
-                        //
-                        //function indexOfElementWithIdInCollection(collection, id) {
-                        //    var i, len;
-                        //    for (i = 0, len = collection.length; i < len; i++) {
-                        //        if (collection[i].id == id) {
-                        //            return i;
-                        //        }
-                        //    }
-                        //
-                        //    return -1;
-                        //}
-                        //
-                        ////Removes a playable from this playlist, and the playable must have an id equal to the provided id
-                        ////Enables chaining
-                        ////Throws an error, if a playable with the provided id is not contained in the playlist
-                        //
-                        //id = validateId(id);
-                        //
-                        //var foundIndex = indexOfElementWithIdInCollection(this._playables, id);
-                        //if (foundIndex < 0) {
-                        //    throw new Error('Playable with id ' + id + ' was not found in playlist');
-                        //}
-                        //
-                        //this._playables.splice(foundIndex, 1);
-
-
-                        var foundedPlayable,
-                            playableId;
-                    //
-                        validators.validateParameter(value);
-                        if (value.id && value.author && value.title) {
-                            playableId = +value.id;
-                        } else if (typeof(value) === 'number'){
-                            playableId = +value;
+                        if (typeof(value) !== 'number') {
+                            value = value.id;
+                            if (value === undefined) {
+                                throw new Error('removePlayable - object without id')
+                            }
                         }
 
-                        validators.validateId(playableId);
-                        foundedPlayable = this.getPlayableById(playableId);
+                        var foundedPlayable = this.getPlayableById(value);
                         if (foundedPlayable === null) {
-                            throw new Error('Non existing playable.')
+                            throw new Error('removePlayble - not existing playable');
                         }
 
-                        this._playlist.splice(this._playlist.indexOf(foundedPlayable), 1);
+                        this._playables.splice(this._playables.indexOf(foundedPlayable), 1);
 
                         return this;
                     },
-                    enumerable: true
+                    enumerable: true,
+                    configurable: true,
+                    writable: false
                 },
-                listPlaylables: {
+                listPlayables: {
                     value: function (page, size) {
                         page = page || 0;
                         size = size || Number.MAX_NUMBER;
-                        if (page*size > this._playables.length || page < 0 || size <= 0){
+                        if (page * size > this._playables.length || page < 0 || size <= 0) {
                             throw new Error('listPlayables - invalid size/page');
                         }
 
                         return this
                             ._playables
                             .slice()
-                            .sort(function (a,b) {
-                                if (a.title === b.title){
+                            .sort(function (a, b) {
+                                if (a.title === b.title) {
                                     return a.id - b.id;
                                 }
                                 return a.title.localeCompare(b.title);
@@ -327,25 +264,37 @@ function solve() {
         })();
 
         playable = (function () {
-            var playable = Object.create({}),
-                generatedId = 0;
+            var playableId = 0,
+                playable = Object.create({});
 
             Object.defineProperties(playable, {
                 init: {
                     value: function (title, author) {
-                        this.id = ++generatedId;
+                        this._id = ++playableId;
                         this.title = title;
                         this.author = author;
 
                         return this;
-                    }
+                    },
+                    enumerable: true,
+                    configurable: false,
+                    writable: false
+                },
+                id: {
+                    get: function () {
+                        return this._id;
+                    },
+                    enumerable: true,
+                    configurable: false
                 },
                 title: {
                     get: function () {
                         return this._title;
                     },
                     set: function (value) {
-                        validators.validateString(value);
+                        if (typeof(value) !== 'string' || value.length < 3 || value.length > 25) {
+                            throw new Error('Invalid title provided.');
+                        }
 
                         this._title = value;
                     },
@@ -357,7 +306,9 @@ function solve() {
                         return this._author;
                     },
                     set: function (value) {
-                        validators.validateString(value);
+                        if (typeof(value) !== 'string' || value.length < 3 || value.length > 25) {
+                            throw new Error('Invalid author provided.');
+                        }
 
                         this._author = value;
                     },
@@ -369,7 +320,8 @@ function solve() {
                         return this.id + '. ' + this.title + ' - ' + this.author;
                     },
                     enumerable: true,
-                    configurable: true
+                    configurable: true,
+                    writable: false
                 }
             });
             return playable;
@@ -383,16 +335,21 @@ function solve() {
                         parent.init.call(this, title, author);
                         this.length = length;
 
+
                         return this;
-                    }
+                    },
+                    enumerable: true,
+                    configurable: false,
+                    writable: false
+
                 },
                 length: {
                     get: function () {
                         return this._length;
                     },
                     set: function (value) {
-                        if (typeof (value) !== 'number' || value <= 0) {
-                            throw new Error('Invalid length');
+                        if (typeof(value) !== 'number' || value <= 0) {
+                            throw new Error('Invalid length provided.');
                         }
 
                         this._length = value;
@@ -405,7 +362,8 @@ function solve() {
                         return parent.play.call(this) + ' - ' + this.length;
                     },
                     enumerable: true,
-                    configurable: true
+                    configurable: true,
+                    writable: false
                 }
             });
             return audio;
@@ -421,14 +379,13 @@ function solve() {
 
                         return this;
                     }
-                },
-                imdbRating: {
+                }, imdbRating: {
                     get: function () {
                         return this._imdbRating;
                     },
                     set: function (value) {
                         if (typeof(value) !== 'number' || value < 1 || value > 5) {
-                            throw new Error('Invalid imdbRating');
+                            throw new Error('Invalid imdbRating provided.');
                         }
 
                         this._imdbRating = value;
@@ -441,7 +398,8 @@ function solve() {
                         return parent.play.call(this) + ' - ' + this.imdbRating;
                     },
                     enumerable: true,
-                    configurable: true
+                    configurable: true,
+                    writable: false
                 }
             });
             return video;
@@ -461,10 +419,9 @@ function solve() {
                 return Object.create(video).init(title, author, imdbRating);
             }
         }
+
     })();
 
     return module;
 }
-
-//module.exports = solve;
 
